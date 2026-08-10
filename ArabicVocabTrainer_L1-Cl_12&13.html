@@ -287,11 +287,12 @@ header{
   padding:8px;
   gap:4px;
 }
-.front .type-pill{
+.back .type-pill{
   position:absolute; top:8px; left:50%; transform:translateX(-50%);
   font-size: calc(10px * var(--scale-text)); letter-spacing:.08em; text-transform:uppercase;
   color:var(--text-soft); font-weight:700;
   background:var(--tab-bg); padding:1px 8px; border-radius:999px;
+  z-index:2;
 }
 .front .star{
   position:absolute; top:4px; right:4px;
@@ -668,12 +669,13 @@ footer{
     <div class="card-shadow" id="cardShadow"></div>
     <div class="card" id="card">
      <div class="face front" id="frontFace">
-      <span class="star" id="starBtn">⭐</span> <span class="type-pill" id="typePill">ক্রিয়া</span>
+      <span class="star" id="starBtn">⭐</span>
       <div class="arabic-word" id="arabicWord">حَكَمَ</div>
       <button class="speak-btn speak-btn-inline" id="speakFrontBtn" title="উচ্চারণ শুনুন">🔊</button>
       <div class="hint">কার্ড উল্টাতে ট্যাপ করুন</div>
      </div>
      <div class="face back" id="backFace" style="transform:rotateY(180deg);">
+      <span class="type-pill" id="typePill">ক্রিয়া</span>
       <div class="back-inner">
        <div class="arabic-word" id="backArabic">حَكَمَ</div>
        <button class="speak-btn" id="speakBackBtn" title="উচ্চারণ শুনুন">🔊</button>
@@ -960,14 +962,14 @@ function render(){
   els.backArabic.textContent = d.ar;
   els.meaningBn.textContent = d.bn;
   els.meaningEn.textContent = d.en;
-  els.typePill.textContent = d.type==="verb" ? "ক্রিয়া" : "অ-ক্রিয়া";
+  els.typePill.textContent = d.type==="verb" ? "ক্রিয়া (verb)" : "অ-ক্রিয়া (nonverb)";
   els.tipBox.innerHTML = d.tip || "";
   els.exampleBox.innerHTML = d.example || "";
 
   let rootChips = "";
   if(d.root && d.root!=="—") rootChips += `<span class="chip">মূল: ${d.root}</span>`;
   if(d.form && d.form!=="—") rootChips += `<span class="chip">${d.type==='verb' ? 'বাব: '+d.form : d.form}</span>`;
-  if(d.type==='verb' && d.nonpast) rootChips += `<span class="chip">মুদারি: ${d.nonpast}</span>`;
+  if(d.type==='verb' && d.nonpast) rootChips += `<span class="chip">মুদারে: ${d.nonpast}</span>`;
   els.rootRow.innerHTML = rootChips;
 
   els.starBtn.textContent = "⭐";
