@@ -1,0 +1,1517 @@
+<!doctype html>
+<html lang="bn">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>আরবি শব্দভাণ্ডার — আন-নূর ২০/ লেভেল-১, ক্লাস ২-১১</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Baloo+Da+2:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+:root{
+  --gold:#c9962c;
+  --gold-soft:#e3bd6a;
+  --teal-deep:#0b3b36;
+  --teal-mid:#4c7a72;
+  --parchment:#f8f3e6;
+  --card-light:#fffdf8;
+  --ink:#1c2b28;
+  --ink-soft:#5a6b66;
+  --line-light: rgba(11,59,54,0.14);
+  --bg:#f8f3e6;
+  --card-bg:#fffdf8;
+  --text:#1c2b28;
+  --text-soft:#5a6b66;
+  --line: rgba(11,59,54,0.14);
+  --shadow: 0 4px 14px rgba(11,59,54,0.08);
+  --accent:#c9962c;
+  --accent-soft:#e3bd6a;
+  --panel:#ffffff;
+  --tab-bg: rgba(11,59,54,0.06);
+  --danger:#b5493a;
+  
+  /* Font Scale Factors */
+  --scale-arabic: 1;
+  --scale-text: 1;
+}
+[data-theme="dark"]{
+  --bg:#081615;
+  --card-bg:#102523;
+  --text:#ede6d3;
+  --text-soft:#a9bab5;
+  --line: rgba(233,226,209,0.12);
+  --shadow: 0 4px 14px rgba(0,0,0,0.3);
+  --accent:#d9ab4f;
+  --accent-soft:#8a6a26;
+  --panel:#0e211f;
+  --tab-bg: rgba(233,226,209,0.06);
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100vh;
+  height:100dvh; /* dynamic viewport height: excludes mobile browser/nav chrome that 100vh miscounts */
+  overflow:hidden;
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali','Segoe UI',system-ui,sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transition: background 0.3s ease;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(201,150,44,0.06), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(11,59,54,0.07), transparent 45%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.wrap{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:520px;
+  height:100vh;
+  height:100dvh;
+  max-height:100vh;
+  max-height:100dvh;
+  margin:0 auto;
+  padding: 6px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+header{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:4px 0 2px;
+  flex:none;
+  position:relative;
+  width: 100%;
+}
+.brand{display:flex; flex-direction:column; align-items:center; gap:1px; width:100%;}
+.brand .eyebrow{
+  font-size: calc(10px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); font-weight:700;
+}
+.brand h1{
+  margin:0; font-size: calc(18px * var(--scale-text)); font-weight:700; color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+
+.header-top-row{
+  display:flex; align-items:center; justify-content:space-between; width:100%; margin-bottom:2px;
+}
+
+.header-right{
+  display:flex; align-items:center; gap:6px;
+  position: absolute; right: 0; top: 0;
+}
+
+.deck-selector-row{
+  display:flex; justify-content:center; width:100%; margin:6px 0 4px 0; flex:none;
+}
+.deck-selector{
+  display:flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 4px;
+  background:var(--tab-bg); 
+  border-radius:16px; 
+  padding:4px; 
+  border:1px solid var(--line);
+  width: 100%;
+  max-width: 100%;
+}
+.deck-btn{
+  padding:4px 12px;
+  border-radius:999px;
+  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  background:transparent;
+  color:var(--text-soft);
+  border:none;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .2s ease;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.deck-btn.active{
+  background:var(--teal-deep);
+  color:#f8f3e6;
+}
+[data-theme="dark"] .deck-btn.active{
+  background:var(--accent);
+  color:#0b1a18;
+}
+
+.theme-toggle{
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--panel);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; cursor:pointer; flex:none;
+  box-shadow:var(--shadow);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.theme-toggle:active{transform:scale(0.9);}
+
+.font-resizer{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  background:var(--tab-bg); border:1px solid var(--line); border-radius:999px;
+  padding:2px 8px; margin-bottom:4px; flex:none;
+}
+.font-resizer-group{
+  display:flex; align-items:center; gap:4px;
+}
+.font-resizer-label{
+  font-size: calc(11px * var(--scale-text)); font-weight:700; color:var(--text-soft); white-space:nowrap;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.font-ctrl-btn{
+  width:24px; height:24px; border-radius:50%; border:1px solid var(--line);
+  background:var(--panel); color:var(--text); font-size:12px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:var(--shadow); transition:transform .1s ease;
+}
+.font-ctrl-btn:active{transform:scale(0.85);}
+
+.tabs{
+  display:flex; gap:6px; overflow-x:auto; padding-bottom:1px; margin-bottom:4px;
+  scrollbar-width:none;
+  flex:none;
+}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  flex:none;
+  padding:5px 12px;
+  border-radius:999px;
+  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  background:var(--tab-bg);
+  color:var(--text-soft);
+  border:1px solid transparent;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .2s ease;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.tab.active{
+  background:var(--teal-deep);
+  color:#f8f3e6;
+  border-color:var(--teal-deep);
+}
+[data-theme="dark"] .tab.active{
+  background:var(--accent);
+  color:#0b1a18;
+  border-color:var(--accent);
+}
+
+.progress-row{
+  display:flex; align-items:center; justify-content:space-between;
+  font-size: calc(13px * var(--scale-text)); font-weight:600; color:var(--text-soft); margin-bottom:4px; padding:0 2px;
+  flex:none;
+}
+.progress-track{
+  flex:1; height:5px; margin:0 8px; border-radius:3px;
+  background:var(--tab-bg); overflow:hidden;
+}
+.progress-fill{
+  height:100%; border-radius:3px;
+  background:linear-gradient(90deg,var(--accent),var(--gold-soft));
+  transition:width .3s ease;
+}
+
+.stage{
+  perspective:1600px;
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex:1;
+  min-height:0;
+  width:100%;
+  position:relative;
+}
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.4,.2,.2,1);
+}
+.card.flipped{transform:rotateY(180deg);}
+
+/* Ground shadow beneath the card, kept flat (does not rotate with the card)
+   so it reads as a real shadow cast on a surface below a floating card. */
+.card-shadow{
+  position:absolute;
+  left:6%; right:6%;
+  bottom:-2%;
+  height:14%;
+  z-index:1;
+  background:radial-gradient(ellipse at center, rgba(11,59,54,0.32) 0%, rgba(11,59,54,0.14) 45%, rgba(11,59,54,0) 75%);
+  filter:blur(4px);
+  border-radius:50%;
+  transform:scaleX(1);
+  transform-origin:50% 50%;
+  transition:transform .5s cubic-bezier(.4,.2,.2,1), opacity .5s ease;
+  pointer-events:none;
+}
+[data-theme="dark"] .card-shadow{
+  background:radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 75%);
+}
+
+.face{
+  position:absolute; inset:0;
+  border-radius:16px;
+  backface-visibility:hidden;
+  display:flex; flex-direction:column;
+  background:var(--card-bg);
+  border:1px solid var(--line);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,
+    0 6px 16px rgba(11,59,54,0.14);
+  overflow:hidden;
+}
+[data-theme="dark"] .face{
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 6px 18px rgba(0,0,0,0.45);
+}
+
+.front{
+  align-items:center; justify-content:center;
+  padding:12px;
+  gap:6px;
+}
+.front .type-pill{
+  position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  font-size: calc(11px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-soft); font-weight:700;
+  background:var(--tab-bg); padding:2px 10px; border-radius:999px;
+}
+.front .star{
+  position:absolute; top:6px; right:6px;
+  font-size:40px; line-height:1; cursor:pointer; z-index:5;
+  font-style:normal;
+  filter:grayscale(1); opacity:.45;
+  transition:all .15s ease;
+  padding:4px;
+}
+.front .star.marked{filter:none; opacity:1;}
+.arabic-word{
+  font-family:'Amiri','Noto Naskh Arabic',serif;
+  font-size: calc(clamp(32px, 8vw, 48px) * var(--scale-arabic));
+  color:var(--text);
+  direction:rtl;
+  line-height:1.2;
+  text-align:center;
+}
+.front .speak-btn{
+  position:static;
+  font-size:17px;
+  margin:2px auto 0;
+  padding:4px;
+}
+.front .hint{
+  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); text-align:center;
+}
+
+.back{
+  padding:12px 14px 10px;
+  overflow-y:auto;
+  /* Mid-height vertical alignment modification */
+  justify-content: center;
+}
+.back-inner{
+  display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center;
+  margin-top:2px;
+}
+.back .arabic-word{
+  font-size: calc(clamp(22px, 6vw, 30px) * var(--scale-arabic));
+  margin-bottom:0px;
+}
+.meaning-bn{
+  font-size: calc(20px * var(--scale-text)); font-weight:700; color:var(--accent);
+}
+.meaning-en{
+  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); font-style:italic;
+}
+.root-row{
+  display:flex; gap:4px; flex-wrap:wrap; justify-content:center; margin-top:1px;
+}
+.chip{
+  font-size: calc(11px * var(--scale-text)); padding:2px 8px; border-radius:999px;
+  background:var(--tab-bg); color:var(--text-soft); font-weight:700;
+}
+.tip-box{
+  margin-top:2px;
+  background:var(--tab-bg);
+  border-radius:8px;
+  padding:6px 10px;
+  font-size: calc(12px * var(--scale-text));
+  line-height:1.3;
+  color:var(--text);
+  text-align:left;
+  border-left:3px solid var(--accent);
+  max-height: 110px;
+  overflow-y: auto;
+}
+.tip-box b{color:var(--accent);}
+
+.controls{
+  display:flex; align-items:center; justify-content:center; gap:22px;
+  margin-top:10px;
+  margin-bottom:4px;
+  flex:none;
+  width:100%;
+}
+.ctrl-btn{
+  flex:none;
+  width:48px;
+  height:48px;
+  border-radius:0;
+  border:none;
+  background:transparent;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; cursor:pointer; color:#0b3b36;
+  box-shadow:none;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.65))
+    drop-shadow(0 3px 4px rgba(11,59,54,0.35));
+  transition:transform .12s ease, filter .12s ease;
+}
+.ctrl-btn:active{
+  transform:scale(0.88) translateY(1px);
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.4))
+    drop-shadow(0 1px 2px rgba(11,59,54,0.3));
+}
+.ctrl-btn.primary{
+  color:#c9962c;
+  font-size:34px;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.5))
+    drop-shadow(0 4px 6px rgba(11,59,54,0.45));
+}
+.ctrl-btn.primary:active{
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.3))
+    drop-shadow(0 1px 3px rgba(11,59,54,0.35));
+}
+
+/* Prev / Next: flat-top circular buttons, shaded only at the edge (matches flashcard styling) */
+.ctrl-btn.nav-btn{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fffdf8;
+  border:1px solid rgba(11,59,54,0.18);
+  font-size:17px;
+  color:#0b3b36;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 -2px 3px rgba(11,59,54,0.10) inset,
+    0 5px 9px rgba(11,59,54,0.22),
+    0 1px 2px rgba(11,59,54,0.14);
+  filter:none;
+}
+.ctrl-btn.nav-btn:active{
+  transform:scale(0.9) translateY(1px);
+  filter:none;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 1px 3px rgba(11,59,54,0.22) inset;
+}
+
+.bottom-actions{
+  display:flex; gap:6px;
+  flex:none;
+  margin-bottom:4px;
+}
+.action-btn{
+  flex:1;
+  padding:8px 6px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  font-size: calc(13px * var(--scale-text)); font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  cursor:pointer;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.action-btn.active{
+  background:var(--teal-deep); color:#f8f3e6; border-color:var(--teal-deep);
+}
+[data-theme="dark"] .action-btn.active{
+  background:var(--accent); color:#0b1a18; border-color:var(--accent);
+}
+
+.empty-state{
+  text-align:center; padding:20px 10px; color:var(--text-soft); font-size: calc(14px * var(--scale-text));
+}
+.empty-state .big{font-size:28px; margin-bottom:4px;}
+
+footer{
+  text-align:center; font-size: calc(11px * var(--scale-text)); color:var(--text-soft);
+  flex:none;
+  padding-bottom: 2px;
+}
+
+/* ===== Pronunciation / Audio ===== */
+.audio-toggle{
+  height:32px;
+  padding:0 10px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  display:flex; align-items:center; justify-content:center; gap:5px;
+  font-size:13px; font-weight:700; cursor:pointer; flex:none;
+  color:var(--text);
+  box-shadow:var(--shadow);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.audio-toggle .mic-icon{ font-size:15px; }
+.audio-toggle:active{transform:scale(0.94);}
+.audio-toggle.speaking{ color:var(--accent); border-color:var(--accent); }
+
+.voice-panel{
+  position:absolute; z-index:20; top:40px; left:0;
+  width:230px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:10px 12px 12px;
+  text-align:left;
+  display:none;
+}
+.voice-panel.open{ display:block; }
+.voice-panel label{
+  display:block; font-size:11px; font-weight:700; color:var(--text-soft);
+  margin-bottom:3px; margin-top:8px;
+}
+.voice-panel label:first-child{ margin-top:0; }
+.voice-panel select{
+  width:100%; font-size:12px; padding:5px 6px; border-radius:8px;
+  border:1px solid var(--line); background:var(--bg); color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.voice-panel input[type="range"]{ width:100%; }
+.voice-panel .rate-val{ font-size:11px; color:var(--text-soft); }
+.voice-panel .note{
+  font-size:10.5px; line-height:1.35; color:var(--text-soft);
+  margin-top:9px; padding-top:7px; border-top:1px solid var(--line);
+}
+
+.speak-btn{
+  position:absolute; top:8px; right:8px;
+  border:none; background:transparent; box-shadow:none;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; cursor:pointer; z-index:5;
+  color:var(--text);
+  padding:4px;
+  transition:transform .15s ease, opacity .15s ease;
+}
+.speak-btn:active{ transform:scale(0.85); }
+.speak-btn.speaking{ opacity:.55; }
+.back .speak-btn{ position:static; font-size:16px; margin:2px auto 0; }
+</style>
+ </head>
+ <body data-template-id="__page-root" data-theme="light">
+  <div class="wrap">
+   <header>
+    <div class="brand">
+     <span class="eyebrow">আন-নূর ২০</span>
+     <h1>আরবি শব্দভাণ্ডার</h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="দিন/রাত মোড">🌙</button>
+    <button class="audio-toggle" id="voiceToggleBtn" title="উচ্চারণ সেটিংস"><span class="mic-icon">🔊</span><span>ভয়েস</span></button>
+    <div class="voice-panel" id="voicePanel">
+     <label for="rateSlider">গতি (speed): <span class="rate-val" id="rateVal">০.৮×</span></label>
+     <input type="range" id="rateSlider" min="0.5" max="1.2" step="0.1" value="0.8">
+     <div class="note">উচ্চারণ শোনানোর জন্য এই অ্যাপ অনলাইন সার্ভিস ব্যবহার করে (ইন্টারনেট প্রয়োজন); ইন্টারনেট না থাকলে ডিভাইসের নিজস্ব উচ্চারণ ব্যবহৃত হবে (যদি থাকে)। এটি প্রকৃত ক্বারীর তাজবীদসম্মত তিলাওয়াত নয়, বরং হারাকাত অনুযায়ী সাধারণ আরবি উচ্চারণের একটি সহায়ক অনুমান মাত্র।</div>
+    </div>
+    <div class="deck-selector-row">
+     <div class="deck-selector" id="deckSelector"></div>
+    </div>
+   </header>
+   
+   <div class="font-resizer" id="fontResizer">
+    <div class="font-resizer-group">
+     <span class="font-resizer-label">আরবি font:</span>
+     <button class="font-ctrl-btn" id="arabicDecBtn" title="ছোট করুন">-</button>
+     <button class="font-ctrl-btn" id="arabicIncBtn" title="বড় করুন">+</button>
+    </div>
+    <div style="width:1px; height:14px; background:var(--line);"></div>
+    <div class="font-resizer-group">
+     <span class="font-resizer-label">বাংলা/ইংলিশ:</span>
+     <button class="font-ctrl-btn" id="textDecBtn" title="ছোট করুন">-</button>
+     <button class="font-ctrl-btn" id="textIncBtn" title="বড় করুন">+</button>
+    </div>
+   </div>
+
+   <div class="tabs" id="tabs">
+    <div class="tab active" data-filter="all" id="tabAll">সব শব্দ</div>
+    <div class="tab" data-filter="verb" id="tabVerb">ক্রিয়া</div>
+    <div class="tab" data-filter="noun" id="tabNoun">অ-ক্রিয়া</div>
+    <div class="tab" data-filter="marked" id="tabMarked">⭐ চিহ্নিত</div>
+   </div>
+   <div class="progress-row">
+    <span id="progCount">১ / ৩০</span>
+    <div class="progress-track">
+     <div class="progress-fill" id="progFill" style="width:3%"></div>
+    </div><span id="progPercent">৩%</span>
+   </div>
+   <div class="stage">
+    <div class="card-shadow" id="cardShadow"></div>
+    <div class="card" id="card">
+     <div class="face front" id="frontFace">
+      <span class="star" id="starBtn">⭐</span> <span class="type-pill" id="typePill">ক্রিয়া</span>
+      <div class="arabic-word" id="arabicWord">حَكَمَ</div>
+      <button class="speak-btn speak-btn-inline" id="speakFrontBtn" title="উচ্চারণ শুনুন">🔊</button>
+      <div class="hint">কার্ড উল্টাতে ট্যাপ করুন</div>
+     </div>
+     <div class="face back" id="backFace" style="transform:rotateY(180deg);">
+      <div class="back-inner">
+       <div class="arabic-word" id="backArabic">حَكَمَ</div>
+       <button class="speak-btn" id="speakBackBtn" title="উচ্চারণ শুনুন">🔊</button>
+       <div class="meaning-bn" id="meaningBn">বিচার করা/মীমাংসা করা</div>
+       <div class="meaning-en" id="meaningEn">to judge</div>
+       <div class="root-row" id="rootRow"></div>
+       <div class="tip-box" id="tipBox"></div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="controls">
+    <button class="ctrl-btn nav-btn" id="prevBtn" title="আগের">◀</button> 
+    <button class="ctrl-btn primary" id="flipBtn" title="উল্টান">⇄</button> 
+    <button class="ctrl-btn nav-btn" id="nextBtn" title="পরের">▶</button>
+   </div>
+   <div class="bottom-actions">
+    <button class="action-btn" id="shuffleBtn"> 
+     <span id="shuffleBtnTextDefault">🔀 শাফল করুন</span> 
+     <span id="shuffleBtnTextDone" style="display:none">✅ শাফল হয়ে গেছে</span> 
+    </button> 
+    <button class="action-btn" id="practiceBtn"> 
+     <span id="practiceBtnTextDefault">🎯 শুধু চিহ্নিত অনুশীলন</span> 
+     <span id="practiceBtnTextActive" style="display:none">🎯 অনুশীলন মোড চালু</span> 
+    </button>
+   </div>
+   <footer>আন-নূর ২০ কোর্সের শব্দভাণ্ডার প্রশিক্ষণ</footer>
+  </div>
+  <script>
+const DECKS = [
+ {
+    id: "class2",
+    label: "ক্লাস ২",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ২",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ১–১০, অ-ক্রিয়া ১–২০)",
+ data: [
+	  {n: 1, type: "verb", ar: "قَالَ", bn: "বলা", en: "to say", root: "ق و ل", form: "I", emoji: "🗣️", tip: "<b>মনে রাখার কৌশল:</b> 'ক্বলা' মানে বলা।"},
+	  {n: 2, type: "verb", ar: "كَانَ", bn: "হওয়া / ছিল", en: "to be", root: "ك و ن", form: "I", emoji: "⏳", tip: "<b>মনে রাখার কৌশল:</b> কোনো কিছু ঘটা বা হওয়া অর্থে ব্যবহৃত হয়।"},
+	  {n: 3, type: "verb", ar: "آمَنَ", bn: "বিশ্বাস করা", en: "to believe", root: "أ م ن", form: "IV", emoji: "🛡️", tip: "<b>মনে রাখার কৌশল:</b> ঈমান বা শান্তির ধারণার সাথে সম্পর্কিত।"},
+	  {n: 4, type: "verb", ar: "عَلِمَ", bn: "জানা", en: "to know", root: "ع ل م", form: "I", emoji: "🧠", tip: "<b>মনে রাখার কৌশল:</b> ইলম বা জ্ঞান অর্জনের সাথে সম্পর্কিত।"},
+	  {n: 5, type: "verb", ar: "جَعَلَ", bn: "তৈরি করা / বানানো / করা", en: "to make", root: "ج ع ل", form: "I", emoji: "🛠️", tip: "<b>মনে রাখার কৌশল:</b> কোনো কিছু সৃষ্টি বা রূপান্তর করা বোঝায়।"},
+	  {n: 6, type: "verb", ar: "كَفَرَ", bn: "অস্বীকার করা", en: "to disbelieve", root: "ك ف ر", form: "I", emoji: "❌", tip: "<b>মনে রাখার কৌশল:</b> কুফরি বা অস্বীকার করার সাথে সম্পর্কিত।"},
+	  {n: 7, type: "verb", ar: "جَاءَ", bn: "আসা", en: "to come", root: "ج ي ا", form: "I", emoji: "🚶", tip: "<b>মনে রাখার কৌশল:</b> আগমন বা উপস্থিত হওয়া বোঝায়।"},
+	  {n: 8, type: "verb", ar: "عَمِلَ", bn: "কাজ করা", en: "to do / to work", root: "ع م ل", form: "I", emoji: "💼", tip: "<b>মনে রাখার কৌশল:</b> আমল বা কর্মের সাথে সম্পর্কিত।"},
+	  {n: 9, type: "verb", ar: "آتَى", bn: "দেওয়া", en: "to give", root: "أ ت ي", form: "IV", emoji: "🎁", tip: "<b>মনে রাখার কৌশল:</b> কাউকে কিছু প্রদান করা অর্থে ব্যবহৃত হয়।"},
+	  {n: 10, type: "verb", ar: "رَأَى", bn: "দেখা", en: "to see", root: "ر ا ي", form: "I", emoji: "👀", tip: "<b>মনে রাখার কৌশল:</b> দৃষ্টি বা দেখার সাথে সম্পর্কিত।"},
+	  {n: 11, type: "noun", ar: "مِنْ", bn: "হতে / থেকে / অন্তর্ভুক্ত", en: "from / of", root: "—", form: "حرف", emoji: "📍", tip: "<b>মনে রাখার কৌশল:</b> উৎস বা স্থান বোঝাতে ব্যবহৃত হয়।"},
+	  {n: 12, type: "noun", ar: "اللَّهُ", bn: "আল্লাহ্", en: "Allah", root: "أ ل ه", form: "—", emoji: "🌟", tip: "<b>মনে রাখার কৌশল:</b> মহান সৃষ্টিকর্তার নাম।"},
+	  {n: 13, type: "noun", ar: "مَا", bn: "যা / না / কী", en: "what / not / no", root: "—", form: "حرف", emoji: "❓", tip: "<b>মনে রাখার কৌশল:</b> প্রশ্ন বা নেতিবাচক অর্থে বসে।"},
+	  {n: 14, type: "noun", ar: "فِي", bn: "মধ্যে", en: "in", root: "—", form: "حرف", emoji: "📥", tip: "<b>মনে রাখার কৌশল:</b> কোনো কিছুর ভেতরে বোঝাতে ব্যবহৃত হয়।"},
+	  {n: 15, type: "noun", ar: "لَا", bn: "না", en: "no / not", root: "—", form: "حرف", emoji: "⛔", tip: "<b>মনে রাখার কৌশল:</b> না বোধক অর্থ প্রকাশ করতে বসে।"},
+	  {n: 16, type: "noun", ar: "إِنَّ", bn: "নিশ্চয়ই / কেবল", en: "certainly / indeed", root: "—", form: "حرف", emoji: "✅", tip: "<b>মনে রাখার কৌশল:</b> জোরালো নিশ্চিতকরণ প্রকাশ করে।"},
+	  {n: 17, type: "noun", ar: "الَّذِي", bn: "যে / যিনি / যা", en: "that / who", root: "—", form: "اسم موصول", emoji: "🔗", tip: "<b>মনে রাখার কৌশল:</b> সংযোগবাচক সর্বনাম হিসেবে বসে।"},
+	  {n: 18, type: "noun", ar: "عَلَى", bn: "উপরে", en: "on / upon / over", root: "—", form: "حرف", emoji: "⬆️", tip: "<b>মনে রাখার কৌশল:</b> কোনো কিছুর ওপর অবস্থান বোঝায়।"},
+	  {n: 19, type: "noun", ar: "رَبٌّ", bn: "রব / প্রভু", en: "the Lord", root: "ر ب ب", form: "বহুবচন: أَرْبَابٌ", emoji: "👑", tip: "<b>মনে রাখার কৌশল:</b> লালনপালনকারী বা প্রতিপালক অর্থ প্রকাশ করে।"},
+	  {n: 20, type: "noun", ar: "مَنْ", bn: "যে / যিনি / যারা / কে / কাকে", en: "who / whom", root: "—", form: "اسم موصول", emoji: "👤", tip: "<b>মনে রাখার কৌশল:</b> ব্যক্তিবাচক সর্বনাম হিসেবে ব্যবহৃত হয়।"},
+	  {n: 21, type: "noun", ar: "إِلَى", bn: "দিকে", en: "to / towards", root: "—", form: "حرف", emoji: "➡️", tip: "<b>মনে রাখার কৌশল:</b> কোনো গন্তব্যের দিকে অগ্রসর হওয়া বোঝায়।"},
+	  {n: 22, type: "noun", ar: "إِنْ", bn: "যদি / না", en: "if / no", root: "—", form: "حرف", emoji: "⚖️", tip: "<b>মনে রাখার কৌশল:</b> শর্ত বা সম্ভাবনা প্রকাশ করতে ব্যবহৃত হয়।"},
+	  {n: 23, type: "noun", ar: "إِلَّا", bn: "ব্যতীত / ছাড়া / কিন্তু", en: "except / but", root: "—", form: "حرف", emoji: "🔍", tip: "<b>মনে রাখার কৌশল:</b> ব্যতিক্রম বা সীমাবদ্ধতা বোঝাতে বসে।"},
+	  {n: 24, type: "noun", ar: "أَنَّ", bn: "যে / তে", en: "that", root: "—", form: "حرف", emoji: "📝", tip: "<b>মনে রাখার কৌশল:</b> বাক্যকে সংযুক্ত করতে ব্যবহৃত হয়।"},
+	  {n: 25, type: "noun", ar: "ذَلِكَ", bn: "ঐ / ওটা", en: "that", root: "—", form: "اسم إشارة", emoji: "👉", tip: "<b>মনে রাখার কৌশল:</b> দূরের কোনো বস্তু বা বিষয় ইশারা করতে বসে।"},
+	  {n: 26, type: "noun", ar: "عَنْ", bn: "হতে / থেকে / সম্পর্কে", en: "from / about", root: "—", form: "حرف", emoji: "🔄", tip: "<b>মনে রাখার কৌশল:</b> দূরত্ব বা কোনো বিষয় সম্পর্কে বোঝায়।"},
+	  {n: 27, type: "noun", ar: "أَرْضٌ", bn: "পৃথিবী", en: "the earth / soil", root: "أ ر ض", form: "বহুবচন: أَرَاضِي", emoji: "🌍", tip: "<b>মনে রাখার কৌশল:</b> জমিন বা ভূখণ্ড বোঝাতে ব্যবহৃত হয়।"},
+	  {n: 28, type: "noun", ar: "إِذَا", bn: "যখন / যদি", en: "when / if", root: "—", form: "ظرف", emoji: "⏱️", tip: "<b>মনে রাখার কৌশল:</b> নির্দিষ্ট কোনো সময় বা শর্ত বোঝায়।"},
+	  {n: 29, type: "noun", ar: "قَدْ", bn: "নিশ্চয়ই", en: "indeed", root: "—", form: "حرف", emoji: "✨", tip: "<b>মনে রাখার কৌশল:</b> নিশ্চিতকরণ বা অতীতের কাজের জোর প্রকাশে বসে।"},
+	  {n: 30, type: "noun", ar: "يَوْمٌ", bn: "দিন / দিবস", en: "day", root: "ي و م", form: "বহুবচন: أَيَّامٌ", emoji: "📅", tip: "<b>মনে রাখার কৌশল:</b> সময় বা দিবস গণনায় ব্যবহৃত হয়।"}
+    ]
+  },
+  {
+    id: "class3",
+    label: "ক্লাস ৩",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৩",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ১১–২০, অ-ক্রিয়া ২১–৪০)",
+  data: [
+      {n:11,type:"verb",ar:"شَاءَ",bn:"ইচ্ছা করা",en:"to will / to wish",root:"ش ي أ",form:"I",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর ইচ্ছা বা 'মাশাআল্লাহ' (আল্লাহ যা চান) শব্দের সাথে মিল রেখে এটি মনে রাখা যায়।"},
+      {n:12,type:"verb",ar:"خَلَقَ",bn:"সৃষ্টি করা",en:"to create",root:"খ ল ক",form:"I",emoji:"🌍",tip:"<b>মনে রাখার কৌশল:</b> সৃষ্টিকর্তা অর্থে 'খালিক' বা সৃষ্টি বোঝাতে 'খালক্ব' শব্দগুলো এর সাথে সম্পর্কিত।"},
+      {n:13,type:"verb",ar:"أَنْزَلَ",bn:"একবারে নাযিল করা",en:"to send down / to reveal",root:"ن ز ل",form:"IV",emoji:"📖",tip:"<b>@মনে রাখার কৌশল:</b> কুরআন নাযিল করা বা আকাশ থেকে কিছু নিচে নামানো অর্থে ব্যবহৃত হয়।"},
+      {n:14,type:"verb",ar:"كَذَّبَ",bn:"মিথ্যা সাব্যস্ত করা / অস্বীকার করা",en:"to deny / to reject",root:"ك ذ ب",form:"II",emoji:"❌",tip:"<b>মনে রাখার কৌশল:</b> 'কাযিব' বা মিথ্যা বলা থেকে এই ক্রিয়ার রূপটি এসেছে।"},
+      {n:15,type:"verb",ar:"دَعَا",bn:"আহ্বান করা / ডাকা / প্রার্থনা করা",en:"to call / to invite / to pray",root:"د ع و",form:"I",emoji:"🤲",tip:"<b>মনে রাখার কৌশল:</b> দোয়া বা প্রার্থনা করার অর্থের সাথে সরাসরি মিল রয়েছে।"},
+      {n:16,type:"verb",ar:"اتَّقَى",bn:"ভয় করা / বেঁচে চলা",en:"to be righteous / to fear (Allah)",root:"و ق ي",form:"VIII",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের পরিচিত পরিভাষা 'তাকওয়া' বা সাবধানতা অবলম্বনের মূল ধাতু।"},
+      {n:17,type:"verb",ar:"هَدَى",bn:"সৎ পথে পরিচালনা করা",en:"to guide",root:"ه د ي",form:"I",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> হিদায়াত বা সঠিক পথের সাথে সম্পর্কিত।"},
+      {n:18,type:"verb",ar:"أَرَادَ",bn:"চাওয়া / ইচ্ছা করা",en:"to intend / to desire / to want",root:"ر و د",form:"IV",emoji:"💭",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছুর ইচ্ছা পোষণ করা বোঝায়।"},
+      {n:19,type:"verb",ar:"اِتَّبَعَ",bn:"অনুসরণ করা",en:"to follow",root:"ت ب ع",form:"VII",emoji:"👣",tip:"<b>মনে রাখার কৌশল:</b> কারো পদাঙ্ক অনুসরণ করা বা অনুগামী হওয়া অর্থে ব্যবহৃত হয়।"},
+      {n:20,type:"verb",ar:"أَرْسَلَ",bn:"পাঠানো",en:"to send",root:"ر س ل",form:"IV",emoji:"📨",tip:"<b>মনে রাখার কৌশল:</b> রাসূল বা দূত প্রেরণের ধারণার সাথে মিল রয়েছে।"},
+      {n:21,type:"noun",ar:"قَوْمٌ",bn:"মানুষ / জাতি / গোষ্ঠী",en:"people / group",root:"ق و م",form:"বহুবচন: أَقْوَامٌ",emoji:"👥",tip:"<b>মনে রাখার কৌশল:</b> কোনো নির্দিষ্ট জনগোষ্ঠী বা জাতিকে বোঝাতে এটি বহুল ব্যবহৃত।"},
+      {n:22,type:"noun",ar:"آيَةٌ",bn:"আয়াত / নিদর্শন",en:"sign",root:"أ ي ي",form:"বহুবচন: آيَاتٌ",emoji:"🔍",tip:"<b>মনে রাখার কৌশল:</b> কুরআনের একেকটি আয়াত বা আল্লাহর প্রকাশ্য নিদর্শন।"},
+      {n:23,type:"noun",ar:"أَنَّ",bn:"যে / নিশ্চয়ই",en:"that",root:"—",form:"حرف",emoji:"🔗",tip:"<b>মনে রাখার কৌশল:</b> বাক্যের সংযোগ বা জোর দেওয়ার জন্য অব্যয় হিসেবে বসে।"},
+      {n:24,type:"noun",ar:"كُلُّ",bn:"প্রত্যেক / সব / সমস্ত",en:"every / all",root:"ك ل ل",form:"—",emoji:"🌐",tip:"<b>মনে রাখার কৌশল:</b> সামগ্রিকতা বা সম্পূর্ণতা প্রকাশ করতে ব্যবহৃত হয়।"},
+      {n:25,type:"noun",ar:"لَمْ",bn:"না / নি / নাই",en:"did not / no",root:"—",form:"حرف",emoji:"⛔",tip:"<b>মনে রাখার কৌশল:</b> ভূতকালের না সূচক অর্থ প্রকাশ করতে এটি বসে।"},
+      {n:26,type:"noun",ar:"ثُمَّ",bn:"অতঃপর / এরপর",en:"then",root:"—",form:"حرف",emoji:"⏳",tip:"<b>মনে রাখার কৌশল:</b> ধারাবাহিকতা বা ক্রমপর্যায় বোঝাতে ব্যবহৃত হয়।"},
+      {n:27,type:"noun",ar:"رَسُولٌ",bn:"রাসূল / দূত",en:"messenger",root:"ر س ل",form:"বহুবচন: رُسُلٌ",emoji:"✉️",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর পক্ষ থেকে প্রেরিত বার্তা বাহক বা নবী।"},
+      {n:28,type:"noun",ar:"عَذَابٌ",bn:"শাস্তি / সাজা",en:"punishment",root:"ع ذ ب",form:"বহুবচন: أَعْذِبَةٌ",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> আখিরাতে বা দুনিয়ায় পাপের শাস্তি বোঝাতে ব্যবহৃত হয়।"},
+      {n:29,type:"noun",ar:"هَذَا",bn:"এটি / এই / ইনি",en:"this / these / it",root:"—",form:"اسم إشارة",emoji:"👉",tip:"<b>মনে রাখার কৌশল:</b> কাছের কোনো ব্যক্তি বা বস্তুকে ইশারা করতে ব্যবহৃত হয়।"},
+      {n:30,type:"noun",ar:"سَمَاءٌ",bn:"আকাশ",en:"the sky",root:"س م و",form:"বহুবচন: سَمَاوَاتٌ",emoji:"🌌",tip:"<b>মনে রাখার কৌশল:</b> মাথার ওপরের বিশাল নীলাকাশ বা মহাকাশ বোঝায়।"},
+      {n:31,type:"noun",ar:"نَفْسٌ",bn:"আত্মা / নিজ / জান",en:"soul / self",root:"ن ف س",form:"বহুবচন: أَنْفُسٌ, نُفُوسٌ",emoji:"👤",tip:"<b>মনে রাখার কৌশল:</b> মানব সত্ত্বা বা অন্তরআত্মা বোঝাতে ব্যবহৃত হয়।"},
+      {n:32,type:"noun",ar:"شَيْءٌ",bn:"কিছু / কোনো কিছু",en:"thing / something",root:"ش ي أ",form:"বহুবচন: أَشْيَاءُ",emoji:"📦",tip:"<b>মনে রাখার কৌশল:</b> যেকোনো বস্তু বা বিষয় বোঝাতে এটি বহুল ব্যবহৃত।"},
+      {n:33,type:"noun",ar:"أَوْ",bn:"অথবা / কিংবা",en:"or",root:"—",form:"অব্যয়",emoji:"➡️",tip:"<b>মনে রাখার কৌশল:</b> 'আউ' শুনলে ভাবুন — 'আউ! কোনটা নেব? এটা না ওটা?' অর্থাৎ একটি বা অন্যটি → অথবা / কিংবা (or)।"},
+      {n:34,type:"noun",ar:"بَيْنَ",bn:"মধ্যে / সামনে",en:"front / between",root:"ب ي ن",form:"—",emoji:"↔️",tip:"<b>মনে রাখার কৌশল:</b> দুটি জিনিস বা অবস্থার মধ্যবর্তী স্থান বোঝায়।"},
+      {n:35,type:"noun",ar:"كِتَابٌ",bn:"বই",en:"book",root:"—",form:"বিশেষ্য",emoji:"❓",tip:"<b>মনে রাখার কৌশল:</b> বাংলায় আমরা অনেক সময় বলি 'কিতাব' পড়া, যার মানে ধর্মীয় বা সাধারণ বই পড়া।"},
+      {n:36,type:"noun",ar:"حَقٌّ",bn:"সত্য / অধিকার",en:"Truth / right",root:"-",form:"বহুবচন: حُقُوقٌ",emoji:"👉",tip:"<b>মনে রাখার কৌশল:</b> বাংলায় আমরা প্রায়ই বলি কোনো কিছুর 'হক' বা অধিকার আছে, কিংবা একদম 'হক' বা সত্য কথা।"},
+      {n:37,type:"noun",ar:"قَبْلَ",bn:"পূর্বে",en:"before",root:"ق ب ل",form:"—",emoji:"⏮️",tip:"<b>মনে রাখার কৌশল:</b> কোনো নির্দিষ্ট সময়ের আগের সময়কে নির্দেশ করে।"},
+      {n:38,type:"noun",ar:"نَاسٌ",bn:"মানুষজন / মানবজাতি",en:"people / mankind",root:"ن و س",form:"—",emoji:"👨‍👩‍👧‍👦",tip:"<b>মনে রাখার কৌশল:</b> সাধারণ মানুষ বা সমগ্র মানবজাতি অর্থে কুরআনে বহুল ব্যবহৃত।"},
+      {n:39,type:"noun",ar:"إِذْ",bn:"যখন",en:"when",root:"—",form:"ظرف",emoji:"⏱️",tip:"<b>মনে রাখার কৌশল:</b> অতীতের কোনো নির্দিষ্ট সময় বা ঘটনা স্মরণ করিয়ে দিতে ব্যবহৃত হয়।"},
+      {n:40,type:"noun",ar:"أُولَئِكَ",bn:"ওরা / ঐ সকল",en:"Those / they",root:"-",form:"—",emoji:"🌍",tip:"<b>মনে রাখার কৌশল:</b> দূরে থাকা 'ঐ সকল' বোঝাতে ব্যবহৃত হয়।"}
+    ]
+  },
+  {
+    id: "class4",
+    label: "ক্লাস ৪",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৪",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ২১–৩০, অ-ক্রিয়া ৪১–৬০)",
+  data: [
+      {n:21, type:"verb", ar:"أَخَذَ", bn:"গ্রহণ করা / জব্দ করা", en:"to take, to seize", root:"أ خ ذ", form:"I", emoji:"🤲", tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু হাত দিয়ে গ্রহণ করা বা শক্তভাবে জব্দ করা অর্থে ব্যবহৃত হয়।"},
+      {n:22, type:"verb", ar:"عَبَدَ", bn:"ইবাদাত / উপাসনা করা", en:"to worship", root:"ع ب د", form:"I", emoji:"🛐", tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'ইবাদত' বা 'আব্দ' (বান্দা) এই মূল থেকে এসেছে।"},
+      {n:23, type:"verb", ar:"ظَلَمَ", bn:"অত্যাচার / জবরদস্তি করা", en:"to oppress, to wrong", root:"ظ ل م", form:"I", emoji:"⚖️", tip:"<b>মনে রাখার কৌশল:</b> জুলুম বা অত্যাচার করা অর্থে কুরআনে এটি অত্যন্ত পরিচিত একটি ক্রিয়া।"},
+      {n:24, type:"verb", ar:"سَأَلَ", bn:"প্রশ্ন / জিজ্ঞাসা করা / চাওয়া", en:"to ask", root:"س أ ل", form:"I", emoji:"❓", tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু বা কোনো বিষয়ে কাউকে জিজ্ঞাসা করা বা চাওয়া বোঝাতে ব্যবহৃত হয়।"},
+      {n:25, type:"verb", ar:"وَجَدَ", bn:"পাওয়া", en:"to find", root:"و ج د", form:"I", emoji:"🔍", tip:"<b>মনে রাখার কৌশল:</b> হারিয়ে যাওয়া বা খোঁজা কোনো কিছু খুঁজে পাওয়া বা প্রাপ্তি বোঝায়।"},
+      {n:26, type:"verb", ar:"أَخْرَجَ", bn:"বের করা", en:"to bring forth, to drive out", root:"خ ر ج", form:"IV", emoji:"🚪", tip:"<b>মনে রাখার কৌশল:</b> ভেতর থেকে কোনো কিছু বাইরে বের করে আনা বা বহিষ্কার করা।"},
+      {n:27, type:"verb", ar:"أَكَلَ", bn:"খাওয়া", en:"to eat, to consume", root:"أ ك ل", form:"I", emoji:"🍽️", tip:"<b>মনে রাখার কৌশল:</b> খাবার খাওয়া বা কোনো কিছু ভক্ষণ করা অর্থে ব্যবহৃত হয়।"},
+      {n:28, type:"verb", ar:"لَيْسَ", bn:"না হওয়া", en:"to not be", root:"ل ي س", form:"—", emoji:"❌", tip:"<b>মনে রাখার কৌশল:</b> এটি একটি না-বোধক অব্যয় বা ক্রিয়া, যা কোনো কিছু নয় বোঝাতে বসে।"},
+      {n:29, type:"verb", ar:"فَعَلَ", bn:"করা", en:"to do", root:"ف ع ل", form:"I", emoji:"🛠️", tip:"<b>মনে রাখার কৌশল:</b> সাধারণ কোনো কাজ করা বা সম্পাদন করা অর্থে ব্যবহৃত হয়।"},
+      {n:30, type:"verb", ar:"نَظَرَ", bn:"দেখা / নজর করা", en:"to look, to see", root:"ن ظ ر", form:"I", emoji:"👀", tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছুর দিকে দৃষ্টি দেওয়া বা অবলোকন করা।"},
+      {n:41, type:"noun", ar:"لَوْ", bn:"যদি", en:"if", root:"—", form:"—", emoji:"🔀", tip:"<b>মনে রাখার কৌশল:</b> শর্ত বা সম্ভাবনা বোঝাতে 'যদি' অর্থে এটি ব্যবহৃত হয়।"},
+      {n:42, type:"noun", ar:"بَعْدُ", bn:"পরে", en:"after", root:"ب ع د", form:"—", emoji:"⏳", tip:"<b>মনে রাখার কৌশল:</b> কোনো সময় বা ঘটনার পরবর্তী অবস্থা বোঝাতে ব্যবহৃত হয়।"},
+      {n:43, type:"noun", ar:"عِنْدَ", bn:"নিকটে / কাছে / সামনে", en:"near, with", root:"ع ن د", form:"—", emoji:"📍", tip:"<b>মনে রাখার কৌশল:</b> সান্নিধ্য বা কারো নিকটে বা কাছে বোঝাতে এটি ব্যবহৃত হয়।"},
+      {n:44, type:"noun", ar:"خَيْرٌ", bn:"ভালো / উত্তম / কল্যাণ", en:"good, better", root:"خ ي ر", form:"—", emoji:"🌟", tip:"<b>মনে রাখার কৌশল:</b> কল্যাণকর বা উত্তম কিছু বোঝাতে 'খায়ের' শব্দটি ব্যবহার করা হয়।"},
+      {n:45, type:"noun", ar:"سَبِيلٌ", bn:"পথ / রাস্তা", en:"path, way", root:"س ب ل", form:"বহুবচন: سُبُلٌ", emoji:"🛤️", tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর রাস্তা বা কোনো নির্দিষ্ট পথ বোঝাতে 'সাবিলুল্লাহ' ব্যবহৃত হয়।"},
+      {n:46, type:"noun", ar:"عَلِيمٌ", bn:"সর্বজ্ঞানী / মহাজ্ঞানী", en:"All-Knower", root:"ع ل م", form:"—", emoji:"🧠", tip:"<b>মনে রাখার কৌশল:</b> সব বিষয়ে পূর্ণ জ্ঞান রাখেন যিনি — আল্লাহর একটি গুণবাচক নাম।"},
+      {n:47, type:"noun", ar:"مَعَ", bn:"সাথে / কাছে", en:"with, near", root:"—", form:"—", emoji:"🤝", tip:"<b>মনে রাখার কৌশল:</b> কারও সাথে থাকা বা সান্নিধ্য বোঝাতে ব্যবহৃত হয়।"},
+      {n:48, type:"noun", ar:"بَعْضٌ", bn:"কিছু / জনৈক / কতক", en:"some, other, part", root:"ب ع ض", form:"—", emoji:"🧩", tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছুর অংশবিশেষ বা কিছু লোক বোঝাতে এটি আসে।"},
+      {n:49, type:"noun", ar:"لَمَّا", bn:"যখন", en:"when", root:"—", form:"—", emoji:"⏱️", tip:"<b>মনে রাখার কৌশল:</b> কোনো নির্দিষ্ট ঘটনার সময় বা যখন অর্থে ব্যবহৃত হয়।"},
+      {n:50, type:"noun", ar:"آخِرٌ", bn:"আখিরাত / শেষ", en:"hereafter, last", root:"أ خ ر", form:"বহুবচন: آخِرُونَ", emoji:"🏁", tip:"<b>মনে রাখার কৌশল:</b> দুনিয়ার জীবনের শেষ বা পরকাল বোঝাতে ব্যবহৃত হয়।"},
+      {n:51, type:"noun", ar:"أَيُّهَا", bn:"ওহে / হে", en:"O", root:"—", form:"—", emoji:"🗣️", tip:"<b>মনে রাখার কৌশল:</b> কাউকে সম্বোধন করে ডাকার সময় 'ইয়া আইয়ুহাল্লাজিনা' বলা হয়।"},
+      {n:52, type:"noun", ar:"إِلٰهٌ", bn:"আল্লাহ / প্রভু", en:"God, lord", root:"أ ل ه", form:"বহুবচন: آلِهَةٌ", emoji:"🛡️", tip:"<b>মনে রাখার কৌশল:</b> উপাস্য বা মাবুদ অর্থে পবিত্র কুরআনে ব্যবহৃত হয়।"},
+      {n:53, type:"noun", ar:"جَنَّةٌ", bn:"জান্নাত / বাগান", en:"gardens, paradise", root:"ج ن ن", form:"বহুবচন: جَنَّاتٌ", emoji:"🌳", tip:"<b>মনে রাখার কৌশল:</b> পরকালের সুখের জান্নাত বা বাগান বোঝায়।"},
+      {n:54, type:"noun", ar:"غَيْرٌ", bn:"ব্যতীত / ছাড়া", en:"without, except", root:"غ ي ر", form:"—", emoji:"🚫", tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু ছাড়া বা ভিন্ন কিছু বোঝাতে ব্যবহৃত হয়।"},
+      {n:55, type:"noun", ar:"نَارٌ", bn:"আগুন / দোযখ", en:"Fire, hell", root:"ن و ر", form:"বহুবচন: نِيرَانٌ", emoji:"🔥", tip:"<b>মনে রাখার কৌশল:</b> প্রজ্বলিত আগুন বা জাহান্নামের আগুন বোঝাতে ব্যবহৃত হয়।"},
+      {n:56, type:"noun", ar:"دُونَ", bn:"ব্যতীত / ছাড়া / তাছাড়া", en:"without, except, besides", root:"د و ن", form:"—", emoji:"🚷", tip:"<b>মনে রাখার কৌশল:</b> আল্লাহ ছাড়া অন্য কাউকে বা কিছু বাদ দিয়ে বোঝাতে এটি আসে।"},
+      {n:57, type:"noun", ar:"حَتَّى", bn:"যতক্ষণ / পর্যন্ত না", en:"until", root:"—", form:"—", emoji:"⏳", tip:"<b>মনে রাখার কৌশল:</b> কোনো নির্দিষ্ট সীমা বা সময় পর্যন্ত বোঝাতে ব্যবহৃত হয়।"},
+      {n:58, type:"noun", ar:"أَمْ", bn:"অথবা", en:"or", root:"—", form:"—", emoji:"⚖️", tip:"<b>মনে রাখার কৌশল:</b> বিকল্প কিছু বোঝাতে বা প্রশ্নবাচক বাক্যে ব্যবহৃত হয়।"},
+      {n:59, type:"noun", ar:"مُوسَى", bn:"মূসা (আঃ)", en:"Musa", root:"—", form:"সঠিক নাম", emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর অন্যতম প্রখ্যাত নবী হযরত মূসা (আঃ)-এর নাম।"},
+      {n:60, type:"noun", ar:"قَلْبٌ", bn:"হৃদয় / মন / অন্তর", en:"heart", root:"ق ل ب", form:"বহুবচন: قُلُوبٌ", emoji:"❤️", tip:"<b>মনে রাখার কৌশল:</b> মানুষের অনুভূতি বা অন্তরের কেন্দ্রস্থল বোঝাতে ব্যবহৃত হয়।"}
+    ]
+  },
+  {
+    id: "class5",
+    label: "ক্লাস ৫",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৫",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৩১–৪০, অ-ক্রিয়া ৬১–৮০)",
+    data: [
+      {n:31,type:"verb",ar:"ذَكَرَ",bn:"স্মরণ করা",en:"to remember / to mention",root:"ذ ك ر",form:"I",emoji:"🧠",tip:"<b>মনে রাখার কৌশল:</b> 'জিকির' (স্মরণ) শব্দটি এই মূল থেকেই এসেছে।"},
+      {n:32,type:"verb",ar:"خَافَ",bn:"ভয় করা / আশঙ্কা করা",en:"to fear / to be afraid",root:"خ و ف",form:"I",emoji:"😨",tip:"<b>মনে রাখার কৌশল:</b> 'খউফ' (ভয়) এই মূল থেকেই এসেছে।"},
+      {n:33,type:"verb",ar:"قَتَلَ",bn:"হত্যা করা",en:"to kill",root:"ق ت ل",form:"I",emoji:"⚔️",tip:"<b>মনে রাখার কৌশল:</b> 'কাতল' (হত্যা) শব্দটি বাংলাতেও বহুল ব্যবহৃত।"},
+      {n:34,type:"verb",ar:"رَجَعَ",bn:"ফিরে আসা",en:"to return",root:"ر ج ع",form:"I",emoji:"🔙",tip:"<b>মনে রাখার কৌশল:</b> 'রুজু' করা (ফিরে আসা) এই মূল থেকেই এসেছে।"},
+      {n:35,type:"verb",ar:"سَمِعَ",bn:"শোনা",en:"to hear / to listen",root:"س م ع",form:"I",emoji:"👂",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর এক নাম 'সামিউন' (সর্বশ্রোতা) এই মূল থেকেই এসেছে।"},
+      {n:36,type:"verb",ar:"تَوَلَّى",bn:"ফিরে যাওয়া",en:"to turn",root:"و ل ي",form:"V",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> মুখ ফিরিয়ে নেয়া বা কোনো দায়িত্ব থেকে সরে যাওয়া।"},
+      {n:37,type:"verb",ar:"أَمَرَ",bn:"আদেশ করা",en:"to order / to command",root:"أ م ر",form:"I",emoji:"🗣️",tip:"<b>মনে রাখার কৌশল:</b> 'আমির' (আদেশদাতা) বা 'امر' (আদেশ) এই মূল থেকে।"},
+      {n:38,type:"verb",ar:"دَخَلَ",bn:"প্রবেশ করা",en:"to enter",root:"د خ ل",form:"I",emoji:"🚪",tip:"<b>মনে রাখার কৌশল:</b> 'দাখিল' হওয়া (প্রবেশ করা) বাংলাতেও প্রচলিত।"},
+      {n:39,type:"verb",ar:"جَزَى",bn:"প্রতিফল দেওয়া / পুরস্কার দেওয়া",en:"to reward / to recompense",root:"ج ز ي",form:"I",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> 'জাযাকাল্লাহ' (আল্লাহ আপনাকে উত্তম প্রতিদান দিন) আমরা প্রায়ই বলি।"},
+      {n:40,type:"verb",ar:"أَطَاعَ",bn:"আনুগত্য / মান্য করা / অনুগত হওয়া",en:"to obey",root:"ط و ع",form:"IV",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> 'ইতাত' বা 'আনুগত্য' শব্দটি এই মূল থেকে এসেছে।"},
+      {n:61,type:"noun",ar:"عَبْدٌ",bn:"দাস / বান্দা",en:"slave / servant",root:"ع ب د",form:"—",emoji:"🙇",tip:"<b>মনে রাখার কৌশল:</b> 'ইবাদত' বা 'আব্দুল্লাহ' (আল্লাহর বান্দা) এই মূল থেকে।"},
+      {n:62,type:"noun",ar:"أَهْلٌ",bn:"পরিবার",en:"family / people",root:"—",form:"—",emoji:"👨‍👩‍👧‍👦",tip:"<b>মনে রাখার কৌশল:</b> 'আহলান' (স্বাগতম) বা 'আহলে বাইত' (নবীর পরিবার) এই শব্দ থেকে।"},
+      {n:63,type:"noun",ar:"بَلْ",bn:"না / বরং",en:"No / rather",root:"—",form:"অব্যয়",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> আগের কথার বিপরীতে নতুন কিছু বলতে ব্যবহৃত হয়।"},
+      {n:64,type:"noun",ar:"لَعَلَّ",bn:"সম্ভবত",en:"perhaps / may",root:"—",form:"অব্যয়",emoji:"🤔",tip:"<b>মনে রাখার কৌশল:</b> আশা বা সম্ভাবনা বোঝাতে ব্যবহৃত হয়।"},
+      {n:65,type:"noun",ar:"عَظِيمٌ",bn:"মহান / বিরাট / কঠিন",en:"great",root:"ع ظ م",form:"—",emoji:"🏔️",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর এক নাম 'আল-আযীম' (সর্বশ্রেষ্ঠ)।"},
+      {n:66,type:"noun",ar:"يَدٌ",bn:"হাত",en:"hand / before",root:"ي د ي",form:"বহুবচন: أَيْدِي",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> 'ইয়াদুল্লাহ' মানে আল্লাহর হাত।"},
+      {n:67,type:"noun",ar:"مُبِينٌ",bn:"স্পষ্ট",en:"clear / manifest",root:"ب ي ن",form:"—",emoji:"📖",tip:"<b>মনে রাখার কৌশল:</b> 'কুরআনুম মুবীন' মানে সুস্পষ্ট কুরআন।"},
+      {n:68,type:"noun",ar:"رَحِيمٌ",bn:"অতি করুণাময়",en:"Most Merciful",root:"ر ح م",form:"—",emoji:"💖",tip:"<b>মনে রাখার কৌশল:</b> 'বিসমিল্লাহির রাহমানির রাহীম' এ বহুল পঠিত।"},
+      {n:69,type:"noun",ar:"دُنْيَا",bn:"পৃথিবী",en:"world",root:"د ن و",form:"—",emoji:"🌍",tip:"<b>মনে রাখার কৌশল:</b> আমরা যে ক্ষণস্থায়ী 'দুনিয়া' তে বাস করছি।"},
+      {n:70,type:"noun",ar:"أَجْرٌ",bn:"পুরস্কার",en:"reward",root:"أ ج ر",form:"—",emoji:"🏆",tip:"<b>মনে রাখার কৌশল:</b> নেক কাজের 'অজর' বা সওয়াব।"},
+      {n:71,type:"noun",ar:"لَنْ",bn:"কখনো না (ভবিষ্যৎ)",en:"Never",root:"—",form:"অব্যয়",emoji:"🚫",tip:"<b>মনে রাখার কৌশল:</b> ভবিষ্যতের কোনো কাজ দৃঢ়ভাবে অস্বীকার করতে ব্যবহৃত হয়।"},
+      {n:72,type:"noun",ar:"عَزِيزٌ",bn:"সর্বশক্তিমান",en:"All-Mighty",root:"ع ز ز",form:"—",emoji:"💪",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর গুণবাচক নাম 'আল-আযীয'।"},
+      {n:73,type:"noun",ar:"حَكِيمٌ",bn:"মহাজ্ঞানী / বিজ্ঞ",en:"All-Wise",root:"ح ك م",form:"—",emoji:"🧠",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর গুণবাচক নাম 'আল-হাকীম' (প্রজ্ঞাময়)।"},
+      {n:74,type:"noun",ar:"ذُو",bn:"অধিকারী / ওয়ালা",en:"Possessor / Owner",root:"—",form:"—",emoji:"👑",tip:"<b>মনে রাখার কৌশল:</b> 'যুল-জালালি ওয়াল-ইকরাম' (মর্যাদা ও সম্মানের অধিকারী)।"},
+      {n:75,type:"noun",ar:"هَلْ",bn:"কি",en:"what",root:"—",form:"অব্যয়",emoji:"❓",tip:"<b>মনে রাখার কৌশল:</b> প্রশ্নবোধক অব্যয়।"},
+      {n:76,type:"noun",ar:"دِينٌ",bn:"বিচার / ধর্ম",en:"Judgment / religion",root:"د ي ن",form:"বহুবচন: أَدْيَانٌ",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> 'ইয়াওমিদ দ্বীন' বা বিচার দিবস এবং 'দ্বীন ইসলাম' (ধর্ম)।"},
+      {n:77,type:"noun",ar:"غَفُورٌ",bn:"ক্ষমাশীল",en:"Forgiving",root:"غ ف ر",form:"—",emoji:"🤲",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর অপর নাম 'আল-গফুর' (অসীম ক্ষমাশীল)।"},
+      {n:78,type:"noun",ar:"شَيْطَانٌ",bn:"শয়তান",en:"Shaitaan",root:"ش ط ن",form:"বহুবচন: شَيَاطِينُ",emoji:"👿",tip:"<b>মনে রাখার কৌশল:</b> মানুষের প্রকাশ্য শত্রু।"},
+      {n:79,type:"noun",ar:"مَثَلٌ",bn:"উদাহরণ",en:"example",root:"م ث ل",form:"বহুবচন: أَمْثَالٌ",emoji:"💡",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে আল্লাহ অনেক 'মিসাল' বা উদাহরণ দিয়েছেন।"},
+      {n:80,type:"noun",ar:"مَلَكٌ",bn:"ফেরেশতা",en:"angels",root:"م ل ك",form:"বহুবচন: مَلَائِكَةُ",emoji:"👼",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর নূরের তৈরি আজ্ঞাবহ সৃষ্টি মালাইকা।"}
+    ]
+  },
+  {
+    id: "class6",
+    label: "ক্লাস ৬",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৬",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৪১–৫০, অ-ক্রিয়া ৮১–১০০)",
+    data: [
+      {n:41,type:"verb",ar:"أَوْحَى",bn:"ওহী পাঠানো / ইঙ্গিত করা",en:"to reveal / to inspire",root:"و ح ي",form:"IV",emoji:"📜",tip:"<b>মনে রাখার কৌশল:</b> 'ওহী' শব্দটি এই মূল থেকেই এসেছে — আল্লাহ নবী-রাসূলদের কাছে প্রত্যাদেশ পাঠানো অর্থে ব্যবহৃত।"},
+      {n:42,type:"verb",ar:"أَشْرَكَ",bn:"শিরক করা",en:"to associate partners",root:"ش ر ك",form:"IV",emoji:"🚫",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'শিরক' এই মূল থেকেই এসেছে — আল্লাহর সাথে অন্য কাউকে অংশীদার সাব্যস্ত করা।"},
+      {n:43,type:"verb",ar:"أَلْقَى",bn:"নিক্ষেপ করা / প্রদান করা",en:"to cast / to throw / to offer",root:"ل ق ي",form:"IV",emoji:"🎯",tip:"<b>মনে রাখার কৌশল:</b> মূসা (আঃ)-এর লাঠি নিক্ষেপের ঘটনায় ব্যবহৃত ক্রিয়া — কোনো কিছু ছুঁড়ে দেওয়া বা পেশ করা।"},
+      {n:44,type:"verb",ar:"وَعَدَ",bn:"ওয়াদা করা / প্রতিশ্রুতি দেওয়া",en:"to promise",root:"و ع د",form:"I",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> বাংলায় প্রচলিত শব্দ 'ওয়াদা' এই মূল থেকেই এসেছে।"},
+      {n:45,type:"verb",ar:"أَنْفَقَ",bn:"ব্যয় / খরচ করা",en:"to spend",root:"ن ف ق",form:"IV",emoji:"💰",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'ইনফাক' (আল্লাহর পথে ব্যয়) এই মূল থেকেই এসেছে।"},
+      {n:46,type:"verb",ar:"غَفَرَ",bn:"ক্ষমা করা",en:"to forgive",root:"غ ف ر",form:"I",emoji:"🤲",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'মাগফিরাত' (ক্ষমা) এই মূল থেকেই এসেছে।"},
+      {n:47,type:"verb",ar:"أَحَبَّ",bn:"ভালোবাসা",en:"to love / to like",root:"ح ب ب",form:"IV",emoji:"❤️",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'মাহাব্বাত/হুব্ব' (ভালোবাসা) এই মূল থেকেই এসেছে।"},
+      {n:48,type:"verb",ar:"أَصَابَ",bn:"পৌঁছা / আপতিত হওয়া",en:"to strike / to befall / to bestow",root:"ص و ب",form:"IV",emoji:"🌩️",tip:"<b>মনে রাখার কৌশল:</b> কোনো বিপদ-মুসিবত বা কল্যাণ কারও উপর আপতিত/বর্তানো হওয়া অর্থে ব্যবহৃত।"},
+      {n:49,type:"verb",ar:"أَضَلَّ",bn:"পথভ্রষ্ট করা / বিপথে যাওয়া / দিকভ্রান্ত করা",en:"to let go astray / to mislead",root:"ض ل ل",form:"IV",emoji:"🧭",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'দালালাত/ضلال' (বিভ্রান্তি) এই মূল থেকেই এসেছে — কাউকে সঠিক পথ থেকে সরিয়ে দেওয়া।"},
+      {n:50,type:"verb",ar:"تَابَ",bn:"তাওবা করা / ক্ষমা করা / ফিরে আসা",en:"to repent / to turn",root:"ت و ب",form:"I",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'তাওবা' এই মূল থেকেই এসেছে — গুনাহ ছেড়ে আল্লাহর দিকে ফিরে আসা।"},
+      {n:81,type:"noun",ar:"مَالٌ",bn:"সম্পদ",en:"wealth / properties",root:"م و ل",form:"বহুবচন: أَمْوَالٌ",emoji:"💰",tip:"<b>মনে রাখার কৌশল:</b> ইয়াতীমের সম্পদ আত্মসাৎ নিষেধ সংক্রান্ত আয়াতে বহুল ব্যবহৃত শব্দ।"},
+      {n:82,type:"noun",ar:"وَلِيٌّ",bn:"অভিভাবক",en:"protector / guardian",root:"و ل ي",form:"বহুবচন: أَوْلِيَاءُ",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'অলি/আউলিয়া' এই মূল থেকেই এসেছে — রক্ষাকারী বা অভিভাবক।"},
+      {n:83,type:"noun",ar:"هُدًى",bn:"নির্দেশনা",en:"guidance",root:"ه د ي",form:"—",emoji:"🧭",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'হেদায়াত' এই মূল থেকেই এসেছে — সঠিক পথের দিশা।"},
+      {n:84,type:"noun",ar:"فَضْلٌ",bn:"অনুগ্রহ",en:"Grace / bounty",root:"ف ض ل",form:"—",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর বিশেষ দয়া বা অনুগ্রহ বোঝাতে ব্যবহৃত হয়।"},
+      {n:85,type:"noun",ar:"لَيْلٌ",bn:"রাত",en:"night",root:"ل ي ل",form:"বহুবচন: لَيَالِي/لِيَال",emoji:"🌙",tip:"<b>মনে রাখার কৌশল:</b> 'লাইলাতুল ক্বদর' (মহিমান্বিত রাত) শব্দটি এখান থেকেই এসেছে।"},
+      {n:86,type:"noun",ar:"صَلٰوةٌ",bn:"নামাজ / সালাত",en:"prayer",root:"ص ل و",form:"বহুবচন: صَلَوَاتٌ",emoji:"🕌",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের অন্যতম স্তম্ভ — আল্লাহর সাথে সরাসরি সংযোগের ইবাদত।"},
+      {n:87,type:"noun",ar:"كَيْفَ",bn:"কীভাবে",en:"How",root:"—",form:"অব্যয়",emoji:"❓",tip:"<b>মনে রাখার কৌশল:</b> প্রশ্নবোধক অব্যয় — কোনো কিছু কীভাবে ঘটে তা জিজ্ঞাসা করতে ব্যবহৃত।"},
+      {n:88,type:"noun",ar:"أَوَّلٌ",bn:"প্রথম / প্রাক্তন",en:"first / former",root:"أ و ل",form:"বহুবচন: أَوَّلُونَ",emoji:"1️⃣",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছুর সূচনা বা পূর্ববর্তী অবস্থা বোঝাতে ব্যবহৃত।"},
+      {n:89,type:"noun",ar:"أَكْثَرُ",bn:"অধিকাংশ",en:"most",root:"ك ث ر",form:"বহুবচন: أَكْثَرُونَ",emoji:"🔢",tip:"<b>মনে রাখার কৌশল:</b> 'কাসীর' (অনেক)-এর তুলনামূলক রূপ — অধিকাংশ বা বেশিরভাগ।"},
+      {n:90,type:"noun",ar:"بُنَىَّ",bn:"সন্তান (হে বৎস)",en:"Children / my dear son",root:"ب ن ي",form:"—",emoji:"👶",tip:"<b>মনে রাখার কৌশল:</b> লুকমান (আঃ)-এর উপদেশে স্নেহভরে সন্তানকে সম্বোধনের শব্দ।"},
+      {n:91,type:"noun",ar:"أَصْحَابٌ",bn:"সঙ্গী / সাথী / অধিবাসী",en:"companions",root:"ص ح ب",form:"একবচন: صَاحِبٌ",emoji:"👥",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'আসহাব' (সাহাবীগণ) এই মূল থেকেই এসেছে।"},
+      {n:92,type:"noun",ar:"جَهَنَّمُ",bn:"জাহান্নাম",en:"Hell",root:"—",form:"সঠিক নাম",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> শাস্তির স্থান হিসেবে কুরআনে বারবার উল্লেখিত।"},
+      {n:93,type:"noun",ar:"حَيَاةٌ",bn:"জীবন",en:"life",root:"ح ي ي",form:"—",emoji:"🌱",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'হায়াত' (জীবন) — পার্থিব জীবন বোঝাতে ব্যবহৃত।"},
+      {n:94,type:"noun",ar:"زَوْجٌ",bn:"স্বামী / স্ত্রী",en:"spouses / wife",root:"ز و ج",form:"বহুবচন: أَزْوَاجٌ",emoji:"💑",tip:"<b>মনে রাখার কৌশল:</b> দাম্পত্য জোড়া বা সঙ্গী বোঝাতে ব্যবহৃত হয়।"},
+      {n:95,type:"noun",ar:"أَخٌ",bn:"ভাই",en:"brother",root:"أ خ و",form:"বহুবচন: إِخْوَةٌ/إِخْوَانٌ",emoji:"👬",tip:"<b>মনে রাখার কৌশল:</b> রক্তসম্পর্কীয় বা ঈমানী ভ্রাতৃত্ব — উভয় অর্থেই ব্যবহৃত হয়।"},
+      {n:96,type:"noun",ar:"لَوْلَا",bn:"যদি না / কেন না",en:"Why not",root:"—",form:"অব্যয়",emoji:"❗",tip:"<b>মনে রাখার কৌশল:</b> শর্তবাচক অব্যয় — কোনো কিছু না ঘটলে কী হতো তা বোঝাতে ব্যবহৃত।"},
+      {n:97,type:"noun",ar:"مِثْلُ",bn:"মতো",en:"similar / like",root:"م ث ل",form:"—",emoji:"🔁",tip:"<b>মনে রাখার কৌশল:</b> তুলনা বা সাদৃশ্য বোঝাতে ব্যবহৃত অব্যয়।"},
+      {n:98,type:"noun",ar:"نَبِيٌّ",bn:"নবী",en:"Prophet",root:"ن ب أ",form:"বহুবচন: أَنْبِيَاءُ",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর মনোনীত প্রেরিত পুরুষ, যার কাছে ওহী পাঠানো হয়।"},
+      {n:99,type:"noun",ar:"أَحَدٌ",bn:"এক / যে / কেউ",en:"one / anyone",root:"أ ح د",form:"—",emoji:"🔵",tip:"<b>মনে রাখার কৌশল:</b> সূরা ইখলাসের বিখ্যাত বাক্য 'কুল হুওয়াল্লাহু আহাদ'-এ ব্যবহৃত।"},
+      {n:100,type:"noun",ar:"خَالِدٌ",bn:"চিরস্থায়ী",en:"abide forever",root:"خ ل د",form:"বহুবচন: خَالِدُونَ",emoji:"♾️",tip:"<b>মনে রাখার কৌশল:</b> জান্নাত বা জাহান্নামে চিরস্থায়ীভাবে অবস্থান করা বোঝাতে ব্যবহৃত।"}
+    ]
+  },
+  {
+    id: "class7",
+    label: "ক্লাস ৭",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৭",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৫১–৬০, অ-ক্রিয়া ১০১–১২০)",
+    data: [
+      {n:51,type:"verb",ar:"كَسَبَ",bn:"উপার্জন/অর্জন/সংগ্রহ/কামাই করা",en:"to earn",root:"ك س ب",form:"I",emoji:"💼",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু অর্জন বা উপার্জন করা অর্থে বহুল ব্যবহৃত ক্রিয়া।"},
+      {n:52,type:"verb",ar:"تَلَا",bn:"তেলাওয়াত/পাঠ/আবৃত্তি করা",en:"to recite",root:"ت ل و",form:"I",emoji: "📖",tip:"<b>মনে রাখার কৌশল:</b> কুরআন তিলাওয়াত বা পাঠ করা অর্থে ব্যবহৃত হয়।"},
+      {n:53,type:"verb",ar:"رَزَقَ",bn:"জীবিকা দেওয়া",en:"to provide",root:"رزق",form:"I",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> রিযিক বা জীবিকা দান করা অর্থে ব্যবহৃত হয়।"},
+      {n:54,type:"verb",ar:"قَضَى",bn:"মীমাংসা করা/সিদ্ধান্ত দেওয়া/আদেশ দেওয়া",en:"to decree/to decide/to judge",root:"قضي",form:"I",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> কোনো বিষয়ে চূড়ান্ত সিদ্ধান্ত বা বিচার করা।"},
+      {n:55,type:"verb",ar:"نَصَرَ",bn:"সাহায্য/সহায়তা/অনুগ্রহ দান করা",en:"to help",root:"ن صر",form:"I",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> বিপদগ্রস্তকে সাহায্য বা নুসরাত দান করা।"},
+      {n:56,type:"verb",ar:"صَبَرَ",bn:"ধৈর্য ধারণ করা",en:"to be patient",root:"ص بر",form:"I",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> বিপদে সবর বা ধৈর্য ধারণ করা।"},
+      {n:57,type:"verb",ar:"جَرَى",bn:"প্রবাহিত হওয়া",en:"to flow / to run",root:"ج ري",form:"I",emoji:"🌊",tip:"<b>মনে রাখার কৌশল:</b> নদী বা পানি প্রবাহিত হওয়া অর্থে।"},
+      {n:58,type:"verb",ar:"مَسَّ",bn:"স্পর্শ করা/ছোঁয়া/লাগা",en:"to touch",root:"مس س",form:"I",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু স্পর্শ করা বা সংস্পর্শে আসা।"},
+      {n:59,type:"verb",ar:"ضَرَبَ",bn:"আঘাত করা/বর্ণনা করা/দৃষ্টান্ত দেওয়া",en:"to strike / to set forth",root:"ض رب",form:"I",emoji:"⚡",tip:"<b>মনে রাখার কৌশল:</b> আঘাত করা বা উপমা পেশ করা অর্থে।"},
+      {n:60,type:"verb",ar:"أَقَامَ",bn:"প্রতিষ্ঠা/স্থাপন করা",en:"to establish",root:"ق وم",form:"IV",emoji:"🏛️",tip:"<b>মনে রাখার কৌশল:</b> সালাত বা কোনো কিছু সঠিকভাবে কায়েম করা।"},
+      {n:101,type:"noun",ar:"فِرْعَوْنَ",bn:"ফিরাউন",en:"Firaun",root:"—",form:"সঠিক নাম",emoji:"👑",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে উল্লেখিত প্রাচীন মিশরের অহংকারী শাসক।"},
+      {n:102,type:"noun",ar:"عَالَمٌ",bn:"বিশ্বজগত",en:"world / universe",root:"ع ل م",form:"বহুবচন: عَالَمِينَ",emoji:"🌍",tip:"<b>মনে রাখার কৌশল:</b> রাব্বুল আলামীন বা সমস্ত জাহানের প্রতিপালক।"},
+      {n:103,type:"noun",ar:"لَٰكِنْ / لَٰكِنَّ",bn:"কিন্তু",en:"but",root:"—",form:"অব্যয়",emoji:"📌",tip:"<b>মনে রাখার কৌশল:</b> বাক্যে ব্যতিক্রম বা ভিন্নতা বোঝাতে ব্যবহৃত হয়।"},
+      {n:104,type:"noun",ar:"أَلِيمٌ",bn:"বেদনাদায়ক",en:"painful",root:"أ ل م",form:"—",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> যেমন 'আযাবুন আলীম' বা কষ্টদায়ক শাস্তি।"},
+      {n:105,type:"noun",ar:"وَجْهٌ",bn:"মুখ",en:"face",root:"و ج ه",form:"বহুবচন: وُجُوهٌ",emoji:"👤",tip:"<b>মনে রাখার কৌশল:</b> মানুষের মুখমণ্ডল বা চেহারা।"},
+      {n:106,type:"noun",ar:"إِنْسَانٌ",bn:"মানুষ",en:"people / mankind",root:"ء ن س",form:"—",emoji:"🧑",tip:"<b>মনে রাখার কৌশল:</b> মানবজাতি বা ইনসান বোঝাতে।"},
+      {n:107,type:"noun",ar:"بَيِّنَةٌ",bn:"সুস্পষ্ট বিধান/প্রমাণ",en:"evidence",root:"ب ي ن",form:"বহুবচন: بَيْنَاتٌ",emoji:"🔍",tip:"<b>মনে রাখার কৌশল:</b> স্পষ্ট দলিল বা নিদর্শন।"},
+      {n:108,type:"noun",ar:"آخَرُ",bn:"অন্য/অন্যান্য/ভিন্ন/আরো",en:"other / last",root:"أ خ ر",form:"বহুবচন: أَخَرُونَ",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> অন্য কোনো বিষয় বা অপর কিছু বোঝাতে।"},
+      {n:109,type:"noun",ar:"قُرْآنٌ",bn:"কুরআন",en:"the Quran",root:"ق ر أ",form:"—",emoji:"📖",tip:"<b>মনে রাখার কৌশল:</b> মুসলমানদের পবিত্র আসমানী গ্রন্থ আল-কুরআন।"},
+      {n:110,type:"noun",ar:"قَلِيلٌ",bn:"সামান্য/অল্প",en:"a few",root:"ق ل ل",form:"বহুবচন: قَلِيلُونَ",emoji:"🔻",tip:"<b>মনে রাখার কৌশল:</b> অল্প পরিমাণ বা কম সংখ্যা বোঝাতে।"},
+      {n:111,type:"noun",ar:"قِيَامَةٌ",bn:"পুনরুত্থান",en:"Resurrection",root:"ق و م",form:"—",emoji:"⏳",tip:"<b>মনে রাখার কৌশল:</b> মহাপ্রলয় বা কিয়ামত দিবস।"},
+      {n:112,type:"noun",ar:"يَوْمَئِذٍ",bn:"সে দিন",en:"Day",root:"ي و م",form:"অব্যয়",emoji:"📅",tip:"<b>মনে রাখার কৌশল:</b> নির্দিষ্ট সেই ভয়াল বা বিশেষ দিন।"},
+      {n:113,type:"noun",ar:"إِبْرَاهِيمُ",bn:"ইব্রাহীম (আঃ)",en:"Ibrahim",root:"—",form:"সঠিক নাম",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর প্রখ্যাত ও সম্মানিত নবী হযরত ইব্রাহীম (আঃ)।"},
+      {n:114,type:"noun",ar:"بَيْتٌ",bn:"ঘর",en:"the House",root:"ب ي ت",form:"বহুবচন: بُيُوتٌ",emoji:"🏠",tip:"<b>মনে রাখার কৌশল:</b> বাসস্থান বা ঘরবাড়ি, যেমন বায়তুল্লাহ।"},
+      {n:115,type:"noun",ar:"صَالِحٌ",bn:"সৎ কাজ/সৎকর্মশীল",en:"the righteous",root:"ص ل ح",form:"বহুবচন: صَالِحُونَ",emoji:"🌿",tip:"<b>মনে রাখার কৌশল:</b> সৎ ও নেককার বান্দা।"},
+      {n:116,type:"noun",ar:"يَمِينٌ",bn:"ডান / হাত / শপথ",en:"the right",root:"ي م ن",form:"বহুবচন: أَيْمَانٌ",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> ডান হাত কিংবা শপথ অর্থে।"},
+      {n:117,type:"noun",ar:"آبَاءٌ",bn:"পূর্বপুরুষ / পিতাগণ",en:"forefathers / fathers",root:"أ ب و",form:"একবচন: أَبٌ",emoji:"👨‍👦",tip:"<b>মনে রাখার কৌশল:</b> বাপ-দাদা বা পূর্বসূরিরা।"},
+      {n:118,type:"noun",ar:"أُمَّةٌ",bn:"জাতি",en:"people / nation",root:"أ م م",form:"বহুবচন: أُمَمٌ",emoji:"🌐",tip:"<b>মনে রাখার কৌশল:</b> গোষ্ঠী বা সম্প্রদায় বোঝাতে।"},
+      {n:119,type:"noun",ar:"ذِكْرٌ",bn:"স্মরণ",en:"remembrance",root:"ذ ك ر",form:"—",emoji:"📿",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর জিকির বা স্মরণ করা।"},
+      {n:120,type:"noun",ar:"عَمَلٌ",bn:"কৃতকর্ম",en:"deed",root:"ع م ل",form:"বহুবচন: أَعْمَالٌ",emoji:"📝",tip:"<b>মনে রাখার কৌশল:</b> মানুষের ভালো বা মন্দ কাজ।"}
+    ]
+  },
+  {
+    id: "class8",
+    label: "ক্লাস ৮",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৮",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৬১–৭০, অ-ক্রিয়া ১২১–১৪০)",
+    data: [
+      {n:61,type:"verb",ar:"بَعَثَ",bn:"পাঠানো / উত্থান করা",en:"to raise / to resurrect / to send",root:"ب ع ث",form:"I",emoji:"📤",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু প্রেরণ করা বা পুনরুত্থান ঘটানো অর্থে বহুল ব্যবহৃত ক্রিয়া।"},
+      {n:62,type:"verb",ar:"أَحْيَا",bn:"জীবিত করা",en:"to give life",root:"ح ي ي",form:"IV",emoji:"🌱",tip:"<b>মনে রাখার কৌশল:</b> জীবনদান করা বা পুনর্জীবিত করার ক্ষেত্রে ব্যবহৃত হয়।"},
+      {n:63,type:"verb",ar:"أَهْلَكَ",bn:"ধ্বংস / বিনষ্ট করা",en:"to destroy",root:"ه ل ك",form:"IV",emoji:"💥",tip:"<b>মনে রাখার কৌশল:</b> 'হালাক' বা ধ্বংসসাধন অর্থে ব্যবহৃত ক্রিয়া। 'হালাকু খানের ধ্বংসযজ্ঞ'। "},
+      {n:64,type:"verb",ar:"اِفْتَرَى",bn:"মিথ্যা রচনা করা",en:"to invent",root:"ف ر ي",form:"VIII",emoji:"🤥",tip:"<b>মনে রাখার কৌশল:</b> মিথ্যা অপবাদ বা বানোয়াট কিছু তৈরি করা।"},
+      {n:65,type:"verb",ar:"زَادَ",bn:"বৃদ্ধি করা",en:"to increase",root:"ز ي د",form:"I",emoji:"📈",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছুর পরিমাণ বা আধিক্য বাড়ানো।"},
+      {n:66,type:"verb",ar:"عَقَلَ",bn:"বুঝতে পারা / হৃদয়ঙ্গম হওয়া",en:"to understand / to reason",root:"ع ق ل",form:"I",emoji:"🧠",tip:"<b>মনে রাখার কৌশল:</b> 'আকল' বা বুদ্ধিমত্তা শব্দের মূল ধাতু।"},
+      {n:67,type:"verb",ar:"كَتَبَ",bn:"লেখা / ফরজ করা",en:"to write / to prescribe / to ordain",root:"ك ت ب",form:"I",emoji:"✍️",tip:"<b>মনে রাখার কৌশল:</b> কিছু লিপিবদ্ধ করা বা বিধান হিসেবে নির্ধারণ করা।"},
+      {n:68,type:"verb",ar:"ظَنَّ",bn:"ধারণা করা / চিন্তা করা",en:"to think / to assume / to guess",root:"ظ ن ن",form:"I",emoji:"💭",tip:"<b>মনে রাখার কৌশল:</b> কোনো বিষয়ে অনুমান বা ধারণা পোষণ করা।"},
+      {n:69,type:"verb",ar:"شَكَرَ",bn:"কৃতজ্ঞতা প্রকাশ করা / হওয়া ",en:"to be grateful / to give thanks",root:"ش ك ر",form:"I",emoji:"🙌",tip:"<b>মনে রাখার কৌশল:</b> নেয়ামতের শুকরিয়া আদায় করা।"},
+      {n:70,type:"verb",ar:"نَبَّأَ",bn:"জানিয়ে দেওয়া / সংবাদ দেওয়া",en:"to inform",root:"ن ب ا",form:"II",emoji:"📢",tip:"<b>মনে রাখার কৌশল:</b> গুরুত্বপূর্ণ কোনো সংবাদ বা খবর পৌঁছে দেওয়া।"},
+      {n:121,type:"noun",ar:"اِبْنٌ",bn:"পুত্র (ছেলে)",en:"the son",root:"ব ن ي",form:"বহুবচন: بَنُونَ, أَبْنَاءٌ",emoji:"👦",tip:"<b>মনে রাখার কৌশল:</b> পিতা-পুত্রের সম্পর্কের ক্ষেত্রে ব্যবহৃত হয়।"},
+      {n:122,type:"noun",ar:"كَثِيرٌ",bn:"অনেক",en:"many",root:"ك ث ر",form:"বহুবচন: كَثِيرُونَ",emoji:"🔢",tip:"<b>মনে রাখার কৌশল:</b> অধিক সংখ্যা বা বহুত্ব বোঝাতে ব্যবহৃত হয়।"},
+      {n:123,type:"noun",ar:"مَاءٌ",bn:"পানি",en:"water",root:"م و ه",form:"বহুবচন: مِيَاهٌ",emoji:"💧",tip:"<b>মনে রাখার কৌশল:</b> জীবনধারণের অপরিহার্য উপাদান পানি।"},
+      {n:124,type:"noun",ar:"صَالِحَةٌ",bn:"সৎ কাজ / সৎকর্মশীল",en:"righteous deeds",root:"ص ل ح",form:"বহুবচন: صَالِحَاتٌ",emoji:"🌿",tip:"<b>মনে রাখার কৌশল:</b> ভালো ও কল্যাণকর কাজ বোঝাতে ব্যবহৃত হয়।"},
+      {n:125,type:"noun",ar:"أَيُّ",bn:"কোনটি / কী",en:"What",root:"—",form:"অব্যয়",emoji:"❓",tip:"<b>মনে রাখার কৌশল:</b> প্রশ্নবাচক বা নির্দিষ্টকরণ অর্থে ব্যবহৃত শব্দ।"},
+      {n:126,type:"noun",ar:"نِسَاءٌ",bn:"নারীগণ / মহিলাগণ",en:"women",root:"ن س و",form:"একবচন: امْرَأَةٌ",emoji:"👩",tip:"<b>মনে রাখার কৌশল:</b> নারী সমাজ বা স্ত্রীজাতি বোঝাতে ব্যবহৃত হয়।"},
+      {n:127,type:"noun",ar:"نَذِيرٌ",bn:"সতর্ককারী",en:"a warning",root:"ن ذ ر",form:"বহুবচন: نُذُرٌ",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> সাবধানকারী বা ভীতিপ্রদর্শনকারী।"},
+      {n:128,type:"noun",ar:"رَحْمَنٌ",bn:"পরম করুণাময়",en:"The Most Gracious",root:"ر ح م",form:"—",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর বিশেষ গুণবাচক নাম।"},
+      {n:129,type:"noun",ar:"عَيْنٌ",bn:"চোখ / ঝরনা",en:"eye / spring",root:"ع ي ن",form:"বহুবচন: عُيُونٌ, أَعْيُنٌ",emoji:"👁️",tip:"<b>মনে রাখার কৌশল:</b> দর্শনেন্দ্রিয় কিংবা পানির ঝরনা অর্থে।"},
+      {n:130,type:"noun",ar:"قَرْيَةٌ",bn:"গ্রাম / শহর",en:"town",root:"ق ر ي",form:"বহুবচন: قُرًى",emoji:"🏘️",tip:"<b>মনে রাখার কৌশল: জনবসতিপূর্ণ এলাকা বা জনপদ।"},
+      {n:131,type:"noun",ar:"نَهَارٌ",bn:"দিন",en:"the day",root:"ن ه ر",form:"বহুবচন: أَنْهُرٌ",emoji:"☀️",tip:"<b>মনে রাখার কৌশল:</b> রাতের বিপরীতে দিবালোক বা দিন।"},
+      {n:132,type:"noun",ar:"شَدِيدٌ",bn:"কঠোর / কঠিন / প্রবল",en:"the mighty / severe",root:"ش د د",form:"বহুবচন: أَشِدَّاءُ",emoji:"⚡",tip:"<b>মনে রাখার কৌশল:</b> শক্তিধর বা তীব্র কিছু বোঝাতে।"},
+      {n:133,type:"noun",ar:"شَهِيدٌ",bn:"সাক্ষী / উপস্থিত / শহীদ",en:"witness / martyr",root:"ش ه د",form:"বহুবচন: شُهَدَاءُ",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> ঘটনার সাক্ষী বা আত্মত্যাগী ব্যক্তি।"},
+      {n:134,type:"noun",ar:"وَلَدٌ",bn:"সন্তান",en:"son / child",root:"و ل د",form:"বহুবচন: أَوْلَادٌ",emoji:"👶",tip:"<b>মনে রাখার কৌশল:</b> পুত্র বা সন্তান সন্ততি।"},
+      {n:135,type:"noun",ar:"أَمَّا",bn:"অতঃপর / ব্যাপারে / পক্ষান্তরে",en:"As for / then",root:"—",form:"অব্যয়",emoji:"📌",tip:"<b>মনে রাখার কৌশল:</b> বাক্যে বিস্তারিত বা ভিন্ন প্রসঙ্গ আনার অব্যয়।"},
+      {n:136,type:"noun",ar:"نَهَرٌ",bn:"নদী",en:"river",root:"ن ه ر",form:"বহুবচন: أَنْهَارٌ",emoji:"🌊",tip:"<b>মনে রাখার কৌশল:</b> প্রবহমান পানির ধারা বা নদী।"},
+      {n:137,type:"noun",ar:"جَمِيعٌ",bn:"সকল",en:"all / entirety",root:"ج م ع",form:"—",emoji:"🌐",tip:"<b>মনে রাখার কৌশল:</b> সামগ্রিক বা সবাইকে একসাথে বোঝাতে।"},
+      {n:138,type:"noun",ar:"أَجَلٌ",bn:"মেয়াদ / নির্দিষ্টকাল / সময়",en:"term / appointed time",root:"أ ج ل",form:"বহুবচন: آجَالٌ",emoji:"⏳",tip:"<b>মনে রাখার কৌশল:</b> নির্ধারিত মেয়াদ বা সময়সীমা।"},
+      {n:139,type:"noun",ar:"مُجْرِمٌ",bn:"অপরাধী",en:"the criminal",root:"ج ر م",form:"বহুবচন: مُجْرِمُونَ",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> দোষী বা পাপাচারী ব্যক্তি।"},
+      {n:140,type:"noun",ar:"بَصِيرٌ",bn:"সর্বদ্রষ্টা / সবকিছু দেখেন",en:"All-Seer",root:"ب ص ر",form:"—",emoji:"🔍",tip:"<b>মনে রাখার কৌশল:</b> যিনি সবকিছু গভীরভাবে দেখেন।"}
+    ]
+  },
+  {
+    id: "class9",
+    label: "ক্লাস ৯",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৯",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৭১–৮০, অ-ক্রিয়া ১৪১–১৬০)",
+    data: [
+      {n:71,type:"verb",ar:"حَكَمَ",bn:"বিচার করা / মীমাংসা করা",en:"to judge",root:"ح ك م",form:"I",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> 'হাকামা' মূল থেকে 'হাকিম' (বিচারক) বা 'হুকুম' (আইন/সিদ্ধান্ত) শব্দগুলো উদ্ভূত, যা বাংলা ভাষায় বহুল প্রচলিত।"},
+      {n:72,type:"verb",ar:"وَذَرَ",bn:"ছেড়ে দেওয়া / ত্যাগ করা",en:"to leave, to forsake",root:"و ذ ر",form:"I",emoji:"🍃",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে অবাধ্যদের বা বর্জ্য বিষয়গুলো ত্যাগ করার প্রসঙ্গে বহুল ব্যবহৃত একটি শক্তিশালী ক্রিয়া।"},
+      {n:73,type:"verb",ar:"حَسِبَ",bn:"মনে করা / ধারণা করা",en:"to think",root:"ح س ب",form:"I",emoji:"💭",tip:"<b>মনে রাখার কৌশল:</b> 'হিসাব' বা প্রাক্কলন করার ধারণার সাথে মিল রেখে এটি মনে রাখা যায় — কোনো কিছু মনে করা বা ধারণা করা।"},
+      {n:74,type:"verb",ar:"شَهِدَ",bn:"সাক্ষ্যদান করা / উপস্থিত থাকা",en:"to testify, to bear witness",root:"ش ه د",form:"I",emoji:"👁️",tip:"<b>মনে রাখার কৌশল:</b> ইসলামি পরিভাষায় 'শাহাদাত' বা 'শহীদ' শব্দগুলো সরাসরি এই মূল (ش ه د) থেকেই এসেছে।"},
+      {n:75,type:"verb",ar:"مَلَكَ",bn:"ক্ষমতা রাখা / মালিক হওয়া",en:"to possess, to have power",root:"م ل ك",form:"I",emoji:"👑",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'মালিক' বা 'মুল্ক' (রাজত্ব) এই মূল থেকেই এসেছে — ক্ষমতা বা অধিকার থাকা।"},
+      {n:76,type:"verb",ar:"نَادَى",bn:"ডাকা / আহ্বান করা",en:"to call",root:"ن د و",form:"III",emoji:"🗣️",tip:"<b>মনে রাখার কৌশল:</b> কাউকে উচ্চস্বরে ডাকা বা কোনো অনুষ্ঠানে আহ্বান/নিমন্ত্রণ জানানোর ক্ষেত্রে এই ক্রিয়াটি ব্যবহার হয়।"},
+      {n:77,type:"verb",ar:"أَنْذَرَ",bn:"সতর্ক করা / সাবধান করা",en:"to warn",root:"ن ذ ر",form:"IV",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে সতর্ককারী বা ভীতিপ্রদর্শনকারী অর্থে 'নাযীর' (منذر) শব্দটি এই মূল থেকেই গঠিত।"},
+      {n:78,type:"verb",ar:"سَبَّحَ",bn:"প্রশংসা করা / পবিত্রতা ঘোষণা করা",en:"to glorify, to praise",root:"س ب ح",form:"II",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> বহুল পঠিত তাসবিহ বা 'সুবহানাল্লাহ' বাক্যটি এই মূল থেকেই উদ্ভূত।"},
+      {n:79,type:"verb",ar:"حَمَلَ",bn:"বহন করা / গর্ভ ধারণ করা",en:"to carry, to bear",root:"ح م ل",form:"I",emoji:"📦",tip:"<b>মনে রাখার কৌশল:</b> কোনো বস্তু বা দায়িত্ব কাঁধে বা পিঠে বহন করা কিংবা গর্ভধারণ করা অর্থে ব্যবহৃত হয়।"},
+      {n:80,type:"verb",ar:"عَذَّبَ",bn:"শাস্তি দেওয়া",en:"to punish",root:"ع ذ ب",form:"II",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'আযাব' (শাস্তি) সরাসরি এই ক্রিয়ার মূল থেকে এসেছে।"},
+      {n:141,type:"noun",ar:"تَحْتَ",bn:"নিচে",en:"beneath",root:"ت ح ت",form:"—",emoji:"⬇️",tip:"<b>মনে রাখার কৌশল:</b> যেমন কুরআনে বলা হয়েছে — 'তাখতিহা আল-আনহার' (যার তলদেশ দিয়ে নদী প্রবাহিত)।"},
+      {n:142,type:"noun",ar:"سُوءٌ",bn:"নিকৃষ্ট / মন্দ / অনিষ্ট",en:"harm, evil",root:"س و ء",form:"—",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> যেকোনো ধরনের মন্দ বা ক্ষতিকর বিষয় বোঝাতে এই শব্দ ব্যবহার হয়।"},
+      {n:143,type:"noun",ar:"عَدُوٌّ",bn:"শত্রু",en:"enemy",root:"ع د و",form:"বহুবচন: أَعْدَاءٌ",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> মানুষের প্রকাশ্য দুশমন বা শত্রু বোঝাতে 'আদুউম মুবীন' ব্যবহৃত হয়।"},
+      {n:144,type:"noun",ar:"نِعْمَةٌ",bn:"অনুগ্রহ / নেয়ামত",en:"favor, blessing",root:"ن ع م",form:"বহুবচন: نِعَمٌ, أَنْعُمْ",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর দান বা নিয়ামত অর্থে আমাদের সমাজে এটি অত্যন্ত পরিচিত।"},
+      {n:145,type:"noun",ar:"أَعْلَمُ",bn:"খুব জানেন / অধিক জ্ঞাত",en:"most knowing",root:"ع ل م",form:"তুলনামূলক",emoji:"🧠",tip:"<b>মনে রাখার কৌশল:</b> 'আলিম' (জ্ঞানী) থেকে তুলনামূলক রূপ — যিনি সবচেয়ে বেশি জানেন।"},
+      {n:146,type:"noun",ar:"غَيْبٌ",bn:"অদৃশ্য",en:"the unseen",root:"غ ي ب",form:"বহুবচন: غُيُوبٌ",emoji:"🌌",tip:"<b>মনে রাখার কৌশল:</b> যা আমাদের চোখের আড়ালে বা অগোচরে থাকে।"},
+      {n:147,type:"noun",ar:"بَصَرٌ",bn:"দৃষ্টি",en:"sight, eyes",root:"ب ص ر",form:"বহুবচন: أَبْصَارٌ",emoji:"👁️",tip:"<b>মনে রাখার কৌশল:</b> চোখ বা দেখার শক্তি ও দৃষ্টিশক্তি বোঝাতে ব্যবহৃত হয়।"},
+      {n:148,type:"noun",ar:"دَارٌ",bn:"বাড়ি / আবাস",en:"home, house",root:"د و ر",form:"বহুবচন: دِيَارٌ",emoji:"🏠",tip:"<b>মনে রাখার কৌশল:</b> যেমন 'দারুল আখিরাত' বা পরকালের স্থায়ী আবাস।"},
+      {n:149,type:"noun",ar:"سَاعَةٌ",bn:"কিয়ামত / মুহূর্ত / সময়",en:"the Hour, time",root:"س و ع",form:"বহুবচন: سَاعَاتٌ",emoji:"⏰",tip:"<b>মনে রাখার কৌশল:</b> নির্দিষ্ট মুহূর্ত বা মহাপ্রলয় 'কিয়ামতের ঘন্টা' অর্থে ব্যবহৃত হয়।"},
+      {n:150,type:"noun",ar:"مُلْكٌ",bn:"রাজত্ব / রাজ্য",en:"kingdom, dominion",root:"م ل ك",form:"—",emoji:"🏰",tip:"<b>মনে রাখার কৌশল:</b> সুলাইমান (আঃ)-এর রাজত্ব বা সার্বভৌম কর্তৃত্ব বোঝাতে ব্যবহৃত হয়েছে।"},
+      {n:151,type:"noun",ar:"سَمِيعٌ",bn:"সব শুনেন / সর্বশ্রোতা",en:"All-Hearing",root:"س م ع",form:"—",emoji:"👂",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর অন্যতম সুন্দর একটি গুণবাচক নাম — যিনি সবকিছু শোনেন।"},
+      {n:152,type:"noun",ar:"أَبٌ",bn:"বাবা / পিতা",en:"father",root:"أ ب و",form:"বহুবচন: آبَاءٌ",emoji:"👨‍👦",tip:"<b>মনে রাখার কৌশল:</b> ইউসুফ (আঃ)-এর পিতার কাহিনীর আয়াতে 'লি-আবিহি' শব্দে এটি পাওয়া যায়।"},
+      {n:153,type:"noun",ar:"خَبِيرٌ",bn:"সর্বজ্ঞ / খুব অবহিত",en:"All-Aware",root:"خ ب ر",form:"বহুবচন: خُبَرَاءُ",emoji:"🔍",tip:"<b>মনে রাখার কৌশল:</b> পুঙ্খানুপুঙ্খ বিষয়ে সম্যক ধারণা বা খবর রাখাকে 'খবির' বলে।"},
+      {n:154,type:"noun",ar:"صِرَاطٌ",bn:"পথ / সরলপথ",en:"path",root:"ص ر ط",form:"—",emoji:"🛣️",tip:"<b>মনে রাখার কৌশল:</b> সূরা ফাতিহায় বহুল পরিচিত শব্দ 'সিরাতাল মুস্তাকিম' (সরল পথ)।"},
+      {n:155,type:"noun",ar:"قَدِيرٌ",bn:"সর্বশক্তিমান",en:"All-Powerful",root:"ق د ر",form:"—",emoji:"⚡",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর আরেকটি মহান গুণ — যিনি সবকিছুর ওপর পূর্ণ ক্ষমতার অধিকারী।"},
+      {n:156,type:"noun",ar:"صَدْرٌ",bn:"বুক / অন্তর / হৃদয়",en:"breast, chest",root:"ص د ر",form:"বহুবচন: صُدُورٌ",emoji:"❤️",tip:"<b>মনে রাখার কৌশল:</b> মানুষের মনের ভেতরের গোপন ভাব বা অন্তর বোঝাতে 'সুদুর' ব্যবহৃত হয়।"},
+      {n:157,type:"noun",ar:"إِسْرَائِيلَ",bn:"ইসরাইল (নাম)",en:"Israel",root:"—",form:"সঠিক নাম",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> ইয়াকুব (আঃ)-এর অপর নাম এবং বনি ইসরাইল জাতিগত পরিচয়।"},
+      {n:158,type:"noun",ar:"حَمْدٌ",bn:"প্রশংসা",en:"praise, thanks",root:"ح م د",form:"—",emoji:"🙌",tip:"<b>মনে রাখার কৌশল:</b> 'আলহামদুলিল্লাহ' শব্দের মূল অংশ — সমস্ত প্রশংসা আল্লাহর জন্য।"},
+      {n:159,type:"noun",ar:"نُوحٌ",bn:"নূহ (আঃ)",en:"Nuh",root:"—",form:"সঠিক নাম",emoji:"🌊",tip:"<b>মনে রাখার কৌশল:</b> প্রখ্যাত নবী হযরত নূহ (আঃ)-এর পবিত্র নাম।"},
+      {n:160,type:"noun",ar:"نُورٌ",bn:"আলো",en:"light",root:"ن و ر",form:"বহুবচন: أَنْوَارٌ",emoji:"💡",tip:"<b>মনে রাখার কৌশল:</b> অন্ধকার দূরকারী আলো বা হেদায়েতের নূর।"}
+    ]
+  },
+    {
+    id: "class10",
+    label: "ক্লাস ১০",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১০",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৮১–৯০, অ-ক্রিয়া ১৬১–১৮০)",
+    data: [
+      {n:81,type:"verb",ar:"بِئْسَ",bn:"খারাপ হওয়া",en:"to be wretched, to be evil",root:"ب أ س",form:"I",emoji:"😟",tip:"بِئْسَ মানে দুর্দশাগ্রস্ত বা মন্দ হওয়া।"},
+      {n:82,type:"verb",ar:"بَلَغَ",bn:"পৌঁছা / নাগাল / উপনীত হওয়া",en:"to reach",root:"ب ل غ",form:"I",emoji:"🎯",tip:"بَلَغَ মানে কোনো স্থান বা লক্ষ্যে পৌঁছানো।"},
+      {n:83,type:"verb",ar:"تَرَكَ",bn:"ছেড়ে দেওয়া",en:"to leave",root:"ت ر ك",form:"I",emoji:"👋",tip:"تَرَكَ মানে ছেড়ে যাওয়া বা পরিত্যাগ করা।"},
+      {n:84,type:"verb",ar:"خَشِيَ",bn:"ভয় করা",en:"to fear",root:"خ ش ي",form:"I",emoji:"😨",tip:"خَشِيَ মানে ভয় করা, বিশেষত আল্লাহকে ভয় করা।"},
+      {n:85,type:"verb",ar:"اِسْتَكْبَرَ",bn:"অহংকার করা",en:"to be arrogant",root:"ك ب ر",form:"X",emoji:"👑",tip:"اِسْتَكْبَرَ মানে অহংকার করা বা নিজেকে বড় মনে করা।"},
+      {n:86,type:"verb",ar:"تَوَكَّلَ",bn:"ভরসা করা / নির্ভর করা",en:"to put trust",root:"و ك ل",form:"V",emoji:"🤲",tip:"تَوَكَّلَ মানে আল্লাহর ওপর ভরসা করা।"},
+      {n:87,type:"verb",ar:"حَرَّمَ",bn:"নিষিদ্ধ করা",en:"to forbid, to make unlawful",root:"ح ر م",form:"II",emoji:"🚫",tip:"حَرَّمَ মানে কোনো বিষয় নিষিদ্ধ করা।"},
+      {n:88,type:"verb",ar:"مَاتَ",bn:"মারা যাওয়া",en:"to die",root:"م و ت",form:"I",emoji:"🕊️",tip:"مَاتَ মানে মৃত্যুবরণ করা।"},
+      {n:89,type:"verb",ar:"بَشَّرَ",bn:"সুসংবাদ দেওয়া",en:"to give glad tidings",root:"ب ش ر",form:"II",emoji:"🎉",tip:"بَشَّرَ মানে আনন্দের সুসংবাদ দেওয়া।"},
+      {n:90,type:"verb",ar:"رَضِيَ",bn:"খুশি হওয়া / সন্তুষ্ট হওয়া",en:"to be pleased",root:"ر ض و",form:"I",emoji:"😊",tip:"رَضِيَ মানে সন্তুষ্ট বা প্রসন্ন হওয়া।"},
+      {n:161,type:"noun",ar:"جَزَاءٌ",bn:"প্রতিদান / পুরস্কার / শাস্তি",en:"recompense",root:"ج ز و",form:"—",emoji:"⚖️",tip:"جَزَاءٌ কাজের প্রতিদান বা ফল বোঝায়।"},
+      {n:162,type:"noun",ar:"سَلَامٌ",bn:"শান্তি",en:"peace",root:"س ل م",form:"—",emoji:"🕊️",tip:"سَلَامٌ মানে শান্তি ও নিরাপত্তা।"},
+      {n:163,type:"noun",ar:"سَوْفَ",bn:"শীঘ্রই",en:"soon",root:"—",form:"অব্যয়",emoji:"⏳",tip:"سَوْفَ ভবিষ্যৎ সময় বোঝাতে ব্যবহৃত হয়।"},
+      {n:164,type:"noun",ar:"بَحْرٌ",bn:"সাগর",en:"sea",root:"ب ح ر",form:"বহুবচন: بِحَارٌ",emoji:"🌊",tip:"بَحْرٌ মানে সমুদ্র বা সাগর।"},
+      {n:165,type:"noun",ar:"سُبْحَانَ",bn:"পবিত্র, মহান",en:"Glory be to",root:"س ب ح",form:"—",emoji:"✨",tip:"سُبْحَانَ আল্লাহর পবিত্রতা ঘোষণা করে।"},
+      {n:166,type:"noun",ar:"فَوْقَ",bn:"উপর / ঊর্ধ্বে",en:"above",root:"ف و ق",form:"—",emoji:"⬆️",tip:"فَوْقَ মানে কোনো কিছুর ওপর বা উপরে।"},
+      {n:167,type:"noun",ar:"شَرِيكٌ",bn:"অংশীদার",en:"partners",root:"ش ر ك",form:"বহুবচন: شُرَكَاءُ",emoji:"🤝",tip:"شَرِيكٌ মানে অংশীদার বা শরিক।"},
+      {n:168,type:"noun",ar:"كَبِيرٌ",bn:"বড় / মহান",en:"big, large, great",root:"ك ب ر",form:"—",emoji:"🏔️",tip:"كَبِيرٌ মানে বড় বা মহান।"},
+      {n:169,type:"noun",ar:"وَيْلٌ",bn:"দুর্ভোগ / ধ্বংস",en:"woe",root:"و ي ل",form:"—",emoji:"⚠️",tip:"وَيْلٌ দুর্ভোগ বা ধ্বংসের সতর্কতা বোঝায়।"},
+      {n:170,type:"noun",ar:"إِذْنٌ",bn:"অনুমতি / হুকুম",en:"permission",root:"أ ذ ن",form:"—",emoji:"✅",tip:"إِذْنٌ মানে অনুমতি।"},
+      {n:171,type:"noun",ar:"اِسْمٌ",bn:"নাম",en:"name",root:"س م و",form:"বহুবচন: أَسْمَاءٌ",emoji:"🏷️",tip:"اِسْمٌ মানে নাম।"},
+      {n:172,type:"noun",ar:"أَلَا",bn:"সাবধান / জেনে রাখো",en:"beware, unquestionably",root:"—",form:"অব্যয়",emoji:"📣",tip:"أَلَا মনোযোগ আকর্ষণ ও সতর্কতার জন্য ব্যবহৃত হয়।"},
+      {n:173,type:"noun",ar:"جَبَلٌ",bn:"পাহাড় / পর্বত",en:"mountains",root:"ج ب ل",form:"বহুবচন: جِبَالٌ",emoji:"⛰️",tip:"جَبَلٌ মানে পাহাড় বা পর্বত।"},
+      {n:174,type:"noun",ar:"حِسَابٌ",bn:"হিসাব / বিচার",en:"account",root:"ح س ب",form:"বহুবচন: حِسَابَاتٌ",emoji:"🧮",tip:"حِسَابٌ মানে হিসাব বা বিচার।"},
+      {n:175,type:"noun",ar:"ضَلَالٌ",bn:"বিভ্রান্তি / পথভ্রষ্টতা",en:"an error",root:"ض ل ل",form:"—",emoji:"🧭",tip:"ضَلَالٌ মানে পথভ্রষ্টতা বা ভুল পথ।"},
+      {n:176,type:"noun",ar:"مَعْرُوفٌ",bn:"সৎকাজ / ন্যায়নীতি",en:"a fair manner",root:"ع ر ف",form:"—",emoji:"🌿",tip:"مَعْرُوفٌ মানে স্বীকৃত ভালো ও ন্যায়সঙ্গত কাজ।"},
+      {n:177,type:"noun",ar:"مَيِّتٌ",bn:"মৃত / মৃতদেহ",en:"the dead",root:"م و ت",form:"বহুবচন: أَمْوَاتٌ",emoji:"🕊️",tip:"مَيِّتٌ মানে মৃত।"},
+      {n:178,type:"noun",ar:"بَشَرٌ",bn:"মানুষ",en:"the human being",root:"ب ش ر",form:"—",emoji:"🧑",tip:"بَشَرٌ মানে মানুষ বা মানবজাতি।"},
+      {n:179,type:"noun",ar:"ذَنْبٌ",bn:"পাপ",en:"sin",root:"ذ ن ب",form:"বহুবচন: ذُنُوبٌ",emoji:"⚫",tip:"ذَنْبٌ মানে পাপ বা অপরাধ।"},
+      {n:180,type:"noun",ar:"سُلْطَانٌ",bn:"প্রমাণ / কর্তৃত্ব",en:"my authority",root:"س ل ط",form:"—",emoji:"⚜️",tip:"سُلْطَانٌ মানে কর্তৃত্ব, ক্ষমতা বা প্রমাণ।"}
+    ]
+  },
+  {
+    id: "class11",
+    label: "ক্লাস ১১",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১১",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৯১–১০০, অ-ক্রিয়া ১৮১–২০০)",
+    data: [
+      {n:91,type:"verb",ar:"حَزِنَ",bn:"দুঃখ করা / চিন্তিত হওয়া",en:"to grieve",root:"ح ز ن",form:"I",emoji:"😢",tip:"<b>মনে রাখার কৌশল:</b> 'হাযিনা' শব্দটি ইংরেজি 'hazard'-এর মতো শোনায় — কোনো বিপদ/ক্ষতিতে মানুষ দুঃখিত হয়। এই মূল থেকেই আসে <b>اَلْحُزْنُ</b> (দুঃখ/শোক) বিশেষ্যটি।"},
+      {n:92,type:"verb",ar:"حَشَرَ",bn:"একত্র করা / উঠানো",en:"to gather, to raise",root:"ح ش ر",form:"I",emoji:"👥",tip:"<b>মনে রাখার কৌশল:</b> সূরা 'আল-হাশর' (সমাবেশ/একত্রীকরণ) নামটি এই মূল থেকেই এসেছে — কিয়ামতের দিন সবাইকে একত্র করা হবে।"},
+      {n:93,type:"verb",ar:"صَدَّ",bn:"বাধা দেওয়া / ফেরানো",en:"to turn away, to hinder",root:"ص د د",form:"I",emoji:"🚫",tip:"<b>মনে রাখার কৌশল:</b> 'সাদ্দা' মানে কাউকে পথ থেকে ফিরিয়ে দেওয়া বা বাধা দেওয়া — কল্পনা করুন একটি দরজা বন্ধ (🚫) হয়ে গেছে কারো পথ আটকে।"},
+      {n:94,type:"verb",ar:"نَجَّى",bn:"উদ্ধার করা / রক্ষা করা",en:"to save, to deliver",root:"ن ج و",form:"II",emoji:"🛟",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'নাজাত' (মুক্তি) এই মূল থেকেই এসেছে। বিশেষ্য রূপ <b>اَلنَّجَاةُ</b> মানে মুক্তি/পরিত্রাণ — যেমন ডুবন্ত মানুষকে জীবন-রক্ষাকারী বলয় (🛟) দিয়ে বাঁচানো।"},
+      {n:95,type:"verb",ar:"ذَاقَ",bn:"স্বাদ গ্রহণ করা",en:"to taste",root:"ذ و ق",form:"I",emoji:"👅",tip:"<b>মনে রাখার কৌশল:</b> বাংলা-উর্দুতে প্রচলিত শব্দ 'জওক' (স্বাদ/রুচি) এই মূল থেকেই এসেছে। বিশেষ্য <b>اَلذَّوْقُ</b> = স্বাদ।"},
+      {n:96,type:"verb",ar:"رَدَّ",bn:"ফিরত দেওয়া / ফিরিয়ে আনা",en:"to turn back, to return",root:"র د د",form:"I",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> ইংরেজি 'redo'(🔄) শব্দের মতো শোনায় — কোনো কিছু আবার ফিরিয়ে/পুনরায় করা।"},
+      {n:97,type:"verb",ar:"بَيَّنَ",bn:"বর্ণনা করা / স্পষ্ট করা",en:"to make clear, to explain",root:"ب ي ن",form:"II",emoji:"💡",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'বয়ান' (বক্তৃতা/ব্যাখ্যা) এই মূল থেকেই এসেছে — যা কিছু স্পষ্ট করে বলা হয়।"},
+      {n:98,type:"verb",ar:"اِخْتَلَفَ",bn:"মতবিরোধ করা / মতভেদ করা",en:"to differ, to dispute",root:"خ ل ف",form:"VIII",emoji:"🔀",tip:"<b>মনে রাখার কৌশল:</b> ইসলামী পরিভাষায় সুপরিচিত শব্দ 'ইখতিলাফ' (মতভেদ) সরাসরি এই ক্রিয়া থেকেই এসেছে।"},
+      {n:99,type:"verb",ar:"ذَهَبَ",bn:"নিয়ে নেওয়া / যাওয়া",en:"to go, to take away",root:"ذ ه ب",form:"I",emoji:"🚶",tip:"<b>মনে রাখার কৌশল:</b> একই মূল থেকে আসে 'যাহাব' (স্বর্ণ) — যা মূল্যবান বলে সহজে হাতছাড়া/চলে যায়। বিশেষ্য <b>اَلذِّهَابُ</b> = যাওয়া।"},
+      {n:100,type:"verb",ar:"سَجَدَ",bn:"সিজদা করা",en:"to prostrate",root:"س ج د",form:"I",emoji:"🕌",tip:"<b>মনে রাখার কৌশল:</b> নামাযে পরিচিত শব্দ 'সিজদাহ' এই মূল থেকেই এসেছে — মাথা মাটিতে রেখে আল্লাহর প্রতি বিনম্রতা প্রকাশ।"},
+      {n:181,type:"noun",ar:"أَحْسَنُ",bn:"উত্তম / সর্বোত্তম",en:"the best",root:"ح س ن",form:"—",emoji:"🏆",tip:"<b>মনে রাখার কৌশল:</b> 'ইহসান' (উৎকর্ষ/সদাচরণ) ও নাম 'হাসান/হুসনা' (সুন্দর/উত্তম) একই মূল থেকে আসে।"},
+      {n:182,type:"noun",ar:"سَيِّئَةٌ",bn:"পাপ / মন্দ কাজ",en:"the evil (deed)",root:"س و ء",form:"বহুবচন: سَيِّئَاتٌ",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> 'হাসানাহ' (সৎকাজ)-এর বিপরীত শব্দ হলো সাইয়্যিআহ — মন্দ কাজ।"},
+      {n:183,type:"noun",ar:"إِثْمٌ",bn:"পাপ / গুনাহ",en:"sin",root:"أ ث م",form:"বহুবচন: آثَامٌ",emoji:"⚫",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে বহুল ব্যবহৃত শব্দ, সরাসরি 'গুনাহ/পাপ' অর্থে ব্যবহৃত হয়।"},
+      {n:184,type:"noun",ar:"حِينٌ",bn:"নির্দিষ্ট সময় / যখন",en:"a (specific) time",root:"ح ي ن",form:"—",emoji:"⏳",tip:"<b>মনে রাখার কৌশল:</b> ইংরেজি উচ্চারণে অনেকটা 'he-in' এর মতো শোনায় — 'সে একটি নির্দিষ্ট সময়ে' এভাবে যুক্ত করে মনে রাখুন।"},
+      {n:185,type:"noun",ar:"مَتَاعٌ",bn:"ভোগসামগ্রী / ভরণ-পোষণ / সুখ-সম্ভোগ",en:"a provision, worldly goods",root:"م ت ع",form:"বহুবচন: أَمْتِعَةٌ",emoji:"🎒",tip:"<b>মনে রাখার কৌশল:</b> বাংলা-উর্দুতে প্রচলিত 'মাল-মাতা' (জিনিসপত্র/সামগ্রী) শব্দের সাথে সরাসরি সম্পর্কিত।"},
+      {n:186,type:"noun",ar:"نَصِيرٌ",bn:"সাহায্যকারী",en:"any helper",root:"ن ص ر",form:"বহুবচন: أَنْصَارٌ",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> মদীনার 'আনসার' (সাহায্যকারী সাহাবীগণ) এবং নাম 'নাসির' এই মূল থেকেই এসেছে।"},
+      {n:187,type:"noun",ar:"أُمٌّ",bn:"মা / মূল",en:"mother, foundation",root:"أ م م",form:"বহুবচন: أُمَّهَاتٌ",emoji:"👩",tip:"<b>মনে রাখার কৌশল:</b> 'উম্মাহ' (জাতি/সম্প্রদায়) শব্দটিও একই মূল থেকে আসে — যেন গোটা জাতির 'মা' বা মূল ভিত্তি।"},
+      {n:188,type:"noun",ar:"فِتْنَةٌ",bn:"পরীক্ষা / বিপর্যয়",en:"a trial, tribulation",root:"ف ت ن",form:"বহুবচন: فِتَنٌ",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> প্রচলিত শব্দ 'ফিতনা' — বিশৃঙ্খলা/পরীক্ষা অর্থে সংবাদমাধ্যমেও ব্যবহৃত হয়, তাই সহজেই মনে থাকে।"},
+      {n:189,type:"noun",ar:"مَرْيَمٌ",bn:"মারইয়াম (নাম)",en:"Maryam",root:"—",form:"সঠিক নাম",emoji:"🌸",tip:"<b>মনে রাখার কৌশল:</b> ঈসা (আঃ)-এর মাতা, এবং কুরআনের ১৯তম সূরাটিও তাঁর নামেই — 'সূরা মারইয়াম'।"},
+      {n:190,type:"noun",ar:"آلَاءٍ",bn:"অনুগ্রহসমূহ",en:"favors, bounties",root:"أ ل و",form:"বহুবচন",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> সূরা আর-রাহমানের বারবার আসা বাক্য 'ফাবিআইয়্যি আলা-ই রব্বিকুমা তুকাযযিবান' এই শব্দ দিয়েই — আল্লাহর অসংখ্য নিয়ামত/উপহার।"},
+      {n:191,type:"noun",ar:"حَرَامٌ",bn:"নিষিদ্ধ / পবিত্র / সম্মানিত",en:"prohibition, sacred",root:"ح ر م",form:"বহুবচন: حُرُمٌ",emoji:"🚷",tip:"<b>মনে রাখার কৌশল:</b> প্রতিদিনের প্রচলিত শব্দ 'হারাম' (নিষিদ্ধ) এবং 'মসজিদুল হারাম' (পবিত্র মসজিদ) থেকেই সহজে চেনা যায়।"},
+      {n:192,type:"noun",ar:"شَمْسٌ",bn:"সূর্য",en:"the sun",root:"ش م س",form:"বহুবচন: شُمُوسٌ",emoji:"☀️",tip:"<b>মনে রাখার কৌশল:</b> কুরআনের ৯১তম সূরা 'আশ-শামস' (সূর্য) নামটি এই শব্দ থেকেই এসেছে।"},
+      {n:193,type:"noun",ar:"فَرِيقٌ",bn:"দল",en:"a group, party",root:"f r q",form:"—",emoji:"👨‍👩‍👧‍👦",tip:"<b>মনে রাখার কৌশল:</b> একটি নির্দিষ্ট দল/গোষ্ঠী বোঝাতে ব্যবহৃত হয় — 'ফারাক্বা' (আলাদা করা) মূল থেকে, অর্থাৎ পুরো জামাত থেকে আলাদা হওয়া একটি অংশ।"},
+      {n:194,type:"noun",ar:"كَلَّا",bn:"কখনো না / সাবধান",en:"nay, never",root:"—",form:"অব্যয় (particle)",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> জোরালো নাকচ (✋)বোঝাতে ব্যবহৃত হয়। "},
+      {n:195,type:"noun",ar:"نَعَمٌ",bn:"গবাদি পশু / গৃহপালিত পশু",en:"cattle, livestock",root:"ن ع م",form:"বহুবচন: أَنْعَامٌ",emoji:"🐄",tip:"<b>মনে রাখার কৌশল:</b> সূরা 'আল-আনআম' (গবাদি পশু) নামটি এই শব্দ থেকেই এসেছে — কুরআনের ৬ষ্ঠ সূরা।"},
+      {n:196,type:"noun",ar:"زَكٰوةٌ",bn:"যাকাত / পবিত্রতা",en:"zakat, purification",root:"ز ك و",form:"বহুবচন: زَكَوَاتٌ",emoji:"💰",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের অন্যতম স্তম্ভ 'যাকাত' — সম্পদ পবিত্র করার আবশ্যিক দান, সবার কাছেই পরিচিত।"},
+      {n:197,type:"noun",ar:"عَاقِبَةٌ",bn:"পরিণাম",en:"end, consequence",root:"ع ق ب",form:"বহুবচন: عَوَاقِبُ",emoji:"🏁",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে বারবার আসা বাক্যাংশ 'ফাকাইফা কানা আক্বিবাতু...' (তাদের পরিণাম কেমন হয়েছিল দেখুন) থেকেই এই শব্দ পরিচিত।"},
+      {n:198,type:"noun",ar:"إِذًا",bn:"তখন / তাহলে / অতঃপর",en:"then, when",root:"—",form:"অব্যয় (particle)",emoji:"⏰",tip:"<b>মনে রাখার কৌশল:</b> শর্তসাপেক্ষ বাক্যে ('যখন...তখন') কুরআনে সবচেয়ে বেশি ব্যবহৃত অব্যয়গুলোর একটি।"},
+      {n:199,type:"noun",ar:"أَشَدُّ",bn:"কঠোরতর / অধিকতর কঠিন",en:"more difficult, more severe",root:"ش د د",form:"তুলনামূলক (comparative)",emoji:"💪",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'শাদীদ' (তীব্র/কঠোর) থেকেই এসেছে এর তুলনামূলক রূপ — আরও বেশি কঠোর।"},
+      {n:200,type:"noun",ar:"وَاحِدٌ",bn:"এক / প্রত্যেক / একই",en:"single, one",root:"و ح د",form:"স্ত্রীলিঙ্গ: وَاحِدَةٌ",emoji:"1️⃣",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের মূল বিশ্বাস 'তাওহীদ' (আল্লাহর একত্ববাদ) এই মূল থেকেই এসেছে — 'ওয়াহিদ' মানে এক."},
+    ]
+  }
+
+];
+
+const state = {
+  deckId: "class2",
+  filter:"all",
+  order: [],
+  idx:0,
+  marked: new Set(JSON.parse(localStorage.getItem("arVocabMarked")||"[]")),
+  flipped:false,
+  practiceMode:false,
+  theme: "light",
+  scaleArabic: parseFloat(localStorage.getItem("arVocabScaleArabic") || "1"),
+  scaleText: parseFloat(localStorage.getItem("arVocabScaleText") || "1")
+};
+
+const els = {
+  card: document.getElementById("card"),
+  arabicWord: document.getElementById("arabicWord"),
+  backArabic: document.getElementById("backArabic"),
+  meaningBn: document.getElementById("meaningBn"),
+  meaningEn: document.getElementById("meaningEn"),
+  rootRow: document.getElementById("rootRow"),
+  tipBox: document.getElementById("tipBox"),
+  typePill: document.getElementById("typePill"),
+  starBtn: document.getElementById("starBtn"),
+  progCount: document.getElementById("progCount"),
+  progFill: document.getElementById("progFill"),
+  progPercent: document.getElementById("progPercent"),
+  prevBtn: document.getElementById("prevBtn"),
+  nextBtn: document.getElementById("nextBtn"),
+  flipBtn: document.getElementById("flipBtn"),
+  shuffleBtn: document.getElementById("shuffleBtn"),
+  practiceBtn: document.getElementById("practiceBtn"),
+  themeToggle: document.getElementById("themeToggle"),
+  tabs: document.getElementById("tabs"),
+  tabAll: document.getElementById("tabAll"),
+  tabVerb: document.getElementById("tabVerb"),
+  tabNoun: document.getElementById("tabNoun"),
+  tabMarked: document.getElementById("tabMarked"),
+  deckSelector: document.getElementById("deckSelector"),
+  shuffleBtnTextDefault: document.getElementById("shuffleBtnTextDefault"),
+  shuffleBtnTextDone: document.getElementById("shuffleBtnTextDone"),
+  practiceBtnTextDefault: document.getElementById("practiceBtnTextDefault"),
+  practiceBtnTextActive: document.getElementById("practiceBtnTextActive"),
+  headerEyebrow: document.querySelector('.brand .eyebrow'),
+  footerEl: document.querySelector('footer'),
+  arabicDecBtn: document.getElementById("arabicDecBtn"),
+  arabicIncBtn: document.getElementById("arabicIncBtn"),
+  textDecBtn: document.getElementById("textDecBtn"),
+  textIncBtn: document.getElementById("textIncBtn"),
+  voiceToggleBtn: document.getElementById("voiceToggleBtn"),
+  voicePanel: document.getElementById("voicePanel"),
+  rateSlider: document.getElementById("rateSlider"),
+  rateVal: document.getElementById("rateVal"),
+  speakFrontBtn: document.getElementById("speakFrontBtn"),
+  speakBackBtn: document.getElementById("speakBackBtn"),
+};
+
+const banglaDigits = ["০","১","২","৩","৪","৫","৬","৭","৮","৯"];
+function toBn(num){
+  return String(num).split("").map(c=> /[0-9]/.test(c) ? banglaDigits[+c] : c).join("");
+}
+
+function currentDeck(){
+  return DECKS.find(d=>d.id===state.deckId) || DECKS[0];
+}
+
+function byNum(n){ return currentDeck().data.find(d=>d.n===n); }
+
+function countVerbs(deck){ return deck.data.filter(d=>d.type==="verb").length; }
+function countNouns(deck){ return deck.data.filter(d=>d.type==="noun").length; }
+
+function currentList(){
+  const deck = currentDeck();
+  let list = deck.data.slice();
+  if(state.filter==="verb") list = list.filter(d=>d.type==="verb");
+  else if(state.filter==="noun") list = list.filter(d=>d.type==="noun");
+  else if(state.filter==="marked") list = list.filter(d=>state.marked.has(d.n));
+  return list;
+}
+
+function rebuildOrder(preserveShuffle){
+  const list = currentList();
+  if(preserveShuffle && state.order.length){
+    const nums = new Set(list.map(d=>d.n));
+    state.order = state.order.filter(n=>nums.has(n));
+    list.forEach(d=>{ if(!state.order.includes(d.n)) state.order.push(d.n); });
+  } else {
+    state.order = list.map(d=>d.n);
+  }
+  state.idx = 0;
+}
+
+function shuffleOrder(){
+  const arr = state.order.slice();
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  state.order = arr;
+  state.idx = 0;
+}
+
+function saveMarked(){
+  localStorage.setItem("arVocabMarked", JSON.stringify([...state.marked]));
+}
+
+function updateFontScales(){
+  document.documentElement.style.setProperty('--scale-arabic', state.scaleArabic);
+  document.documentElement.style.setProperty('--scale-text', state.scaleText);
+  localStorage.setItem("arVocabScaleArabic", state.scaleArabic);
+  localStorage.setItem("arVocabScaleText", state.scaleText);
+}
+
+function buildDeckSelector(){
+  els.deckSelector.innerHTML = "";
+  DECKS.forEach(deck => {
+    const btn = document.createElement("button");
+    btn.className = "deck-btn" + (deck.id === state.deckId ? " active" : "");
+    btn.dataset.deckId = deck.id;
+    btn.textContent = deck.label;
+    els.deckSelector.appendChild(btn);
+  });
+}
+
+function updateTabLabels(){
+  const deck = currentDeck();
+  const total = deck.data.length;
+  const vCount = countVerbs(deck);
+  const nCount = countNouns(deck);
+  els.tabAll.textContent = "সব শব্দ (" + toBn(total) + ")";
+  els.tabVerb.textContent = "ক্রিয়া (" + toBn(vCount) + ")";
+  els.tabNoun.textContent = "অ-ক্রিয়া (" + toBn(nCount) + ")";
+  els.tabMarked.textContent = "⭐ চিহ্নিত";
+}
+
+function render(){
+  const deck = currentDeck();
+
+  els.headerEyebrow.textContent = deck.eyebrow;
+  els.footerEl.textContent = deck.footerText;
+
+  const list = currentList();
+  if(list.length===0){
+    els.card.style.display="none";
+    document.querySelector(".controls").style.display="none";
+    document.querySelector(".progress-row").style.display="none";
+    if(!document.getElementById("emptyState")){
+      const div = document.createElement("div");
+      div.id="emptyState";
+      div.className="empty-state";
+      div.innerHTML = `<div class="big">⭐</div><div>এখনো কোনো শব্দ চিহ্নিত করা হয়নি।<br>শব্দের কার্ডে বাম পাশের তারকা চিহ্নে ট্যাপ করে চিহ্নিত করুন।</div>`;
+      document.querySelector(".stage").after(div);
+    }
+    return;
+  }
+  const es = document.getElementById("emptyState");
+  if(es) es.remove();
+  els.card.style.display="";
+  document.querySelector(".controls").style.display="";
+  document.querySelector(".progress-row").style.display="";
+
+  if(state.idx >= state.order.length) state.idx = 0;
+  const n = state.order[state.idx];
+  const d = byNum(n);
+
+  els.arabicWord.textContent = d.ar;
+  els.backArabic.textContent = d.ar;
+  els.meaningBn.textContent = d.bn;
+  els.meaningEn.textContent = d.en;
+  els.typePill.textContent = d.type==="verb" ? "ক্রিয়া" : "অ-ক্রিয়া";
+  els.tipBox.innerHTML = d.tip;
+
+  let rootChips = "";
+  if(d.root && d.root!=="—") rootChips += `<span class="chip">মূল: ${d.root}</span>`;
+  if(d.form && d.form!=="—") rootChips += `<span class="chip">${d.type==='verb' ? 'বাব: '+d.form : d.form}</span>`;
+  els.rootRow.innerHTML = rootChips;
+
+  els.starBtn.textContent = "⭐";
+  els.starBtn.classList.toggle("marked", state.marked.has(d.n));
+
+  els.progCount.textContent = toBn(state.idx+1) + " / " + toBn(state.order.length);
+  const pct = Math.round(((state.idx+1)/state.order.length)*100);
+  els.progFill.style.width = pct+"%";
+  els.progPercent.textContent = toBn(pct)+"%";
+
+  if(state.flipped){
+    els.card.classList.add("flipped");
+  } else {
+    els.card.classList.remove("flipped");
+  }
+}
+
+function flip(){
+  state.flipped = !state.flipped;
+  els.card.classList.toggle("flipped", state.flipped);
+}
+
+function goNext(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx+1) % state.order.length;
+  render();
+}
+function goPrev(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx-1+state.order.length) % state.order.length;
+  render();
+}
+
+els.card.addEventListener("click",(e)=>{
+  if(e.target===els.starBtn) return;
+  if(didSwipe){ didSwipe = false; return; }
+  flip();
+});
+els.flipBtn.addEventListener("click",flip);
+els.nextBtn.addEventListener("click",goNext);
+els.prevBtn.addEventListener("click",goPrev);
+
+els.starBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  const n = state.order[state.idx];
+  if(state.marked.has(n)) state.marked.delete(n);
+  else state.marked.add(n);
+  saveMarked();
+  render();
+});
+
+els.shuffleBtn.addEventListener("click",()=>{
+  shuffleOrder();
+  state.flipped=false;
+  render();
+  els.shuffleBtnTextDefault.style.display = "none";
+  els.shuffleBtnTextDone.style.display = "";
+  setTimeout(()=>{
+    els.shuffleBtnTextDefault.style.display = "";
+    els.shuffleBtnTextDone.style.display = "none";
+  }, 900);
+});
+
+els.practiceBtn.addEventListener("click",()=>{
+  state.practiceMode = !state.practiceMode;
+  if(state.practiceMode){
+    state.filter="marked";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="marked"]').classList.add("active");
+    rebuildOrder(false);
+    shuffleOrder();
+    els.practiceBtn.classList.add("active");
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtn.classList.remove("active");
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+    state.filter="all";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="all"]').classList.add("active");
+    rebuildOrder(false);
+  }
+  state.flipped=false;
+  render();
+});
+
+els.tabs.addEventListener("click",(e)=>{
+  const tab = e.target.closest(".tab");
+  if(!tab) return;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  tab.classList.add("active");
+  state.filter = tab.dataset.filter;
+  state.practiceMode = (state.filter==="marked");
+  els.practiceBtn.classList.toggle("active", state.practiceMode);
+  if(state.practiceMode){
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+  }
+  rebuildOrder(false);
+  state.flipped=false;
+  render();
+});
+
+els.deckSelector.addEventListener("click",(e)=>{
+  const btn = e.target.closest(".deck-btn");
+  if(!btn) return;
+  const newDeckId = btn.dataset.deckId;
+  if(newDeckId === state.deckId) return;
+  state.deckId = newDeckId;
+  state.filter = "all";
+  state.practiceMode = false;
+  state.flipped = false;
+  els.practiceBtn.classList.remove("active");
+  els.practiceBtnTextDefault.style.display = "";
+  els.practiceBtnTextActive.style.display = "none";
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.querySelector('.tab[data-filter="all"]').classList.add("active");
+  document.querySelectorAll(".deck-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+});
+
+els.themeToggle.addEventListener("click",()=>{
+  state.theme = state.theme==="light" ? "dark" : "light";
+  document.body.setAttribute("data-theme", state.theme);
+  els.themeToggle.textContent = state.theme==="light" ? "🌙" : "☀️";
+  localStorage.setItem("arVocabTheme", state.theme);
+});
+
+els.arabicIncBtn.addEventListener("click", () => {
+  if(state.scaleArabic < 1.5) {
+    state.scaleArabic = parseFloat((state.scaleArabic + 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.arabicDecBtn.addEventListener("click", () => {
+  if(state.scaleArabic > 0.7) {
+    state.scaleArabic = parseFloat((state.scaleArabic - 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.textIncBtn.addEventListener("click", () => {
+  if(state.scaleText < 1.4) {
+    state.scaleText = parseFloat((state.scaleText + 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.textDecBtn.addEventListener("click", () => {
+  if(state.scaleText > 0.8) {
+    state.scaleText = parseFloat((state.scaleText - 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+
+let touchStartX = null, touchStartY = null, didSwipe = false;
+els.card.addEventListener("touchstart",(e)=>{
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  didSwipe = false;
+},{passive:true});
+els.card.addEventListener("touchend",(e)=>{
+  if(touchStartX===null) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  // Only treat it as a swipe if the motion is mostly horizontal, so vertical
+  // scroll/tap gestures never accidentally trigger next/previous.
+  if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)){
+    didSwipe = true;
+    if(dx < 0) goNext(); else goPrev();
+  }
+  touchStartX = null;
+  touchStartY = null;
+},{passive:true});
+
+/* ===================== Pronunciation (auto, no manual voice picker) ===================== */
+/*
+  Primary: if the device/browser already has an Arabic voice installed,
+  use it directly (works fully offline, zero network delay).
+  Fallback: if no local Arabic voice is found, automatically stream
+  pronunciation from an online TTS service instead (needs internet).
+  Neither path is a real qari's tajweed-accurate recitation; both are
+  automated pronunciation aids only (disclosed in the settings panel note).
+*/
+const ttsSupported = ("speechSynthesis" in window);
+const MALE_HINTS = ["male","naayf","hamed","majed","tarik","karim","abdullah","yousef","fahd","khalid","rashid","omar"];
+const FEMALE_HINTS = ["female","hoda","salma","laila","zariyah","amira","fatima","noura","tasnim"];
+
+let cachedVoices = [];
+function refreshVoices(){
+  if(ttsSupported) cachedVoices = speechSynthesis.getVoices();
+}
+if(ttsSupported){
+  refreshVoices();
+  speechSynthesis.onvoiceschanged = refreshVoices;
+}
+
+function guessIsMale(voice){
+  const n = voice.name.toLowerCase();
+  if(MALE_HINTS.some(h=>n.includes(h))) return true;
+  if(FEMALE_HINTS.some(h=>n.includes(h))) return false;
+  return null;
+}
+
+function pickLocalArabicVoice(){
+  if(!ttsSupported) return null;
+  const all = cachedVoices.filter(v=>v.lang && v.lang.toLowerCase().startsWith("ar"));
+  if(all.length===0) return null;
+  return all.find(v=>guessIsMale(v)===true) || all[0];
+}
+
+function setSpeaking(on){
+  [els.speakFrontBtn, els.speakBackBtn].forEach(b=>b.classList.toggle("speaking", on));
+}
+
+function speakLocally(text, voice){
+  if(!voice) voice = pickLocalArabicVoice();
+  if(!voice) return false;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.voice = voice;
+  utter.lang = voice.lang || "ar-SA";
+  utter.rate = parseFloat(els.rateSlider.value) || 0.8;
+  utter.onend = utter.onerror = ()=> setSpeaking(false);
+  speechSynthesis.speak(utter);
+  return true;
+}
+
+let currentAudio = null;
+const MEDIA_ERROR_NAMES = { 1:"ABORTED", 2:"NETWORK", 3:"DECODE", 4:"SRC_NOT_SUPPORTED" };
+
+// Two independent free online TTS providers, tried in order. If one is
+// blocked/down/rate-limited, the next is attempted automatically before
+// giving up. Neither requires an API key.
+const ONLINE_TTS_PROVIDERS = [
+  { name:"StreamElements", build:(text)=> "https://api.streamelements.com/kappa/v2/speech?voice=Zeina&text=" + encodeURIComponent(text) },
+  { name:"GoogleTranslateTTS", build:(text)=> "https://translate.google.com/translate_tts?ie=UTF-8&tl=ar&client=tw-ob&q=" + encodeURIComponent(text) },
+];
+
+function speakOnline(text, providerIndex, diagLog){
+  providerIndex = providerIndex || 0;
+  diagLog = diagLog || [];
+  if(currentAudio){ currentAudio.pause(); currentAudio = null; }
+
+  if(providerIndex >= ONLINE_TTS_PROVIDERS.length){
+    setSpeaking(false);
+    console.error("TTS: all providers failed.", diagLog);
+    const diagText = diagLog.join(" | ");
+    alert("এই মুহূর্তে কোনো অনলাইন উচ্চারণ সার্ভার থেকে সাড়া পাওয়া যাচ্ছে না এবং ডিভাইসেও কোনো আরবি উচ্চারণ কণ্ঠস্বর ইনস্টল করা নেই, তাই উচ্চারণ শোনানো সম্ভব হচ্ছে না।\n\n[debug: " + diagText + "]");
+    return;
+  }
+
+  const provider = ONLINE_TTS_PROVIDERS[providerIndex];
+  const url = provider.build(text);
+  const audio = new Audio(url);
+  currentAudio = audio;
+  audio.playbackRate = parseFloat(els.rateSlider.value) || 0.8;
+
+  let settled = false;
+  const tryNext = (reason)=>{
+    if(settled) return;
+    settled = true;
+    diagLog.push(provider.name + ": " + reason);
+    speakOnline(text, providerIndex + 1, diagLog);
+  };
+
+  audio.addEventListener("ended", ()=>{ settled = true; setSpeaking(false); });
+  audio.addEventListener("error", ()=>{
+    const code = audio.error ? audio.error.code : null;
+    tryNext("media-error(" + (MEDIA_ERROR_NAMES[code] || code || "unknown") + ")");
+  });
+
+  audio.play()
+    .then(()=>{ settled = true; })
+    .catch((err)=> tryNext("play-rejected(" + (err && err.name || err) + ")"));
+
+  // Safety timeout in case a request hangs silently instead of erroring
+  setTimeout(()=>{ if(!settled) tryNext("timeout"); }, 3000);
+}
+
+function speakArabic(text){
+  setSpeaking(true);
+  const localVoice = pickLocalArabicVoice();
+  if(localVoice){
+    speakLocally(text, localVoice);
+  } else {
+    speakOnline(text);
+  }
+}
+
+function speakCurrentWord(){
+  if(state.order.length===0) return;
+  const d = byNum(state.order[state.idx]);
+  if(d) speakArabic(d.ar);
+}
+
+els.voiceToggleBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  els.voicePanel.classList.toggle("open");
+});
+document.addEventListener("click",(e)=>{
+  if(!els.voicePanel.contains(e.target) && e.target!==els.voiceToggleBtn){
+    els.voicePanel.classList.remove("open");
+  }
+});
+els.rateSlider.addEventListener("input",()=>{
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+});
+els.speakFrontBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  speakCurrentWord();
+});
+els.speakBackBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  speakCurrentWord();
+});
+
+(function init(){
+  const savedTheme = localStorage.getItem("arVocabTheme");
+  if(savedTheme){
+    state.theme = savedTheme;
+    document.body.setAttribute("data-theme", savedTheme);
+    els.themeToggle.textContent = savedTheme==="light" ? "🌙" : "☀️";
+  }
+  updateFontScales();
+  buildDeckSelector();
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+})();
+</script>
+ </body>
+</html>
