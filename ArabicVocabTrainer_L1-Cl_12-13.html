@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="bn">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>আরবি শব্দভাণ্ডার — আন-নূর ২০/ লেভেল-১, ক্লাস ১২-১৩</title>
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Baloo+Da+2:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap');
+
+:root{
+  --gold:#c9962c;
+  --gold-soft:#e3bd6a;
+  --teal-deep:#0b3b36;
+  --teal-mid:#4c7a72;
+  --parchment:#f8f3e6;
+  --card-light:#fffdf8;
+  --ink:#1c2b28;
+  --ink-soft:#5a6b66;
+  --line-light: rgba(11,59,54,0.14);
+  --bg:#f8f3e6;
+  --card-bg:#fffdf8;
+  --text:#1c2b28;
+  --text-soft:#5a6b66;
+  --line: rgba(11,59,54,0.14);
+  --shadow: 0 4px 14px rgba(11,59,54,0.08);
+  --accent:#c9962c;
+  --accent-soft:#e3bd6a;
+  --panel:#ffffff;
+  --tab-bg: rgba(11,59,54,0.06);
+  --danger:#b5493a;
+  
+  /* Font Scale Factors */
+  --scale-arabic: 1;
+  --scale-text: 1;
+}
+[data-theme="dark"]{
+  --bg:#081615;
+  --card-bg:#102523;
+  --text:#ede6d3;
+  --text-soft:#a9bab5;
+  --line: rgba(233,226,209,0.12);
+  --shadow: 0 4px 14px rgba(0,0,0,0.3);
+  --accent:#d9ab4f;
+  --accent-soft:#8a6a26;
+  --panel:#0e211f;
+  --tab-bg: rgba(233,226,209,0.06);
+}
+
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{
+  margin:0;
+  padding:0;
+  width:100%;
+  height:100vh;
+  height:100dvh; /* dynamic viewport height: excludes mobile browser/nav chrome that 100vh miscounts */
+  overflow:hidden;
+}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali','Segoe UI',system-ui,sans-serif;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  transition: background 0.3s ease;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    radial-gradient(circle at 20% 15%, rgba(201,150,44,0.06), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(11,59,54,0.07), transparent 45%);
+  pointer-events:none;
+  z-index:0;
+}
+
+.wrap{
+  position:relative; z-index:1;
+  width:100%;
+  max-width:520px;
+  height:100vh;
+  height:100dvh;
+  max-height:100vh;
+  max-height:100dvh;
+  margin:0 auto;
+  padding: 6px 12px calc(6px + env(safe-area-inset-bottom, 0px));
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+header{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:4px 0 2px;
+  flex:none;
+  position:relative;
+  width: 100%;
+}
+.brand{display:flex; flex-direction:column; align-items:center; gap:1px; width:100%;}
+.brand .eyebrow{
+  font-size: calc(10px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); font-weight:700;
+}
+.brand h1{
+  margin:0; font-size: calc(18px * var(--scale-text)); font-weight:700; color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+
+.header-top-row{
+  display:flex; align-items:center; justify-content:space-between; width:100%; margin-bottom:2px;
+}
+
+.header-right{
+  display:flex; align-items:center; gap:6px;
+  position: absolute; right: 0; top: 0;
+}
+
+.deck-selector-row{
+  display:flex; justify-content:center; width:100%; margin:6px 0 4px 0; flex:none;
+}
+.deck-selector{
+  display:flex; 
+  flex-wrap: wrap; 
+  justify-content: center;
+  gap: 4px;
+  background:var(--tab-bg); 
+  border-radius:16px; 
+  padding:4px; 
+  border:1px solid var(--line);
+  width: 100%;
+  max-width: 100%;
+}
+.deck-btn{
+  padding:4px 12px;
+  border-radius:999px;
+  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  background:transparent;
+  color:var(--text-soft);
+  border:none;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .2s ease;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.deck-btn.active{
+  background:var(--teal-deep);
+  color:#f8f3e6;
+}
+[data-theme="dark"] .deck-btn.active{
+  background:var(--accent);
+  color:#0b1a18;
+}
+
+.theme-toggle{
+  width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--line);
+  background:var(--panel);
+  display:flex; align-items:center; justify-content:center;
+  font-size:16px; cursor:pointer; flex:none;
+  box-shadow:var(--shadow);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.theme-toggle:active{transform:scale(0.9);}
+
+.font-resizer{
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  background:var(--tab-bg); border:1px solid var(--line); border-radius:999px;
+  padding:2px 8px; margin-bottom:4px; flex:none;
+}
+.font-resizer-group{
+  display:flex; align-items:center; gap:4px;
+}
+.font-resizer-label{
+  font-size: calc(11px * var(--scale-text)); font-weight:700; color:var(--text-soft); white-space:nowrap;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.font-ctrl-btn{
+  width:24px; height:24px; border-radius:50%; border:1px solid var(--line);
+  background:var(--panel); color:var(--text); font-size:12px; font-weight:700;
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:var(--shadow); transition:transform .1s ease;
+}
+.font-ctrl-btn:active{transform:scale(0.85);}
+
+.tabs{
+  display:flex; gap:6px; overflow-x:auto; padding-bottom:1px; margin-bottom:4px;
+  scrollbar-width:none;
+  flex:none;
+}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{
+  flex:none;
+  padding:5px 12px;
+  border-radius:999px;
+  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  background:var(--tab-bg);
+  color:var(--text-soft);
+  border:1px solid transparent;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .2s ease;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.tab.active{
+  background:var(--teal-deep);
+  color:#f8f3e6;
+  border-color:var(--teal-deep);
+}
+[data-theme="dark"] .tab.active{
+  background:var(--accent);
+  color:#0b1a18;
+  border-color:var(--accent);
+}
+
+.progress-row{
+  display:flex; align-items:center; justify-content:space-between;
+  font-size: calc(13px * var(--scale-text)); font-weight:600; color:var(--text-soft); margin-bottom:4px; padding:0 2px;
+  flex:none;
+}
+.progress-track{
+  flex:1; height:5px; margin:0 8px; border-radius:3px;
+  background:var(--tab-bg); overflow:hidden;
+}
+.progress-fill{
+  height:100%; border-radius:3px;
+  background:linear-gradient(90deg,var(--accent),var(--gold-soft));
+  transition:width .3s ease;
+}
+
+.stage{
+  perspective:1600px;
+  display:flex;
+  justify-content:center;
+  align-items:stretch;
+  flex:1;
+  min-height:0;
+  width:100%;
+  position:relative;
+}
+.card{
+  position:relative;
+  z-index:2;
+  width:100%;
+  height:100%;
+  cursor:pointer;
+  transform-style:preserve-3d;
+  transition:transform .5s cubic-bezier(.4,.2,.2,1);
+}
+.card.flipped{transform:rotateY(180deg);}
+
+/* Ground shadow beneath the card, kept flat (does not rotate with the card)
+   so it reads as a real shadow cast on a surface below a floating card. */
+.card-shadow{
+  position:absolute;
+  left:6%; right:6%;
+  bottom:-2%;
+  height:14%;
+  z-index:1;
+  background:radial-gradient(ellipse at center, rgba(11,59,54,0.32) 0%, rgba(11,59,54,0.14) 45%, rgba(11,59,54,0) 75%);
+  filter:blur(4px);
+  border-radius:50%;
+  transform:scaleX(1);
+  transform-origin:50% 50%;
+  transition:transform .5s cubic-bezier(.4,.2,.2,1), opacity .5s ease;
+  pointer-events:none;
+}
+[data-theme="dark"] .card-shadow{
+  background:radial-gradient(ellipse at center, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 45%, rgba(0,0,0,0) 75%);
+}
+
+.face{
+  position:absolute; inset:0;
+  border-radius:16px;
+  backface-visibility:hidden;
+  display:flex; flex-direction:column;
+  background:var(--card-bg);
+  border:1px solid var(--line);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,
+    0 6px 16px rgba(11,59,54,0.14);
+  overflow:hidden;
+}
+[data-theme="dark"] .face{
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.04) inset,
+    0 6px 18px rgba(0,0,0,0.45);
+}
+
+.front{
+  align-items:center; justify-content:center;
+  padding:12px;
+  gap:6px;
+}
+.front .type-pill{
+  position:absolute; top:10px; left:50%; transform:translateX(-50%);
+  font-size: calc(11px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  color:var(--text-soft); font-weight:700;
+  background:var(--tab-bg); padding:2px 10px; border-radius:999px;
+}
+.front .star{
+  position:absolute; top:6px; right:6px;
+  font-size:40px; line-height:1; cursor:pointer; z-index:5;
+  font-style:normal;
+  filter:grayscale(1); opacity:.45;
+  transition:all .15s ease;
+  padding:4px;
+}
+.front .star.marked{filter:none; opacity:1;}
+.arabic-word{
+  font-family:'Amiri','Noto Naskh Arabic',serif;
+  font-size: calc(clamp(32px, 8vw, 48px) * var(--scale-arabic));
+  color:var(--text);
+  direction:rtl;
+  line-height:1.2;
+  text-align:center;
+}
+.front .speak-btn{
+  position:static;
+  font-size:17px;
+  margin:2px auto 0;
+  padding:4px;
+}
+.front .hint{
+  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); text-align:center;
+}
+
+.back{
+  padding:12px 14px 10px;
+  overflow-y:auto;
+  /* Mid-height vertical alignment modification */
+  justify-content: center;
+}
+.back-inner{
+  display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center;
+  margin-top:2px;
+}
+.back .arabic-word{
+  font-size: calc(clamp(22px, 6vw, 30px) * var(--scale-arabic));
+  margin-bottom:0px;
+}
+.meaning-bn{
+  font-size: calc(20px * var(--scale-text)); font-weight:700; color:var(--accent);
+}
+.meaning-en{
+  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); font-style:italic;
+}
+.root-row{
+  display:flex; gap:4px; flex-wrap:wrap; justify-content:center; margin-top:1px;
+}
+.chip{
+  font-size: calc(11px * var(--scale-text)); padding:2px 8px; border-radius:999px;
+  background:var(--tab-bg); color:var(--text-soft); font-weight:700;
+}
+.tip-box{
+  margin-top:2px;
+  background:var(--tab-bg);
+  border-radius:8px;
+  padding:6px 10px;
+  font-size: calc(12px * var(--scale-text));
+  line-height:1.3;
+  color:var(--text);
+  text-align:left;
+  border-left:3px solid var(--accent);
+  max-height: 110px;
+  overflow-y: auto;
+}
+.tip-box b{color:var(--accent);}
+
+.controls{
+  display:flex; align-items:center; justify-content:center; gap:22px;
+  margin-top:10px;
+  margin-bottom:4px;
+  flex:none;
+  width:100%;
+}
+.ctrl-btn{
+  flex:none;
+  width:48px;
+  height:48px;
+  border-radius:0;
+  border:none;
+  background:transparent;
+  display:flex; align-items:center; justify-content:center;
+  font-size:24px; cursor:pointer; color:#0b3b36;
+  box-shadow:none;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.65))
+    drop-shadow(0 3px 4px rgba(11,59,54,0.35));
+  transition:transform .12s ease, filter .12s ease;
+}
+.ctrl-btn:active{
+  transform:scale(0.88) translateY(1px);
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.4))
+    drop-shadow(0 1px 2px rgba(11,59,54,0.3));
+}
+.ctrl-btn.primary{
+  color:#c9962c;
+  font-size:34px;
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.5))
+    drop-shadow(0 4px 6px rgba(11,59,54,0.45));
+}
+.ctrl-btn.primary:active{
+  filter:
+    drop-shadow(0 1px 0 rgba(255,255,255,0.3))
+    drop-shadow(0 1px 3px rgba(11,59,54,0.35));
+}
+
+/* Prev / Next: flat-top circular buttons, shaded only at the edge (matches flashcard styling) */
+.ctrl-btn.nav-btn{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#fffdf8;
+  border:1px solid rgba(11,59,54,0.18);
+  font-size:17px;
+  color:#0b3b36;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.6) inset,
+    0 -2px 3px rgba(11,59,54,0.10) inset,
+    0 5px 9px rgba(11,59,54,0.22),
+    0 1px 2px rgba(11,59,54,0.14);
+  filter:none;
+}
+.ctrl-btn.nav-btn:active{
+  transform:scale(0.9) translateY(1px);
+  filter:none;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 1px 3px rgba(11,59,54,0.22) inset;
+}
+
+.bottom-actions{
+  display:flex; gap:6px;
+  flex:none;
+  margin-bottom:4px;
+}
+.action-btn{
+  flex:1;
+  padding:8px 6px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  color:var(--text);
+  font-size: calc(13px * var(--scale-text)); font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  cursor:pointer;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.action-btn.active{
+  background:var(--teal-deep); color:#f8f3e6; border-color:var(--teal-deep);
+}
+[data-theme="dark"] .action-btn.active{
+  background:var(--accent); color:#0b1a18; border-color:var(--accent);
+}
+
+.empty-state{
+  text-align:center; padding:20px 10px; color:var(--text-soft); font-size: calc(14px * var(--scale-text));
+}
+.empty-state .big{font-size:28px; margin-bottom:4px;}
+
+footer{
+  text-align:center; font-size: calc(11px * var(--scale-text)); color:var(--text-soft);
+  flex:none;
+  padding-bottom: 2px;
+}
+
+/* ===== Pronunciation / Audio ===== */
+.audio-toggle{
+  height:32px;
+  padding:0 10px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  display:flex; align-items:center; justify-content:center; gap:5px;
+  font-size:13px; font-weight:700; cursor:pointer; flex:none;
+  color:var(--text);
+  box-shadow:var(--shadow);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.audio-toggle .mic-icon{ font-size:15px; }
+.audio-toggle:active{transform:scale(0.94);}
+.audio-toggle.speaking{ color:var(--accent); border-color:var(--accent); }
+
+.voice-panel{
+  position:absolute; z-index:20; top:40px; left:0;
+  width:230px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+  padding:10px 12px 12px;
+  text-align:left;
+  display:none;
+}
+.voice-panel.open{ display:block; }
+.voice-panel label{
+  display:block; font-size:11px; font-weight:700; color:var(--text-soft);
+  margin-bottom:3px; margin-top:8px;
+}
+.voice-panel label:first-child{ margin-top:0; }
+.voice-panel select{
+  width:100%; font-size:12px; padding:5px 6px; border-radius:8px;
+  border:1px solid var(--line); background:var(--bg); color:var(--text);
+  font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
+}
+.voice-panel input[type="range"]{ width:100%; }
+.voice-panel .rate-val{ font-size:11px; color:var(--text-soft); }
+.voice-panel .note{
+  font-size:10.5px; line-height:1.35; color:var(--text-soft);
+  margin-top:9px; padding-top:7px; border-top:1px solid var(--line);
+}
+
+.speak-btn{
+  position:absolute; top:8px; right:8px;
+  border:none; background:transparent; box-shadow:none;
+  display:flex; align-items:center; justify-content:center;
+  font-size:15px; cursor:pointer; z-index:5;
+  color:var(--text);
+  padding:4px;
+  transition:transform .15s ease, opacity .15s ease;
+}
+.speak-btn:active{ transform:scale(0.85); }
+.speak-btn.speaking{ opacity:.55; }
+.back .speak-btn{ position:static; font-size:16px; margin:2px auto 0; }
+</style>
+ </head>
+ <body data-template-id="__page-root" data-theme="light">
+  <div class="wrap">
+   <header>
+    <div class="brand">
+     <span class="eyebrow">আন-নূর ২০</span>
+     <h1>আরবি শব্দভাণ্ডার</h1>
+    </div>
+    <button class="theme-toggle" id="themeToggle" title="দিন/রাত মোড">🌙</button>
+    <button class="audio-toggle" id="voiceToggleBtn" title="উচ্চারণ সেটিংস"><span class="mic-icon">🔊</span><span>ভয়েস</span></button>
+    <div class="voice-panel" id="voicePanel">
+     <label for="rateSlider">গতি (speed): <span class="rate-val" id="rateVal">০.৮×</span></label>
+     <input type="range" id="rateSlider" min="0.5" max="1.2" step="0.1" value="0.8">
+     <div class="note">উচ্চারণ শোনানোর জন্য এই অ্যাপ অনলাইন সার্ভিস ব্যবহার করে (ইন্টারনেট প্রয়োজন); ইন্টারনেট না থাকলে ডিভাইসের নিজস্ব উচ্চারণ ব্যবহৃত হবে (যদি থাকে)। এটি প্রকৃত ক্বারীর তাজবীদসম্মত তিলাওয়াত নয়, বরং হারাকাত অনুযায়ী সাধারণ আরবি উচ্চারণের একটি সহায়ক অনুমান মাত্র।</div>
+    </div>
+    <div class="deck-selector-row">
+     <div class="deck-selector" id="deckSelector"></div>
+    </div>
+   </header>
+   
+   <div class="font-resizer" id="fontResizer">
+    <div class="font-resizer-group">
+     <span class="font-resizer-label">আরবি font:</span>
+     <button class="font-ctrl-btn" id="arabicDecBtn" title="ছোট করুন">-</button>
+     <button class="font-ctrl-btn" id="arabicIncBtn" title="বড় করুন">+</button>
+    </div>
+    <div style="width:1px; height:14px; background:var(--line);"></div>
+    <div class="font-resizer-group">
+     <span class="font-resizer-label">বাংলা/ইংলিশ:</span>
+     <button class="font-ctrl-btn" id="textDecBtn" title="ছোট করুন">-</button>
+     <button class="font-ctrl-btn" id="textIncBtn" title="বড় করুন">+</button>
+    </div>
+   </div>
+
+   <div class="tabs" id="tabs">
+    <div class="tab active" data-filter="all" id="tabAll">সব শব্দ</div>
+    <div class="tab" data-filter="verb" id="tabVerb">ক্রিয়া</div>
+    <div class="tab" data-filter="noun" id="tabNoun">অ-ক্রিয়া</div>
+    <div class="tab" data-filter="marked" id="tabMarked">⭐ চিহ্নিত</div>
+   </div>
+   <div class="progress-row">
+    <span id="progCount">১ / ৩০</span>
+    <div class="progress-track">
+     <div class="progress-fill" id="progFill" style="width:3%"></div>
+    </div><span id="progPercent">৩%</span>
+   </div>
+   <div class="stage">
+    <div class="card-shadow" id="cardShadow"></div>
+    <div class="card" id="card">
+     <div class="face front" id="frontFace">
+      <span class="star" id="starBtn">⭐</span> <span class="type-pill" id="typePill">ক্রিয়া</span>
+      <div class="arabic-word" id="arabicWord">حَكَمَ</div>
+      <button class="speak-btn speak-btn-inline" id="speakFrontBtn" title="উচ্চারণ শুনুন">🔊</button>
+      <div class="hint">কার্ড উল্টাতে ট্যাপ করুন</div>
+     </div>
+     <div class="face back" id="backFace" style="transform:rotateY(180deg);">
+      <div class="back-inner">
+       <div class="arabic-word" id="backArabic">حَكَمَ</div>
+       <button class="speak-btn" id="speakBackBtn" title="উচ্চারণ শুনুন">🔊</button>
+       <div class="meaning-bn" id="meaningBn">বিচার করা/মীমাংসা করা</div>
+       <div class="meaning-en" id="meaningEn">to judge</div>
+       <div class="root-row" id="rootRow"></div>
+       <div class="tip-box" id="tipBox"></div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="controls">
+    <button class="ctrl-btn nav-btn" id="prevBtn" title="আগের">◀</button> 
+    <button class="ctrl-btn primary" id="flipBtn" title="উল্টান">⇄</button> 
+    <button class="ctrl-btn nav-btn" id="nextBtn" title="পরের">▶</button>
+   </div>
+   <div class="bottom-actions">
+    <button class="action-btn" id="shuffleBtn"> 
+     <span id="shuffleBtnTextDefault">🔀 শাফল করুন</span> 
+     <span id="shuffleBtnTextDone" style="display:none">✅ শাফল হয়ে গেছে</span> 
+    </button> 
+    <button class="action-btn" id="practiceBtn"> 
+     <span id="practiceBtnTextDefault">🎯 শুধু চিহ্নিত অনুশীলন</span> 
+     <span id="practiceBtnTextActive" style="display:none">🎯 অনুশীলন মোড চালু</span> 
+    </button>
+   </div>
+   <footer>আন-নূর ২০ কোর্সের শব্দভাণ্ডার প্রশিক্ষণ</footer>
+  </div>
+  <script>
+const DECKS = [
+ {
+    id: "class12",
+    label: "ক্লাস ১২",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১২",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ১০১–১১০, অ-ক্রিয়া ২০১–২২০)",
+    data: [
+      {n: 101, type: "verb", ar: "اسْتَوَى", bn: "সমান হওয়া / সমাসীন হওয়া / স্থির হওয়া", en: "to be equal / to be alike / to establish", nonpast: "يَسْتَوِي", root: "س و ي", group: "VIII", example: "ثُمَّ اسْتَوَى إِلَى السَّمَاءِ۔ قُلْ لَا يَسْتَوِي الْخَبِيثُ وَالطَّيِّبُ"},
+      {n: 102, type: "verb", ar: "نَسِيَ", bn: "ভুলে যাওয়া", en: "to forget", nonpast: "يَنْسَى", root: "ن س ي", group: "I", example: "وَتَنْسَوْنَ أَنْفُسَكُمْ۔ رَبَّنَا لَا تُؤَاخِذْنَا إِنْ نَّسِينَا أَوْ أَخْطَأْنَا"},
+      {n: 103, type: "verb", ar: "ابْتَغَى", bn: "সন্ধান করা / আশা করা / চাওয়া", en: "to seek", nonpast: "يَبْتَغِي", root: "ب غ ي", group: "VIII", example: "وَابْتَغُوا إِلَيْهِ الْوَسِيلَةَ۔ وَمَنْ يَبْتَغِ غَيْرَ الْإِسْلَامِ دِينًا فَلَنْ يُقْبَلَ مِنْهُ"},
+      {n: 104, type: "verb", ar: "أَعْرَضَ", bn: "উপেক্ষা করা / এড়িয়ে যাওয়া / মুখ ফেরানো", en: "to turn away", nonpast: "يُعْرِضُ", root: "ع ر ض", group: "IV", example: "لَا إِلَهَ إِلَّا هُوَ وَأَعْرِضْ عَنِ الْمُشْرِكِينَ۔ وَإِنْ تُعْرِضْ عَنْهُمْ فَلَنْ يَضُرُّوكَ شَيْئًا"},
+      {n: 105, type: "verb", ar: "كَفَى", bn: "যথেষ্ট হওয়া", en: "to be sufficient", nonpast: "يَكْفِي", root: "ك ف ي", group: "I", example: "وَكَفَى بِاللَّهِ وَلِيًّا۔ وَكَفَى بِاللَّهِ نَصِيرًا"},
+      {n: 106, type: "verb", ar: "نَهَى", bn: "নিষেধ করা / বিরত রাখা", en: "to forbid", nonpast: "يَنْهَى", root: "ن ه ي", group: "I", example: "يَنْهَوْنَ عَنِ السُّوءِ۔ وَيَأْمُرُونَ بِالْمَعْرُوْفِ وَيَنْهَوْنَ عَنِ الْمُنْكَرِ"},
+      {n: 107, type: "verb", ar: "نَفَعَ", bn: "উপকার দেওয়া / উপকার করা", en: "to profit / to benifit", nonpast: "يَنْفَعُ", root: "ن ف ع", group: "I", example: "يَوْمَ لَا يَنْفَعُ مَالٌ وَلَا بَنُونَ۔ لَنْ تَنْفَعَكُمْ أَرْحَامُكُمْ وَلَا أَوْلَادُكُمْ"},
+      {n: 108, type: "verb", ar: "سَاءَ", bn: "মন্দ / নিকৃষ্ট হওয়া", en: "to be evil", nonpast: "يَسُوءُ", root: "س و ا", group: "I", example: "سَاءَتْ وُجُوهُ الَّذِينَ كَفَرُوا"},
+      {n: 109, type: "verb", ar: "عَسَى", bn: "আশা করা / সম্ভবত", en: "to perhaps", nonpast: "يَعْسَى / عَسَى", root: "ع س ي", group: "I", example: "قَالَ هَلْ عَسَيْتُمْ"},
+      {n: 110, type: "verb", ar: "لَبِثَ", bn: "অবস্থান করা / বিলম্ব করা", en: "to remain / to stay / to delay", nonpast: "يَلْبَثُ", root: "ل ب ث", group: "I", example: "قَالَ قَائِلٌ مِنْهُمْ كَمْ لَبِثْتُمْ۔ قَالُوْا لَبِثْنَا يَوْمًا أَوْ بَعْضَ يَوْمٍ"},
+	  {n: 201, type: "noun", ar: "شر", bn: "খারাপ / অনিষ্ট / মন্দ / অকল্যাণ", en: "the evil", root: "ش ر ر", group: "—", emoji: "❌", example: "مِنْ شَرِّ مَا خَلَقَ"},
+      {n: 202, type: "noun", ar: "قوى", bn: "শক্তি", en: "power", root: "ق و ي", group: "—", emoji: "💪", example: "أَنَّ الْقُوَّةَ لِلَّهِ جَمِيعًا"},
+      {n: 203, type: "noun", ar: "كَرِيمٌ", bn: "সম্মানিত / মহান", en: "Noble", root: "ك ر م", group: "—", emoji: "🌟", example: "لَهُمْ مَّغْفِرَةٌ وَرِزْقٌ كَرِيمٌ"},
+      {n: 204, type: "noun", ar: "ملا", bn: "পরিষদবর্গ / প্রধান ব্যক্তিরা", en: "the chiefs", root: "م ل أ", group: "—", emoji: "👥", example: "قَالَ الْمَلَأُ الَّذِينَ كَفَرُوا"},
+      {n: 205, type: "noun", ar: "جند", bn: "সেনাবাহিনী / দলবল", en: "the hosts", root: "ج ن د", group: "—", emoji: "🛡️", example: "وَأَنْزَلَ جُنُودًا لَّمْ تَرَوْهَا"},
+      {n: 206, type: "noun", ar: "حَيْثُ", bn: "যেখানে / যেভাবে", en: "wherever / where", root: "ح ي ث", group: "—", emoji: "📍", example: "وَمِنْ حَيْثُ خَرَجْتَ فَوَلِ وَجْهَكَ"},
+      {n: 207, type: "noun", ar: "رَجُلٌ", bn: "পুরুষ / ব্যক্তি / পায়ে হাটা ব্যক্তি", en: "a man", root: "ر ج ل", group: "—", emoji: "🚶", example: "وَجَاءَ رَجُلٌ مِّنْ أَقْصَى الْمَدِينَةِ"},
+      {n: 208, type: "noun", ar: "رِجَالٌ", bn: "men", en: "men", root: "ر ج ل", group: "—", emoji: "👥", example: "لِلرِّجَالِ نَصِيبٌ"},
+      {n: 209, type: "noun", ar: "ريح", bn: "বাতাস / ঘ্রাণ", en: "by a wind", root: "ر و ح", group: "—", emoji: "💨", example: "فَأَرْسَلْنَا عَلَيْهِمْ رِيحًا"},
+      {n: 210, type: "noun", ar: "عرش", bn: "আরশসিংহাসন / ছাদ", en: "the Throne", root: "ع ر ش", group: "—", emoji: "👑", example: "كَانَ عَرْشُهُ عَلَى الْمَاءِ"},
+      {n: 211, type: "noun", ar: "عهد", bn: "প্রতিশ্রুতি / চুক্তি / অঙ্গীকার", en: "Promise", root: "ع ه د", group: "—", emoji: "📜", example: "فَلَنْ يُخْلِفَ اللَّهُ عَهْدَةً"},
+      {n: 212, type: "noun", ar: "كان", bn: "যেন", en: "as if / as though", root: "ك و ن", group: "—", emoji: "⏳", example: "كَأَنَّهُمْ لَا يَعْلَمُوْنَ"},
+      {n: 213, type: "noun", ar: "নবা", bn: "সংবাদ", en: "a news", root: "ن ب أ", group: "—", emoji: "📰", example: "وَاتْلُ عَلَيْهِمْ نَبَأَنُوْحٍ"},
+      {n: 214, type: "noun", ar: "ابدا", bn: "চিরকাল / কখনো না / সর্বদা", en: "forever / ever", root: "أ ب د", group: "—", emoji: "♾️", example: "لَا تَقُمْ فِيْهِ أَبَدًا"},
+      {n: 215, type: "noun", ar: "انی", bn: "কোথায় / কীভাবে / যেভাবে / যখন", en: "Then how", root: "أ ن ن", group: "—", emoji: "❓", example: "رَبِّ أَنِّي يَكُونُ لِي غُلَامٌ"},
+      {n: 216, type: "noun", ar: "حَدِيثٌ", bn: "কথা / স্বপ্নসংবাদ / বৃত্তান্ত / কাহিনী / বাণী", en: "story", root: "ح د ث", group: "—", emoji: "📖", example: "وَهَلْ أَتَاكَ حَدِيثُ مُوسَى"},
+      {n: 217, type: "noun", ar: "حَسَنَةٌ", bn: "কল্যাণ / ভালো", en: "the good", root: "ح س ن", group: "—", emoji: "✨", example: "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً"},
+      {n: 218, type: "noun", ar: "درية", bn: "সন্তান-সন্ততি / বংশধর", en: "his offspring", root: "ذ ر ر", group: "—", emoji: "👶", example: "وَكُنَّا ذُرِّيَّةً مِنْ بَعْدِهِمْ"},
+      {n: 219, type: "noun", ar: "সحر", bn: "জাদু", en: "magic", root: "س ح ر", group: "—", emoji: "🪄", example: "يُعَلِّمُونَ النَّاسَ السِّحْرَ"},
+      {n: 220, type: "noun", ar: "كَلِمَةٌ", bn: "কথা / বাণী / বাক্য", en: "words", root: "ك ل م", group: "—", emoji: "💬", example: "وَكَلِمَةُ اللَّهِ هِيَ الْعُلْيَا"}
+	]
+  },
+  {
+    id: "class13",
+    label: "ক্লাস ১৩",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১৩",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ১১১–১২০, অ-ক্রিয়া ২২১–২৪০)",
+    data: [
+	  {n: 111, type: "verb", ar: "أَبْصَرَ", bn: "দেখা", en: "to see", nonpast: "يُبْصِرُ", root: "ب ص ر", group: "IV", example: "وَتَرَكَهُمْ فِي ظُلُمَاتٍ لَا يُبْصِرُوْنَ۔"},
+      {n: 112, type: "verb", ar: "اسْتَجَابَ", bn: "সাড়া দেওয়া", en: "to answer / to respond", nonpast: "يَسْتَجِيبُ", root: "ج و ب", group: "X", example: "إِنَّمَا يَسْتَجِيبُ الَّذِينَ يَسْمَعُوْنَ۔ فَاسْتَجَابَ لَهُمْ رَبُّهُمْ أَنِّي لَا أُضِيعُ عَمَلَ عَامِلٍ مِنْكُمْ مِنْ ذَكَرٍ أَوْ انْثَى"},
+      {n: 113, type: "verb", ar: "رَحِمَ", bn: "দয়া করা / অনুগ্রহ করা", en: "to have mercy", nonpast: "يَرْحَمُ", root: "ر ح م", group: "I", example: "وَأَطِيعُوا اللهَ وَالرَّسُولَ لَعَلَّكُمْ تُرْحَمُوْنَ۔ وَاغْفِرْ لَنَا وَارْحَمْنَا"},
+      {n: 114, type: "verb", ar: "أَصْبَحَ", bn: "হওয়া / সকাল হওয়া / হয়ে যাওয়া", en: "to become", nonpast: "يُصْبِحُ", root: "ص ب ح", group: "IV", example: "فَأَصْبَحْتُمْ بِنِعْمَتِهَ إِخْوَانًا"},
+      {n: 115, type: "verb", ar: "أَصْلَحَ", bn: "সংশোধন করা / মীমাংসা করা / শান্তি স্থাপন করা", en: "to correct / to reform / to make peace", nonpast: "يُصْلِحُ", root: "ص ل ح", group: "IV", example: "إِلَّا الَّذِينَ تَابُوا وَأَصْلَحُوا"},
+      {n: 116, type: "verb", ar: "اغْنى", bn: "উপকারে আসা / অভাবমুক্ত করা", en: "to avail / to enrich", nonpast: "يُغْنِي", root: "غ ن ي", group: "IV", example: "لَنْ تُغْنِيَ عَنْهُمْ أَمْوَالُهُمْ"},
+      {n: 117, type: "verb", ar: "جَاهَدَ", bn: "জিহাদ করা / চেষ্টা করা", en: "to strive", nonpast: "يُجَاهِدُ", root: "ج ه د", group: "III", example: "يُجَاهِدُونَ فِي سَبِيلِ اللَّهِ"},
+      {n: 118, type: "verb", ar: "عطى", bn: "অমান্য করা / অবাধ্য হওয়া", en: "to disobey", nonpast: "يَعْصِي", root: "ع ص ي", group: "I", example: "ذلِكَ بِمَا عَصَوْا وَكَانُوا يَعْتَدُونَ"},
+      {n: 119, type: "verb", ar: "عفا", bn: "ক্ষমা করা / মাফ করা", en: "to forgive / to pardon", nonpast: "يَعْفُو", root: "ع ف و", group: "I", example: "وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنْتَ مَوْلَانَا"},
+      {n: 120, type: "verb", ar: "أَفْلَحَ", bn: "সফল হওয়া", en: "to succeed", nonpast: "يُفْلِحُ", root: "ف ل ح", group: "IV", example: "قَدْ أَفْلَحَ الْمُؤْمِنُونَ"},
+	  {n: 221, type: "noun", ar: "مَسْجِدٌ", bn: "মসিজদ", en: "the masjids", root: "س ج د", group: "—", emoji: "🕌", example: "عِنْدَ الْمَسْجِدِ الْحَرَامِ"},
+      {n: 222, type: "noun", ar: "مَصِير", bn: "গন্তব্যস্থল / প্রত্যাবর্তন স্থল", en: "the final return", root: "ص ي ر", group: "—", emoji: "🛤️", example: "وَإِلَيْكَ الْمَصِيرُ"},
+      {n: 223, type: "noun", ar: "مَغْفِرَةٌ", bn: "ক্ষমা / মাফ", en: "and forgiveness", root: "غ ف ر", group: "—", emoji: "🤝", example: "جَزَاؤُهُمْ مَغْفِرَةٌ"},
+      {n: 224, type: "noun", ar: "باب", bn: "দরজা", en: "gateways", root: "ب و ب", group: "—", emoji: "🚪", example: "وَغَلَقَتِ الْأَبْوَابَ"},
+      {n: 225, type: "noun", ar: "سواء", bn: "সমান / সরল", en: "midst", root: "س و ي", group: "—", emoji: "⚖️", example: "سَوَاءٌ عَلَيْهِمْ"},
+      {n: 226, type: "noun", ar: "قمر", bn: "চাঁদ", en: "the moon", root: "ق م ر", group: "—", emoji: "🌙", example: "رَأَى الْقَمَرَ"},
+      {n: 227, type: "noun", ar: "لوظ", bn: "লুত আঃ", en: "Lut", root: "ل و ط", group: "—", emoji: "👤", example: "إِنَّا أُرْسِلْنَا إِلَى قَوْمِ لُوطٍ"},
+      {n: 228, type: "noun", ar: "مكان", bn: "স্থান / অবস্থান / মর্যাদা", en: "a position", root: "ك و ن", group: "—", emoji: "📌", example: "وَإِذَا بَدَّلْنَا آيَةً مَكَانَ أَيَةٍ"},
+      {n: 229, type: "noun", ar: "يُوسُفُ", bn: "ইউসুফ আঃ", en: "Yusuf", root: "ي و س ف", group: "—", emoji: "👤", example: "قَالَ يُوسُفُ لِآ بِيْهِ"},
+      {n: 230, type: "noun", ar: "اجْمَعُ", bn: "সকলে / একত্রে", en: "all together", root: "ج م ع", group: "—", emoji: "🤝", example: "فَنَجَّيْنَاهُ وَأَهْلَةَ أَجْمَعِينَ"},
+      {n: 231, type: "noun", ar: "امْرَأَةٌ", bn: "স্ত্রী / নারী", en: "And his wife", root: "م ر أ", group: "—", emoji: "👩", example: "قَالَتِ امْرَأَتُ الْعَزِيزِ"},
+      {n: 232, type: "noun", ar: "بَاطِل", bn: "অর্থহীন / অন্যায় / মিথ্যা", en: "the falsehood", root: "ب ط ل", group: "—", emoji: "❌", example: "وَلَا تَلْبِسُوا الْحَقَّ بِالْبَاطِلِ"},
+      {n: 233, type: "noun", ar: "نمود", bn: "সামুদ আঃ", en: "Thamood", root: "ث م د", group: "—", emoji: "🏛️", example: "وَأَتَيْنَا ثَمُودَ النَّاقَةَ"},
+      {n: 234, type: "noun", ar: "جَحِيم", bn: "জাহান্নাম", en: "Hellfire", root: "ج ح م", group: "—", emoji: "🔥", example: "أُولَئِكَ أَصْحَابُ الْجَحِيمِ"},
+      {n: 235, type: "noun", ar: "قَرِيبٌ", bn: "আসন্ন / শীঘ্রই / নিকট", en: "Near / close / soon", root: "ق ر ب", group: "—", emoji: "⏳", example: "إِنَّ نَصْرَ اللَّهِ قَرِيبٌ"},
+      {n: 236, type: "noun", ar: "گید", bn: "কৌশল / ষড়যন্ত্র / চক্রান্ত", en: "a plan", root: "ك ي د", group: "—", emoji: "♟️", example: "إِنَّ كَيْدَ كُنَّ عَظِيمٌ"},
+      {n: 237, type: "noun", ar: "ماذا", bn: "কী", en: "What", root: "م ا ذ ا", group: "—", emoji: "❓", example: "يَسْأَلُوْنَكَ مَاذَا يُنْفِقُوْنَ"},
+      {n: 238, type: "noun", ar: "ال", bn: "সম্প্রদায় / বংশধর / পরিবার অনুসারী", en: "family", root: "أ ل ل", group: "—", emoji: "👨‍👩‍👧‍👦", example: "وَاذْ نَجَّيْنَاكُمْ مِنْ آلِ فِرْعَوْنَ"},
+      {n: 239, type: "noun", ar: "ادم", bn: "আদম আঃ", en: "Adam (A.)", root: "أ د م", group: "—", emoji: "👤", example: "وَقُلْنَا يَا آدَم"},
+      {n: 240, type: "noun", ar: "بأْسٌ", bn: "শাস্তি / শক্তি / যুক্ত / সংগ্রাম", en: "Our torment", root: "ب أ س", group: "—", emoji: "⚡", example: "إِذْ جَاءَهُمْ بَأْسُنَا"}
+
+];
+
+const state = {
+  deckId: "class12",
+  filter:"all",
+  order: [],
+  idx:0,
+  marked: new Set(JSON.parse(localStorage.getItem("arVocabMarked")||"[]")),
+  flipped:false,
+  practiceMode:false,
+  theme: "light",
+  scaleArabic: parseFloat(localStorage.getItem("arVocabScaleArabic") || "1"),
+  scaleText: parseFloat(localStorage.getItem("arVocabScaleText") || "1")
+};
+
+const els = {
+  card: document.getElementById("card"),
+  arabicWord: document.getElementById("arabicWord"),
+  backArabic: document.getElementById("backArabic"),
+  meaningBn: document.getElementById("meaningBn"),
+  meaningEn: document.getElementById("meaningEn"),
+  rootRow: document.getElementById("rootRow"),
+  tipBox: document.getElementById("tipBox"),
+  typePill: document.getElementById("typePill"),
+  starBtn: document.getElementById("starBtn"),
+  progCount: document.getElementById("progCount"),
+  progFill: document.getElementById("progFill"),
+  progPercent: document.getElementById("progPercent"),
+  prevBtn: document.getElementById("prevBtn"),
+  nextBtn: document.getElementById("nextBtn"),
+  flipBtn: document.getElementById("flipBtn"),
+  shuffleBtn: document.getElementById("shuffleBtn"),
+  practiceBtn: document.getElementById("practiceBtn"),
+  themeToggle: document.getElementById("themeToggle"),
+  tabs: document.getElementById("tabs"),
+  tabAll: document.getElementById("tabAll"),
+  tabVerb: document.getElementById("tabVerb"),
+  tabNoun: document.getElementById("tabNoun"),
+  tabMarked: document.getElementById("tabMarked"),
+  deckSelector: document.getElementById("deckSelector"),
+  shuffleBtnTextDefault: document.getElementById("shuffleBtnTextDefault"),
+  shuffleBtnTextDone: document.getElementById("shuffleBtnTextDone"),
+  practiceBtnTextDefault: document.getElementById("practiceBtnTextDefault"),
+  practiceBtnTextActive: document.getElementById("practiceBtnTextActive"),
+  headerEyebrow: document.querySelector('.brand .eyebrow'),
+  footerEl: document.querySelector('footer'),
+  arabicDecBtn: document.getElementById("arabicDecBtn"),
+  arabicIncBtn: document.getElementById("arabicIncBtn"),
+  textDecBtn: document.getElementById("textDecBtn"),
+  textIncBtn: document.getElementById("textIncBtn"),
+  voiceToggleBtn: document.getElementById("voiceToggleBtn"),
+  voicePanel: document.getElementById("voicePanel"),
+  rateSlider: document.getElementById("rateSlider"),
+  rateVal: document.getElementById("rateVal"),
+  speakFrontBtn: document.getElementById("speakFrontBtn"),
+  speakBackBtn: document.getElementById("speakBackBtn"),
+};
+
+const banglaDigits = ["০","১","২","৩","৪","৫","৬","৭","৮","৯"];
+function toBn(num){
+  return String(num).split("").map(c=> /[0-9]/.test(c) ? banglaDigits[+c] : c).join("");
+}
+
+function currentDeck(){
+  return DECKS.find(d=>d.id===state.deckId) || DECKS[0];
+}
+
+function byNum(n){ return currentDeck().data.find(d=>d.n===n); }
+
+function countVerbs(deck){ return deck.data.filter(d=>d.type==="verb").length; }
+function countNouns(deck){ return deck.data.filter(d=>d.type==="noun").length; }
+
+function currentList(){
+  const deck = currentDeck();
+  let list = deck.data.slice();
+  if(state.filter==="verb") list = list.filter(d=>d.type==="verb");
+  else if(state.filter==="noun") list = list.filter(d=>d.type==="noun");
+  else if(state.filter==="marked") list = list.filter(d=>state.marked.has(d.n));
+  return list;
+}
+
+function rebuildOrder(preserveShuffle){
+  const list = currentList();
+  if(preserveShuffle && state.order.length){
+    const nums = new Set(list.map(d=>d.n));
+    state.order = state.order.filter(n=>nums.has(n));
+    list.forEach(d=>{ if(!state.order.includes(d.n)) state.order.push(d.n); });
+  } else {
+    state.order = list.map(d=>d.n);
+  }
+  state.idx = 0;
+}
+
+function shuffleOrder(){
+  const arr = state.order.slice();
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  state.order = arr;
+  state.idx = 0;
+}
+
+function saveMarked(){
+  localStorage.setItem("arVocabMarked", JSON.stringify([...state.marked]));
+}
+
+function updateFontScales(){
+  document.documentElement.style.setProperty('--scale-arabic', state.scaleArabic);
+  document.documentElement.style.setProperty('--scale-text', state.scaleText);
+  localStorage.setItem("arVocabScaleArabic", state.scaleArabic);
+  localStorage.setItem("arVocabScaleText", state.scaleText);
+}
+
+function buildDeckSelector(){
+  els.deckSelector.innerHTML = "";
+  DECKS.forEach(deck => {
+    const btn = document.createElement("button");
+    btn.className = "deck-btn" + (deck.id === state.deckId ? " active" : "");
+    btn.dataset.deckId = deck.id;
+    btn.textContent = deck.label;
+    els.deckSelector.appendChild(btn);
+  });
+}
+
+function updateTabLabels(){
+  const deck = currentDeck();
+  const total = deck.data.length;
+  const vCount = countVerbs(deck);
+  const nCount = countNouns(deck);
+  els.tabAll.textContent = "সব শব্দ (" + toBn(total) + ")";
+  els.tabVerb.textContent = "ক্রিয়া (" + toBn(vCount) + ")";
+  els.tabNoun.textContent = "অ-ক্রিয়া (" + toBn(nCount) + ")";
+  els.tabMarked.textContent = "⭐ চিহ্নিত";
+}
+
+function render(){
+  const deck = currentDeck();
+
+  els.headerEyebrow.textContent = deck.eyebrow;
+  els.footerEl.textContent = deck.footerText;
+
+  const list = currentList();
+  if(list.length===0){
+    els.card.style.display="none";
+    document.querySelector(".controls").style.display="none";
+    document.querySelector(".progress-row").style.display="none";
+    if(!document.getElementById("emptyState")){
+      const div = document.createElement("div");
+      div.id="emptyState";
+      div.className="empty-state";
+      div.innerHTML = `<div class="big">⭐</div><div>এখনো কোনো শব্দ চিহ্নিত করা হয়নি।<br>শব্দের কার্ডে বাম পাশের তারকা চিহ্নে ট্যাপ করে চিহ্নিত করুন।</div>`;
+      document.querySelector(".stage").after(div);
+    }
+    return;
+  }
+  const es = document.getElementById("emptyState");
+  if(es) es.remove();
+  els.card.style.display="";
+  document.querySelector(".controls").style.display="";
+  document.querySelector(".progress-row").style.display="";
+
+  if(state.idx >= state.order.length) state.idx = 0;
+  const n = state.order[state.idx];
+  const d = byNum(n);
+
+  els.arabicWord.textContent = d.ar;
+  els.backArabic.textContent = d.ar;
+  els.meaningBn.textContent = d.bn;
+  els.meaningEn.textContent = d.en;
+  els.typePill.textContent = d.type==="verb" ? "ক্রিয়া" : "অ-ক্রিয়া";
+  els.tipBox.innerHTML = d.tip;
+
+  let rootChips = "";
+  if(d.root && d.root!=="—") rootChips += `<span class="chip">মূল: ${d.root}</span>`;
+  if(d.form && d.form!=="—") rootChips += `<span class="chip">${d.type==='verb' ? 'বাব: '+d.form : d.form}</span>`;
+  els.rootRow.innerHTML = rootChips;
+
+  els.starBtn.textContent = "⭐";
+  els.starBtn.classList.toggle("marked", state.marked.has(d.n));
+
+  els.progCount.textContent = toBn(state.idx+1) + " / " + toBn(state.order.length);
+  const pct = Math.round(((state.idx+1)/state.order.length)*100);
+  els.progFill.style.width = pct+"%";
+  els.progPercent.textContent = toBn(pct)+"%";
+
+  if(state.flipped){
+    els.card.classList.add("flipped");
+  } else {
+    els.card.classList.remove("flipped");
+  }
+}
+
+function flip(){
+  state.flipped = !state.flipped;
+  els.card.classList.toggle("flipped", state.flipped);
+}
+
+function goNext(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx+1) % state.order.length;
+  render();
+}
+function goPrev(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx-1+state.order.length) % state.order.length;
+  render();
+}
+
+els.card.addEventListener("click",(e)=>{
+  if(e.target===els.starBtn) return;
+  if(didSwipe){ didSwipe = false; return; }
+  flip();
+});
+els.flipBtn.addEventListener("click",flip);
+els.nextBtn.addEventListener("click",goNext);
+els.prevBtn.addEventListener("click",goPrev);
+
+els.starBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  const n = state.order[state.idx];
+  if(state.marked.has(n)) state.marked.delete(n);
+  else state.marked.add(n);
+  saveMarked();
+  render();
+});
+
+els.shuffleBtn.addEventListener("click",()=>{
+  shuffleOrder();
+  state.flipped=false;
+  render();
+  els.shuffleBtnTextDefault.style.display = "none";
+  els.shuffleBtnTextDone.style.display = "";
+  setTimeout(()=>{
+    els.shuffleBtnTextDefault.style.display = "";
+    els.shuffleBtnTextDone.style.display = "none";
+  }, 900);
+});
+
+els.practiceBtn.addEventListener("click",()=>{
+  state.practiceMode = !state.practiceMode;
+  if(state.practiceMode){
+    state.filter="marked";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="marked"]').classList.add("active");
+    rebuildOrder(false);
+    shuffleOrder();
+    els.practiceBtn.classList.add("active");
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtn.classList.remove("active");
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+    state.filter="all";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="all"]').classList.add("active");
+    rebuildOrder(false);
+  }
+  state.flipped=false;
+  render();
+});
+
+els.tabs.addEventListener("click",(e)=>{
+  const tab = e.target.closest(".tab");
+  if(!tab) return;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  tab.classList.add("active");
+  state.filter = tab.dataset.filter;
+  state.practiceMode = (state.filter==="marked");
+  els.practiceBtn.classList.toggle("active", state.practiceMode);
+  if(state.practiceMode){
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+  }
+  rebuildOrder(false);
+  state.flipped=false;
+  render();
+});
+
+els.deckSelector.addEventListener("click",(e)=>{
+  const btn = e.target.closest(".deck-btn");
+  if(!btn) return;
+  const newDeckId = btn.dataset.deckId;
+  if(newDeckId === state.deckId) return;
+  state.deckId = newDeckId;
+  state.filter = "all";
+  state.practiceMode = false;
+  state.flipped = false;
+  els.practiceBtn.classList.remove("active");
+  els.practiceBtnTextDefault.style.display = "";
+  els.practiceBtnTextActive.style.display = "none";
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.querySelector('.tab[data-filter="all"]').classList.add("active");
+  document.querySelectorAll(".deck-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+});
+
+els.themeToggle.addEventListener("click",()=>{
+  state.theme = state.theme==="light" ? "dark" : "light";
+  document.body.setAttribute("data-theme", state.theme);
+  els.themeToggle.textContent = state.theme==="light" ? "🌙" : "☀️";
+  localStorage.setItem("arVocabTheme", state.theme);
+});
+
+els.arabicIncBtn.addEventListener("click", () => {
+  if(state.scaleArabic < 1.5) {
+    state.scaleArabic = parseFloat((state.scaleArabic + 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.arabicDecBtn.addEventListener("click", () => {
+  if(state.scaleArabic > 0.7) {
+    state.scaleArabic = parseFloat((state.scaleArabic - 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.textIncBtn.addEventListener("click", () => {
+  if(state.scaleText < 1.4) {
+    state.scaleText = parseFloat((state.scaleText + 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.textDecBtn.addEventListener("click", () => {
+  if(state.scaleText > 0.8) {
+    state.scaleText = parseFloat((state.scaleText - 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+
+let touchStartX = null, touchStartY = null, didSwipe = false;
+els.card.addEventListener("touchstart",(e)=>{
+  touchStartX = e.touches[0].clientX;
+  touchStartY = e.touches[0].clientY;
+  didSwipe = false;
+},{passive:true});
+els.card.addEventListener("touchend",(e)=>{
+  if(touchStartX===null) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  const dy = e.changedTouches[0].clientY - touchStartY;
+  // Only treat it as a swipe if the motion is mostly horizontal, so vertical
+  // scroll/tap gestures never accidentally trigger next/previous.
+  if(Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)){
+    didSwipe = true;
+    if(dx < 0) goNext(); else goPrev();
+  }
+  touchStartX = null;
+  touchStartY = null;
+},{passive:true});
+
+/* ===================== Pronunciation (auto, no manual voice picker) ===================== */
+/*
+  Primary: if the device/browser already has an Arabic voice installed,
+  use it directly (works fully offline, zero network delay).
+  Fallback: if no local Arabic voice is found, automatically stream
+  pronunciation from an online TTS service instead (needs internet).
+  Neither path is a real qari's tajweed-accurate recitation; both are
+  automated pronunciation aids only (disclosed in the settings panel note).
+*/
+const ttsSupported = ("speechSynthesis" in window);
+const MALE_HINTS = ["male","naayf","hamed","majed","tarik","karim","abdullah","yousef","fahd","khalid","rashid","omar"];
+const FEMALE_HINTS = ["female","hoda","salma","laila","zariyah","amira","fatima","noura","tasnim"];
+
+let cachedVoices = [];
+function refreshVoices(){
+  if(ttsSupported) cachedVoices = speechSynthesis.getVoices();
+}
+if(ttsSupported){
+  refreshVoices();
+  speechSynthesis.onvoiceschanged = refreshVoices;
+}
+
+function guessIsMale(voice){
+  const n = voice.name.toLowerCase();
+  if(MALE_HINTS.some(h=>n.includes(h))) return true;
+  if(FEMALE_HINTS.some(h=>n.includes(h))) return false;
+  return null;
+}
+
+function pickLocalArabicVoice(){
+  if(!ttsSupported) return null;
+  const all = cachedVoices.filter(v=>v.lang && v.lang.toLowerCase().startsWith("ar"));
+  if(all.length===0) return null;
+  return all.find(v=>guessIsMale(v)===true) || all[0];
+}
+
+function setSpeaking(on){
+  [els.speakFrontBtn, els.speakBackBtn].forEach(b=>b.classList.toggle("speaking", on));
+}
+
+function speakLocally(text, voice){
+  if(!voice) voice = pickLocalArabicVoice();
+  if(!voice) return false;
+  speechSynthesis.cancel();
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.voice = voice;
+  utter.lang = voice.lang || "ar-SA";
+  utter.rate = parseFloat(els.rateSlider.value) || 0.8;
+  utter.onend = utter.onerror = ()=> setSpeaking(false);
+  speechSynthesis.speak(utter);
+  return true;
+}
+
+let currentAudio = null;
+function speakOnline(text){
+  if(currentAudio){ currentAudio.pause(); currentAudio = null; }
+
+  const url = "https://translate.google.com/translate_tts?ie=UTF-8&tl=ar&client=tw-ob&q=" + encodeURIComponent(text);
+  const audio = new Audio(url);
+  currentAudio = audio;
+  audio.playbackRate = parseFloat(els.rateSlider.value) || 0.8;
+
+  let settled = false;
+  const fail = ()=>{
+    if(settled) return;
+    settled = true;
+    setSpeaking(false);
+    alert("এই মুহূর্তে ইন্টারনেট সংযোগ নেই এবং ডিভাইসেও কোনো আরবি উচ্চারণ কণ্ঠস্বর ইনস্টল করা নেই, তাই উচ্চারণ শোনানো সম্ভব হচ্ছে না।");
+  };
+
+  audio.addEventListener("ended", ()=>{ settled = true; setSpeaking(false); });
+  audio.addEventListener("error", fail);
+
+  audio.play().then(()=>{ settled = true; }).catch(fail);
+
+  // Safety timeout in case the request hangs silently (e.g. blocked network)
+  setTimeout(()=>{ if(!settled) fail(); }, 3500);
+}
+
+function speakArabic(text){
+  setSpeaking(true);
+  const localVoice = pickLocalArabicVoice();
+  if(localVoice){
+    speakLocally(text, localVoice);
+  } else {
+    speakOnline(text);
+  }
+}
+
+function speakCurrentWord(){
+  if(state.order.length===0) return;
+  const d = byNum(state.order[state.idx]);
+  if(d) speakArabic(d.ar);
+}
+
+els.voiceToggleBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  els.voicePanel.classList.toggle("open");
+});
+document.addEventListener("click",(e)=>{
+  if(!els.voicePanel.contains(e.target) && e.target!==els.voiceToggleBtn){
+    els.voicePanel.classList.remove("open");
+  }
+});
+els.rateSlider.addEventListener("input",()=>{
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+});
+els.speakFrontBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  speakCurrentWord();
+});
+els.speakBackBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  speakCurrentWord();
+});
+
+(function init(){
+  const savedTheme = localStorage.getItem("arVocabTheme");
+  if(savedTheme){
+    state.theme = savedTheme;
+    document.body.setAttribute("data-theme", savedTheme);
+    els.themeToggle.textContent = savedTheme==="light" ? "🌙" : "☀️";
+  }
+  updateFontScales();
+  buildDeckSelector();
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+})();
+</script>
+ </body>
+</html>
