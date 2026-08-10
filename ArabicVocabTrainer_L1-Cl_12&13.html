@@ -1153,6 +1153,7 @@ els.card.addEventListener("touchend",(e)=>{
 /* ===================== Reliable Speech Audio Engine ===================== */
 let synth = window.speechSynthesis;
 let voiceList = [];
+let speakingTimeout = null;
 
 function loadVoices() {
   if ('speechSynthesis' in window) {
@@ -1168,10 +1169,8 @@ function findArabicVoice(){
   return voiceList.find(v => v.lang && (v.lang.startsWith('ar') || v.lang.includes('Arabic')));
 }
 function hasArabicVoice(){
-  return !!findArabicVoice();
+  return !!findArabicVoice() || ('speechSynthesis' in window);
 }
-
-let speakingTimeout = null;
 
 function setSpeaking(on){
   if (speakingTimeout) {
@@ -1182,7 +1181,7 @@ function setSpeaking(on){
     if(b) b.classList.toggle("speaking", on);
   });
   if (on) {
-    // Safety timer in case the browser drops the onend/onerror event
+    // Safety timer in case browser drops the onend event
     speakingTimeout = setTimeout(() => setSpeaking(false), 4500);
   }
 }
@@ -1204,8 +1203,8 @@ function speakArabic(text){
   const rate = parseFloat(els.rateSlider.value) || 0.8;
   const arVoice = findArabicVoice();
 
-  // 1. Prefer an Arabic voice already installed on this device (works fully offline)
-  if ('speechSynthesis' in window && arVoice) {
+  // 1. Prefer Web Speech API (attempts native playback even if voice array is temporarily unpopulated)
+  if ('speechSynthesis' in window) {
     try {
       if (synth.paused) synth.resume();
       synth.cancel();
@@ -1213,25 +1212,28 @@ function speakArabic(text){
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = rate;
       utterance.lang = 'ar-SA';
-      utterance.voice = arVoice;
-      utterance.onend = () => setSpeaking(false);
-      utterance.onerror = () => tryOnlineTTS(text, rate);
+      if (arVoice) utterance.voice = arVoice;
+
+      let handled = false;
+      utterance.onend = () => { handled = true; setSpeaking(false); };
+      utterance.onerror = (e) => {
+        if (!handled) {
+          handled = true;
+          tryOnlineTTS(text, rate);
+        }
+      };
+
       synth.speak(utterance);
+      return;
     } catch (e) {
       console.warn("SpeechSynthesis error, switching to online TTS fallback", e);
-      tryOnlineTTS(text, rate);
     }
-  } else {
-    // No local Arabic voice found — fall back to an online voice service.
-    // (We deliberately don't use the browser's default non-Arabic voice here —
-    // it would "succeed" silently while mispronouncing the word.)
-    tryOnlineTTS(text, rate);
   }
+
+  // 2. Fall back to online TTS endpoints
+  tryOnlineTTS(text, rate);
 }
 
-// 2. Try a short chain of online TTS endpoints, one after another.
-//    If every one of them also fails (e.g. the network/voice server is
-//    blocked), hand off to handlePlaybackFailure().
 function tryOnlineTTS(text, rate) {
   const clean = stripTashkeel(text);
   const sources = [
@@ -1258,10 +1260,6 @@ function playAudioSequence(sources, index, rate){
   audio.play().catch(() => playAudioSequence(sources, index + 1, rate));
 }
 
-// 3. Every playback route failed. If it's specifically because this
-//    device/browser has no Arabic voice installed AND the online voice
-//    server couldn't be reached, show the install-instructions modal.
-//    Otherwise it's a one-off/network hiccup — just log it quietly.
 function handlePlaybackFailure(){
   if (!hasArabicVoice()) {
     showVoiceHelpModal();
@@ -1276,8 +1274,6 @@ function speakCurrentWord(){
   if(d) speakArabic(d.ar);
 }
 
-/* ===================== Current Browser Detection ===================== */
-// Used only to avoid recommending the browser the user is already on.
 function detectBrowserName(){
   const ua = navigator.userAgent || "";
   if (/Edg\//.test(ua)) return "Edge";
@@ -1289,14 +1285,13 @@ function detectBrowserName(){
   return null;
 }
 
-/* ===================== Voice Help Modal ===================== */
 function showVoiceHelpModal(){
   const current = detectBrowserName();
   const suggestions = ["Chrome", "Firefox", "Edge"].filter(b => b !== current);
 
   els.vhTitleText.textContent = "উচ্চারণ শোনা যাচ্ছে না";
-  els.vhMsg.textContent = "দুঃখিত, এই মুহূর্তে উচ্চারণটি প্লে করা যাচ্ছে না — অনলাইন ভয়েস সার্ভারে সংযোগ করা যায়নি এবং আপনার এই ব্রাউজারে কোনো আরবি ভয়েসও ইনস্টল করা নেই। এই অসুবিধার জন্য আন্তরিকভাবে দুঃখিত।";
-  els.vhNote.textContent = `একটু চেষ্টা করে দেখুন: এই পেজটি ${suggestions.join(", ")}, অথবা অন্য কোনো ব্রাউজারে খুলে দেখুন — এর মধ্যে হয়তো কোনো একটি ব্রাউজারে উচ্চারণ (ভয়েস) প্লে করা সম্ভব হতে পারে। পাশাপাশি আপনার ইন্টারনেট সংযোগটিও একবার পরীক্ষা করে নিন।`;
+  els.vhMsg.textContent = "দুঃখিত, এই মুহূর্তে উচ্চারণটি প্লে করা যাচ্ছে না — অনলাইন ভয়েস সার্ভারে সংযোগ করা যায়নি এবং আপনার এই ব্রাউজারে কোনো আরবি ভয়েসও ইনস্টল করা নেই। অসুবিধার জন্য আন্তরিকভাবে দুঃখিত।";
+  els.vhNote.textContent = `একটু চেষ্টা করে দেখুন: এই পেজটি ${suggestions.join(" বা ")}-এর মতো অন্য কোনো ব্রাউজারে খুলুন — এই ব্রাউজারগুলো সাধারণত ইন্টারনেট থেকে সরাসরি Google-এর আরবি উচ্চারণ (TTS) এনে চালাতে পারে। এছাড়া আপনার ইন্টারনেট সংযোগ ঠিক আছে কিনা তা-ও একবার দেখে নিন।`;
 
   els.voiceHelpOverlay.classList.add("open");
 }
@@ -1336,7 +1331,6 @@ els.speakBackBtn.addEventListener("click",(e)=>{
   speakCurrentWord();
 });
 
-// Try locking screen orientation to portrait where supported
 if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
   window.screen.orientation.lock('portrait').catch(() => {});
 }
