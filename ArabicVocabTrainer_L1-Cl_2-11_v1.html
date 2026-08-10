@@ -51,8 +51,9 @@ html,body{
   margin:0;
   padding:0;
   width:100%;
-  height:100vh;
-  height:100svh;
+  height:100%;
+  min-height:100vh;
+  min-height:100dvh;
   overflow:hidden;
 }
 body{
@@ -64,6 +65,9 @@ body{
   align-items:center;
   justify-content:center;
   transition: background 0.3s ease;
+  height:100vh;
+  height:100dvh;
+  overflow:hidden;
 }
 body::before{
   content:"";
@@ -80,30 +84,31 @@ body::before{
   width:100%;
   max-width:520px;
   height:100vh;
-  height:100svh;
+  height:100dvh;
   max-height:100vh;
-  max-height:100svh;
+  max-height:100dvh;
   margin:0 auto;
-  padding: 6px 12px calc(6px + env(safe-area-inset-bottom)) 12px;
+  padding: 4px 10px 6px 10px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  overflow:hidden;
 }
 
 header{
   display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
-  padding:4px 0 2px;
+  padding:2px 0 2px;
   flex:none;
   position:relative;
   width: 100%;
 }
 .brand{display:flex; flex-direction:column; align-items:center; gap:1px; width:100%;}
 .brand .eyebrow{
-  font-size: calc(10px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  font-size: calc(9px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
   color:var(--accent); font-weight:700;
 }
 .brand h1{
-  margin:0; font-size: calc(18px * var(--scale-text)); font-weight:700; color:var(--text);
+  margin:0; font-size: calc(16px * var(--scale-text)); font-weight:700; color:var(--text);
   font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
 }
 
@@ -117,24 +122,24 @@ header{
 }
 
 .deck-selector-row{
-  display:flex; justify-content:center; width:100%; margin:6px 0 4px 0; flex:none;
+  display:flex; justify-content:center; width:100%; margin:4px 0 3px 0; flex:none;
 }
 .deck-selector{
   display:flex; 
   flex-wrap: wrap; 
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
   background:var(--tab-bg); 
   border-radius:16px; 
-  padding:4px; 
+  padding:3px; 
   border:1px solid var(--line);
   width: 100%;
   max-width: 100%;
 }
 .deck-btn{
-  padding:4px 12px;
+  padding:3px 10px;
   border-radius:999px;
-  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  font-size: calc(10px * var(--scale-text)); font-weight:700;
   background:transparent;
   color:var(--text-soft);
   border:none;
@@ -153,11 +158,11 @@ header{
 }
 
 .theme-toggle{
-  width:36px; height:36px; border-radius:50%;
+  width:32px; height:32px; border-radius:50%;
   border:1px solid var(--line);
   background:var(--panel);
   display:flex; align-items:center; justify-content:center;
-  font-size:16px; cursor:pointer; flex:none;
+  font-size:14px; cursor:pointer; flex:none;
   box-shadow:var(--shadow);
   position: absolute;
   right: 0;
@@ -166,36 +171,36 @@ header{
 .theme-toggle:active{transform:scale(0.9);}
 
 .font-resizer{
-  display:flex; align-items:center; justify-content:center; gap:8px;
+  display:flex; align-items:center; justify-content:center; gap:6px;
   background:var(--tab-bg); border:1px solid var(--line); border-radius:999px;
-  padding:2px 8px; margin-bottom:4px; flex:none;
+  padding:1px 8px; margin-bottom:2px; flex:none;
 }
 .font-resizer-group{
-  display:flex; align-items:center; gap:4px;
+  display:flex; align-items:center; gap:3px;
 }
 .font-resizer-label{
-  font-size: calc(11px * var(--scale-text)); font-weight:700; color:var(--text-soft); white-space:nowrap;
+  font-size: calc(9px * var(--scale-text)); font-weight:700; color:var(--text-soft); white-space:nowrap;
   font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
 }
 .font-ctrl-btn{
-  width:24px; height:24px; border-radius:50%; border:1px solid var(--line);
-  background:var(--panel); color:var(--text); font-size:12px; font-weight:700;
+  width:20px; height:20px; border-radius:50%; border:1px solid var(--line);
+  background:var(--panel); color:var(--text); font-size:10px; font-weight:700;
   display:flex; align-items:center; justify-content:center; cursor:pointer;
   box-shadow:var(--shadow); transition:transform .1s ease;
 }
 .font-ctrl-btn:active{transform:scale(0.85);}
 
 .tabs{
-  display:flex; gap:6px; overflow-x:auto; padding-bottom:1px; margin-bottom:4px;
+  display:flex; gap:4px; overflow-x:auto; padding-bottom:1px; margin-bottom:3px;
   scrollbar-width:none;
   flex:none;
 }
 .tabs::-webkit-scrollbar{display:none;}
 .tab{
   flex:none;
-  padding:5px 12px;
+  padding:4px 10px;
   border-radius:999px;
-  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  font-size: calc(10px * var(--scale-text)); font-weight:700;
   background:var(--tab-bg);
   color:var(--text-soft);
   border:1px solid transparent;
@@ -217,11 +222,11 @@ header{
 
 .progress-row{
   display:flex; align-items:center; justify-content:space-between;
-  font-size: calc(13px * var(--scale-text)); font-weight:600; color:var(--text-soft); margin-bottom:4px; padding:0 2px;
+  font-size: calc(11px * var(--scale-text)); font-weight:600; color:var(--text-soft); margin-bottom:3px; padding:0 2px;
   flex:none;
 }
 .progress-track{
-  flex:1; height:5px; margin:0 8px; border-radius:3px;
+  flex:1; height:4px; margin:0 6px; border-radius:3px;
   background:var(--tab-bg); overflow:hidden;
 }
 .progress-fill{
@@ -235,10 +240,11 @@ header{
   display:flex;
   justify-content:center;
   align-items:stretch;
-  flex:1;
+  flex:1 1 auto;
   min-height:0;
   width:100%;
   position:relative;
+  padding:2px 0;
 }
 .card{
   position:relative;
@@ -255,9 +261,9 @@ header{
   position:absolute;
   left:6%; right:6%;
   bottom:-2%;
-  height:14%;
+  height:12%;
   z-index:1;
-  background:radial-gradient(ellipse at center, rgba(11,59,54,0.32) 0%, rgba(11,59,54,0.14) 45%, rgba(11,59,54,0) 75%);
+  background:radial-gradient(ellipse at center, rgba(11,59,54,0.28) 0%, rgba(11,59,54,0.12) 45%, rgba(11,59,54,0) 75%);
   filter:blur(4px);
   border-radius:50%;
   transform:scaleX(1);
@@ -271,7 +277,7 @@ header{
 
 .face{
   position:absolute; inset:0;
-  border-radius:16px;
+  border-radius:14px;
   backface-visibility:hidden;
   display:flex; flex-direction:column;
   background:var(--card-bg);
@@ -289,18 +295,18 @@ header{
 
 .front{
   align-items:center; justify-content:center;
-  padding:12px;
-  gap:6px;
+  padding:10px;
+  gap:4px;
 }
 .front .type-pill{
-  position:absolute; top:10px; left:50%; transform:translateX(-50%);
-  font-size: calc(11px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
+  position:absolute; top:8px; left:50%; transform:translateX(-50%);
+  font-size: calc(9px * var(--scale-text)); letter-spacing:.1em; text-transform:uppercase;
   color:var(--text-soft); font-weight:700;
-  background:var(--tab-bg); padding:2px 10px; border-radius:999px;
+  background:var(--tab-bg); padding:1px 10px; border-radius:999px;
 }
 .front .star{
-  position:absolute; top:6px; right:6px;
-  font-size:40px; line-height:1; cursor:pointer; z-index:5;
+  position:absolute; top:4px; right:6px;
+  font-size:34px; line-height:1; cursor:pointer; z-index:5;
   font-style:normal;
   filter:grayscale(1); opacity:.45;
   transition:all .15s ease;
@@ -309,7 +315,7 @@ header{
 .front .star.marked{filter:none; opacity:1;}
 .arabic-word{
   font-family:'Amiri','Noto Naskh Arabic',serif;
-  font-size: calc(clamp(32px, 8vw, 48px) * var(--scale-arabic));
+  font-size: calc(clamp(28px, 7vw, 42px) * var(--scale-arabic));
   color:var(--text);
   direction:rtl;
   line-height:1.2;
@@ -317,71 +323,71 @@ header{
 }
 .front .speak-btn{
   position:static;
-  font-size:17px;
-  margin:2px auto 0;
-  padding:4px;
+  font-size:15px;
+  margin:1px auto 0;
+  padding:3px;
 }
 .front .hint{
-  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); text-align:center;
+  font-size: calc(11px * var(--scale-text)); color:var(--text-soft); text-align:center;
 }
 
 .back{
-  padding:12px 14px 10px;
+  padding:10px 12px 8px;
   overflow-y:auto;
   justify-content: center;
 }
 .back-inner{
-  display:flex; flex-direction:column; align-items:center; gap:4px; text-align:center;
-  margin-top:2px;
+  display:flex; flex-direction:column; align-items:center; gap:3px; text-align:center;
+  margin-top:1px;
 }
 .back .arabic-word{
-  font-size: calc(clamp(22px, 6vw, 30px) * var(--scale-arabic));
+  font-size: calc(clamp(20px, 5vw, 28px) * var(--scale-arabic));
   margin-bottom:0px;
 }
 .meaning-bn{
-  font-size: calc(20px * var(--scale-text)); font-weight:700; color:var(--accent);
+  font-size: calc(18px * var(--scale-text)); font-weight:700; color:var(--accent);
 }
 .meaning-en{
-  font-size: calc(13px * var(--scale-text)); color:var(--text-soft); font-style:italic;
+  font-size: calc(12px * var(--scale-text)); color:var(--text-soft); font-style:italic;
 }
 .root-row{
-  display:flex; gap:4px; flex-wrap:wrap; justify-content:center; margin-top:1px;
+  display:flex; gap:3px; flex-wrap:wrap; justify-content:center; margin-top:1px;
 }
 .chip{
-  font-size: calc(11px * var(--scale-text)); padding:2px 8px; border-radius:999px;
+  font-size: calc(10px * var(--scale-text)); padding:1px 8px; border-radius:999px;
   background:var(--tab-bg); color:var(--text-soft); font-weight:700;
 }
 .tip-box{
   margin-top:2px;
   background:var(--tab-bg);
   border-radius:8px;
-  padding:6px 10px;
-  font-size: calc(12px * var(--scale-text));
+  padding:5px 8px;
+  font-size: calc(11px * var(--scale-text));
   line-height:1.3;
   color:var(--text);
   text-align:left;
   border-left:3px solid var(--accent);
-  max-height: 110px;
+  max-height: 90px;
   overflow-y: auto;
 }
 .tip-box b{color:var(--accent);}
 
 .controls{
-  display:flex; align-items:center; justify-content:center; gap:22px;
-  margin-top:10px;
-  margin-bottom:4px;
+  display:flex; align-items:center; justify-content:center; gap:18px;
+  margin-top:6px;
+  margin-bottom:2px;
   flex:none;
   width:100%;
 }
 .ctrl-btn{
   flex:none;
-  width:48px;
-  height:48px;
+  width:44px;
+  height:44px;
   border-radius:0;
   border:none;
   background:transparent;
   display:flex; align-items:center; justify-content:center;
-  font-size:24px; cursor:pointer; color:#0b3b36;
+  font-size:22px; cursor:pointer; color:#0b3b36;
   box-shadow:none;
   filter:
     drop-shadow(0 1px 0 rgba(255,255,255,0.65))
@@ -396,7 +402,7 @@ header{
 }
 .ctrl-btn.primary{
   color:#c9962c;
-  font-size:34px;
+  font-size:32px;
   filter:
     drop-shadow(0 1px 0 rgba(255,255,255,0.5))
     drop-shadow(0 4px 6px rgba(11,59,54,0.45));
@@ -408,12 +414,12 @@ header{
 }
 
 .ctrl-btn.nav-btn{
-  width:46px;
-  height:46px;
+  width:42px;
+  height:42px;
   border-radius:50%;
   background:#fffdf8;
   border:1px solid rgba(11,59,54,0.18);
-  font-size:17px;
+  font-size:16px;
   color:#0b3b36;
   box-shadow:
     0 1px 0 rgba(255,255,255,0.6) inset,
@@ -431,19 +437,19 @@ header{
 }
 
 .bottom-actions{
-  display:flex; gap:6px;
+  display:flex; gap:5px;
   flex:none;
-  margin-bottom:4px;
+  margin-bottom:2px;
 }
 .action-btn{
   flex:1;
-  padding:8px 6px;
+  padding:6px 5px;
   border-radius:10px;
   border:1px solid var(--line);
   background:var(--panel);
   color:var(--text);
-  font-size: calc(13px * var(--scale-text)); font-weight:700;
-  display:flex; align-items:center; justify-content:center; gap:4px;
+  font-size: calc(11px * var(--scale-text)); font-weight:700;
+  display:flex; align-items:center; justify-content:center; gap:3px;
   cursor:pointer;
   font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
 }
@@ -460,20 +466,19 @@ header{
 .empty-state .big{font-size:28px; margin-bottom:4px;}
 
 footer{
-  text-align:center; font-size: calc(11px * var(--scale-text)); color:var(--text-soft);
+  text-align:center; font-size: calc(9px * var(--scale-text)); color:var(--text-soft);
   flex:none;
-  padding-bottom: 2px;
+  padding-bottom: 1px;
 }
 
-/* ===== Pronunciation / Audio ===== */
 .audio-toggle{
-  height:32px;
-  padding:0 10px;
-  border-radius:16px;
+  height:28px;
+  padding:0 8px;
+  border-radius:14px;
   border:1px solid var(--line);
   background:var(--panel);
-  display:flex; align-items:center; justify-content:center; gap:5px;
-  font-size:13px; font-weight:700; cursor:pointer; flex:none;
+  display:flex; align-items:center; justify-content:center; gap:4px;
+  font-size:11px; font-weight:700; cursor:pointer; flex:none;
   color:var(--text);
   box-shadow:var(--shadow);
   position: absolute;
@@ -481,51 +486,51 @@ footer{
   top: 2px;
   font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
 }
-.audio-toggle .mic-icon{ font-size:15px; }
+.audio-toggle .mic-icon{ font-size:13px; }
 .audio-toggle:active{transform:scale(0.94);}
 .audio-toggle.speaking{ color:var(--accent); border-color:var(--accent); }
 
 .voice-panel{
-  position:absolute; z-index:20; top:40px; left:0;
-  width:230px;
+  position:absolute; z-index:20; top:34px; left:0;
+  width:220px;
   background:var(--panel);
   border:1px solid var(--line);
   border-radius:12px;
   box-shadow:var(--shadow);
-  padding:10px 12px 12px;
+  padding:8px 10px 10px;
   text-align:left;
   display:none;
 }
 .voice-panel.open{ display:block; }
 .voice-panel label{
-  display:block; font-size:11px; font-weight:700; color:var(--text-soft);
-  margin-bottom:3px; margin-top:8px;
+  display:block; font-size:10px; font-weight:700; color:var(--text-soft);
+  margin-bottom:2px; margin-top:6px;
 }
 .voice-panel label:first-child{ margin-top:0; }
 .voice-panel select{
-  width:100%; font-size:12px; padding:5px 6px; border-radius:8px;
+  width:100%; font-size:11px; padding:4px 5px; border-radius:8px;
   border:1px solid var(--line); background:var(--bg); color:var(--text);
   font-family:'Baloo Da 2','Hind Siliguri','Noto Sans Bengali',sans-serif;
 }
 .voice-panel input[type="range"]{ width:100%; }
-.voice-panel .rate-val{ font-size:11px; color:var(--text-soft); }
+.voice-panel .rate-val{ font-size:10px; color:var(--text-soft); }
 .voice-panel .note{
-  font-size:10.5px; line-height:1.35; color:var(--text-soft);
-  margin-top:9px; padding-top:7px; border-top:1px solid var(--line);
+  font-size:9.5px; line-height:1.3; color:var(--text-soft);
+  margin-top:6px; padding-top:5px; border-top:1px solid var(--line);
 }
 
 .speak-btn{
-  position:absolute; top:8px; right:8px;
+  position:absolute; top:6px; right:6px;
   border:none; background:transparent; box-shadow:none;
   display:flex; align-items:center; justify-content:center;
-  font-size:15px; cursor:pointer; z-index:5;
+  font-size:14px; cursor:pointer; z-index:5;
   color:var(--text);
-  padding:4px;
+  padding:3px;
   transition:transform .15s ease, opacity .15s ease;
 }
 .speak-btn:active{ transform:scale(0.85); }
 .speak-btn.speaking{ opacity:.55; }
-.back .speak-btn{ position:static; font-size:16px; margin:2px auto 0; }
+.back .speak-btn{ position:static; font-size:14px; margin:1px auto 0; }
 </style>
  </head>
  <body data-template-id="__page-root" data-theme="light">
@@ -540,7 +545,7 @@ footer{
     <div class="voice-panel" id="voicePanel">
      <label for="rateSlider">গতি (speed): <span class="rate-val" id="rateVal">০.৮×</span></label>
      <input type="range" id="rateSlider" min="0.5" max="1.2" step="0.1" value="0.8">
-     <div class="note">উচ্চারণ শোনানোর জন্য এই অ্যাপ অনলাইন সার্ভিস ব্যবহার করে (ইন্টারনেট প্রয়োজন); ইন্টারনেট না থাকলে ডিভাইসের নিজস্ব উচ্চারণ ব্যবহৃত হবে (যদি থাকে)। এটি প্রকৃত ক্বারীর তাজবীদসম্মত তিলাওয়াত নয়, বরং হারাকাত অনুযায়ী সাধারণ আরবি উচ্চারণের একটি সহায়ক অনুমান মাত্র।</div>
+     <div class="note">উচ্চারণ শোনানোর জন্য প্রথমে ডিভাইসের আরবি ভয়েস ব্যবহার করার চেষ্টা করে; না থাকলে অনলাইন সার্ভিস ব্যবহার করে (ইন্টারনেট প্রয়োজন)। এটি প্রকৃত ক্বারীর তাজবীদসম্মত তিলাওয়াত নয়, বরং হারাকাত অনুযায়ী সাধারণ আরবি উচ্চারণের একটি সহায়ক অনুমান মাত্র।</div>
     </div>
     <div class="deck-selector-row">
      <div class="deck-selector" id="deckSelector"></div>
@@ -553,7 +558,7 @@ footer{
      <button class="font-ctrl-btn" id="arabicDecBtn" title="ছোট করুন">-</button>
      <button class="font-ctrl-btn" id="arabicIncBtn" title="বড় করুন">+</button>
     </div>
-    <div style="width:1px; height:14px; background:var(--line);"></div>
+    <div style="width:1px; height:12px; background:var(--line);"></div>
     <div class="font-resizer-group">
      <span class="font-resizer-label">বাংলা/ইংলিশ:</span>
      <button class="font-ctrl-btn" id="textDecBtn" title="ছোট করুন">-</button>
@@ -657,9 +662,9 @@ const DECKS = [
     eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ৩",
     footerText: "মোট ৩০টি শব্দ (ক্রিয়া ১১–২০, অ-ক্রিয়া ২১–৪০)",
   data: [
-      {n:11,type:"verb",ar:"شَاءَ",bn:"ইচ্ছা করা",en:"to will / to wish",root:"ش ي أ",form:"I",emoji:"✨",tip: "<b>মনে রাখার কৌশল:</b> আল্লাহর ইচ্ছা বা 'মাশাআল্লাহ' (আল্লাহ যা চান) শব্দের সাথে মিল রেখে এটি মনে রাখা যায়।"},
+      {n:11,type:"verb",ar:"شَاءَ",bn:"ইচ্ছা করা",en:"to will / to wish",root:"ش ي أ",form:"I",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর ইচ্ছা বা 'মাশাআল্লাহ' (আল্লাহ যা চান) শব্দের সাথে মিল রেখে এটি মনে রাখা যায়।"},
       {n:12,type:"verb",ar:"خَلَقَ",bn:"সৃষ্টি করা",en:"to create",root:"খ ল ক",form:"I",emoji:"🌍",tip:"<b>মনে রাখার কৌশল:</b> সৃষ্টিকর্তা অর্থে 'খালিক' বা সৃষ্টি বোঝাতে 'খালক্ব' শব্দগুলো এর সাথে সম্পর্কিত।"},
-      {n:13,type:"verb",ar:"أَنْزَلَ",bn:"একবারে নাযিল করা",en:"to send down / to reveal",root:"ন ز ل",form:"IV",emoji:"📖",tip:"<b>মনে রাখার কৌশল:</b> কুরআন নাযিল করা বা আকাশ থেকে কিছু নিচে নামানো অর্থে ব্যবহৃত হয়।"},
+      {n:13,type:"verb",ar:"أَنْزَلَ",bn:"একবারে নাযিল করা",en:"to send down / to reveal",root:"ن ز ل",form:"IV",emoji:"📖",tip:"<b>@মনে রাখার কৌশল:</b> কুরআন নাযিল করা বা আকাশ থেকে কিছু নিচে নামানো অর্থে ব্যবহৃত হয়।"},
       {n:14,type:"verb",ar:"كَذَّبَ",bn:"মিথ্যা সাব্যস্ত করা / অস্বীকার করা",en:"to deny / to reject",root:"ك ذ ب",form:"II",emoji:"❌",tip:"<b>মনে রাখার কৌশল:</b> 'কাযিব' বা মিথ্যা বলা থেকে এই ক্রিয়ার রূপটি এসেছে।"},
       {n:15,type:"verb",ar:"دَعَا",bn:"আহ্বান করা / ডাকা / প্রার্থনা করা",en:"to call / to invite / to pray",root:"د ع و",form:"I",emoji:"🤲",tip:"<b>মনে রাখার কৌশল:</b> দোয়া বা প্রার্থনা করার অর্থের সাথে সরাসরি মিল রয়েছে।"},
       {n:16,type:"verb",ar:"اتَّقَى",bn:"ভয় করা / বেঁচে চলা",en:"to be righteous / to fear (Allah)",root:"و ق ي",form:"VIII",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের পরিচিত পরিভাষা 'তাকওয়া' বা সাবধানতা অবলম্বনের মূল ধাতু।"},
@@ -740,7 +745,7 @@ const DECKS = [
       {n:35,type:"verb",ar:"سَمِعَ",bn:"শোনা",en:"to hear / to listen",root:"س م ع",form:"I",emoji:"👂",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর এক নাম 'সামিউন' (সর্বশ্রোতা) এই মূল থেকেই এসেছে।"},
       {n:36,type:"verb",ar:"تَوَلَّى",bn:"ফিরে যাওয়া",en:"to turn",root:"و ل ي",form:"V",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> মুখ ফিরিয়ে নেয়া বা কোনো দায়িত্ব থেকে সরে যাওয়া।"},
       {n:37,type:"verb",ar:"أَمَرَ",bn:"আদেশ করা",en:"to order / to command",root:"أ م ر",form:"I",emoji:"🗣️",tip:"<b>মনে রাখার কৌশল:</b> 'আমির' (আদেশদাতা) বা 'امر' (আদেশ) এই মূল থেকে।"},
-      {n:38,type:"verb",ar:"দَخَلَ",bn:"প্রবেশ করা",en:"to enter",root:"د خ ل",form:"I",emoji:"🚪",tip:"<b>মনে রাখার কৌশল:</b> 'দাখিল' হওয়া (প্রবেশ করা) বাংলাতেও প্রচলিত।"},
+      {n:38,type:"verb",ar:"دَخَلَ",bn:"প্রবেশ করা",en:"to enter",root:"د خ ل",form:"I",emoji:"🚪",tip:"<b>মনে রাখার কৌশল:</b> 'দাখিল' হওয়া (প্রবেশ করা) বাংলাতেও প্রচলিত।"},
       {n:39,type:"verb",ar:"جَزَى",bn:"প্রতিফল দেওয়া / পুরস্কার দেওয়া",en:"to reward / to recompense",root:"ج ز ي",form:"I",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> 'জাযাকাল্লাহ' (আল্লাহ আপনাকে উত্তম প্রতিদান দিন) আমরা প্রায়ই বলি।"},
       {n:40,type:"verb",ar:"أَطَاعَ",bn:"আনুগত্য / মান্য করা / অনুগত হওয়া",en:"to obey",root:"ط و ع",form:"IV",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> 'ইতাত' বা 'আনুগত্য' শব্দটি এই মূল থেকে এসেছে।"},
       {n:61,type:"noun",ar:"عَبْدٌ",bn:"দাস / বান্দা",en:"slave / servant",root:"ع ب د",form:"—",emoji:"🙇",tip:"<b>মনে রাখার কৌশল:</b> 'ইবাদত' বা 'আব্দুল্লাহ' (আল্লাহর বান্দা) এই মূল থেকে।"},
@@ -798,7 +803,7 @@ const DECKS = [
       {n:95,type:"noun",ar:"أَخٌ",bn:"ভাই",en:"brother",root:"أ خ و",form:"বহুবচন: إِخْوَةٌ/إِخْوَانٌ",emoji:"👬",tip:"<b>মনে রাখার কৌশল:</b> রক্তসম্পর্কীয় বা ঈমানী ভ্রাতৃত্ব — উভয় অর্থেই ব্যবহৃত হয়।"},
       {n:96,type:"noun",ar:"لَوْلَا",bn:"যদি না / কেন না",en:"Why not",root:"—",form:"অব্যয়",emoji:"❗",tip:"<b>মনে রাখার কৌশল:</b> শর্তবাচক অব্যয় — কোনো কিছু না ঘটলে কী হতো তা বোঝাতে ব্যবহৃত।"},
       {n:97,type:"noun",ar:"مِثْلُ",bn:"মতো",en:"similar / like",root:"م ث ل",form:"—",emoji:"🔁",tip:"<b>মনে রাখার কৌশল:</b> তুলনা বা সাদৃশ্য বোঝাতে ব্যবহৃত অব্যয়।"},
-      {n:98,type:"noun",ar:"নَبِيٌّ",bn:"নবী",en:"Prophet",root:"ন ب أ",form:"বহুবচন: أَنْبِيَاءُ",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর মনোনীত প্রেরিত পুরুষ, যার কাছে ওহী পাঠানো হয়।"},
+      {n:98,type:"noun",ar:"نَبِيٌّ",bn:"নবী",en:"Prophet",root:"ن ب أ",form:"বহুবচন: أَنْبِيَاءُ",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর মনোনীত প্রেরিত পুরুষ, যার কাছে ওহী পাঠানো হয়।"},
       {n:99,type:"noun",ar:"أَحَدٌ",bn:"এক / যে / কেউ",en:"one / anyone",root:"أ ح د",form:"—",emoji:"🔵",tip:"<b>মনে রাখার কৌশল:</b> সূরা ইখলাসের বিখ্যাত বাক্য 'কুল হুওয়াল্লাহু আহাদ'-এ ব্যবহৃত।"},
       {n:100,type:"noun",ar:"خَالِدٌ",bn:"চিরস্থায়ী",en:"abide forever",root:"خ ل د",form:"বহুবচন: خَالِدُونَ",emoji:"♾️",tip:"<b>মনে রাখার কৌশল:</b> জান্নাত বা জাহান্নামে চিরস্থায়ীভাবে অবস্থান করা বোঝাতে ব্যবহৃত।"}
     ]
@@ -813,7 +818,7 @@ const DECKS = [
       {n:52,type:"verb",ar:"تَلَا",bn:"তেলাওয়াত/পাঠ/আবৃত্তি করা",en:"to recite",root:"ت ل و",form:"I",emoji: "📖",tip:"<b>মনে রাখার কৌশল:</b> কুরআন তিলাওয়াত বা পাঠ করা অর্থে ব্যবহৃত হয়।"},
       {n:53,type:"verb",ar:"رَزَقَ",bn:"জীবিকা দেওয়া",en:"to provide",root:"رزق",form:"I",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> রিযিক বা জীবিকা দান করা অর্থে ব্যবহৃত হয়।"},
       {n:54,type:"verb",ar:"قَضَى",bn:"মীমাংসা করা/সিদ্ধান্ত দেওয়া/আদেশ দেওয়া",en:"to decree/to decide/to judge",root:"قضي",form:"I",emoji:"⚖️",tip:"<b>মনে রাখার কৌশল:</b> কোনো বিষয়ে চূড়ান্ত সিদ্ধান্ত বা বিচার করা।"},
-      {n:55,type:"verb",ar:"নَصَرَ",bn:"সাহায্য/সহায়তা/অনুগ্রহ দান করা",en:"to help",root:"ন صر",form:"I",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> বিপদগ্রস্তকে সাহায্য বা নুসরাত দান করা।"},
+      {n:55,type:"verb",ar:"نَصَرَ",bn:"সাহায্য/সহায়তা/অনুগ্রহ দান করা",en:"to help",root:"ن صر",form:"I",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> বিপদগ্রস্তকে সাহায্য বা নুসরাত দান করা।"},
       {n:56,type:"verb",ar:"صَبَرَ",bn:"ধৈর্য ধারণ করা",en:"to be patient",root:"ص بر",form:"I",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> বিপদে সবর বা ধৈর্য ধারণ করা।"},
       {n:57,type:"verb",ar:"جَرَى",bn:"প্রবাহিত হওয়া",en:"to flow / to run",root:"ج ري",form:"I",emoji:"🌊",tip:"<b>মনে রাখার কৌশল:</b> নদী বা পানি প্রবাহিত হওয়া অর্থে।"},
       {n:58,type:"verb",ar:"مَسَّ",bn:"স্পর্শ করা/ছোঁয়া/লাগা",en:"to touch",root:"مس س",form:"I",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> কোনো কিছু স্পর্শ করা বা সংস্পর্শে আসা।"},
@@ -856,8 +861,8 @@ const DECKS = [
       {n:67,type:"verb",ar:"كَتَبَ",bn:"লেখা / ফরজ করা",en:"to write / to prescribe / to ordain",root:"ك ت ب",form:"I",emoji:"✍️",tip:"<b>মনে রাখার কৌশল:</b> কিছু লিপিবদ্ধ করা বা বিধান হিসেবে নির্ধারণ করা।"},
       {n:68,type:"verb",ar:"ظَنَّ",bn:"ধারণা করা / চিন্তা করা",en:"to think / to assume / to guess",root:"ظ ن ن",form:"I",emoji:"💭",tip:"<b>মনে রাখার কৌশল:</b> কোনো বিষয়ে অনুমান বা ধারণা পোষণ করা।"},
       {n:69,type:"verb",ar:"شَكَرَ",bn:"কৃতজ্ঞতা প্রকাশ করা / হওয়া ",en:"to be grateful / to give thanks",root:"ش ك ر",form:"I",emoji:"🙌",tip:"<b>মনে রাখার কৌশল:</b> নেয়ামতের শুকরিয়া আদায় করা।"},
-      {n:70,type:"verb",ar:"নَبَّأَ",bn:"জানিয়ে দেওয়া / সংবাদ দেওয়া",en:"to inform",root:"ন ب ا",form:"II",emoji:"📢",tip:"<b>মনে রাখার কৌশল:</b> গুরুত্বপূর্ণ কোনো সংবাদ বা খবর পৌঁছে দেওয়া।"},
-      {n:121,type:"noun",ar:"اِبْنٌ",bn:"পুত্র (ছেলে)",en:"the son",root:"ব ন ي",form:"বহুবচন: بَنُونَ, أَبْنَاءٌ",emoji:"👦",tip:"<b>মনে রাখার কৌশল:</b> পিতা-পুত্রের সম্পর্কের ক্ষেত্রে ব্যবহৃত হয়।"},
+      {n:70,type:"verb",ar:"نَبَّأَ",bn:"জানিয়ে দেওয়া / সংবাদ দেওয়া",en:"to inform",root:"ن ب ا",form:"II",emoji:"📢",tip:"<b>মনে রাখার কৌশল:</b> গুরুত্বপূর্ণ কোনো সংবাদ বা খবর পৌঁছে দেওয়া।"},
+      {n:121,type:"noun",ar:"اِبْنٌ",bn:"পুত্র (ছেলে)",en:"the son",root:"ব ن ي",form:"বহুবচন: بَنُونَ, أَبْنَاءٌ",emoji:"👦",tip:"<b>মনে রাখার কৌশল:</b> পিতা-পুত্রের সম্পর্কের ক্ষেত্রে ব্যবহৃত হয়।"},
       {n:122,type:"noun",ar:"كَثِيرٌ",bn:"অনেক",en:"many",root:"ك ث ر",form:"বহুবচন: كَثِيرُونَ",emoji:"🔢",tip:"<b>মনে রাখার কৌশল:</b> অধিক সংখ্যা বা বহুত্ব বোঝাতে ব্যবহৃত হয়।"},
       {n:123,type:"noun",ar:"مَاءٌ",bn:"পানি",en:"water",root:"م و ه",form:"বহুবচন: مِيَاهٌ",emoji:"💧",tip:"<b>মনে রাখার কৌশল:</b> জীবনধারণের অপরিহার্য উপাদান পানি।"},
       {n:124,type:"noun",ar:"صَالِحَةٌ",bn:"সৎ কাজ / সৎকর্মশীল",en:"righteous deeds",root:"ص ل ح",form:"বহুবচন: صَالِحَاتٌ",emoji:"🌿",tip:"<b>মনে রাখার কৌশল:</b> ভালো ও কল্যাণকর কাজ বোঝাতে ব্যবহৃত হয়।"},
@@ -867,7 +872,7 @@ const DECKS = [
       {n:128,type:"noun",ar:"رَحْمَنٌ",bn:"পরম করুণাময়",en:"The Most Gracious",root:"ر ح م",form:"—",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর বিশেষ গুণবাচক নাম।"},
       {n:129,type:"noun",ar:"عَيْنٌ",bn:"চোখ / ঝরনা",en:"eye / spring",root:"ع ي ن",form:"বহুবচন: عُيُونٌ, أَعْيُنٌ",emoji:"👁️",tip:"<b>মনে রাখার কৌশল:</b> দর্শনেন্দ্রিয় কিংবা পানির ঝরনা অর্থে।"},
       {n:130,type:"noun",ar:"قَرْيَةٌ",bn:"গ্রাম / শহর",en:"town",root:"ق ر ي",form:"বহুবচন: قُرًى",emoji:"🏘️",tip:"<b>মনে রাখার কৌশল: জনবসতিপূর্ণ এলাকা বা জনপদ।"},
-      {n:131,type:"noun",ar:"نَهَارٌ",bn:"দিন",en:"the day",root:"ন ه ر",form:"বহুবচন: أَنْهُرٌ",emoji:"☀️",tip:"<b>মনে রাখার কৌশল:</b> রাতের বিপরীতে দিবালোক বা দিন।"},
+      {n:131,type:"noun",ar:"نَهَارٌ",bn:"দিন",en:"the day",root:"ن ه ر",form:"বহুবচন: أَنْهُرٌ",emoji:"☀️",tip:"<b>মনে রাখার কৌশল:</b> রাতের বিপরীতে দিবালোক বা দিন।"},
       {n:132,type:"noun",ar:"شَدِيدٌ",bn:"কঠোর / কঠিন / প্রবল",en:"the mighty / severe",root:"ش د د",form:"বহুবচন: أَشِدَّاءُ",emoji:"⚡",tip:"<b>মনে রাখার কৌশল:</b> শক্তিধর বা তীব্র কিছু বোঝাতে।"},
       {n:133,type:"noun",ar:"شَهِيدٌ",bn:"সাক্ষী / উপস্থিত / শহীদ",en:"witness / martyr",root:"ش ه د",form:"বহুবচন: شُهَدَاءُ",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> ঘটনার সাক্ষী বা আত্মত্যাগী ব্যক্তি।"},
       {n:134,type:"noun",ar:"وَلَدٌ",bn:"সন্তান",en:"son / child",root:"و ل د",form:"বহুবচন: أَوْلَادٌ",emoji:"👶",tip:"<b>মনে রাখার কৌশল:</b> পুত্র বা সন্তান সন্ততি।"},
@@ -893,357 +898,602 @@ const DECKS = [
       {n:76,type:"verb",ar:"نَادَى",bn:"ডাকা / আহ্বান করা",en:"to call",root:"ن د و",form:"III",emoji:"🗣️",tip:"<b>মনে রাখার কৌশল:</b> কাউকে উচ্চস্বরে ডাকা বা কোনো অনুষ্ঠানে আহ্বান/নিমন্ত্রণ জানানোর ক্ষেত্রে এই ক্রিয়াটি ব্যবহার হয়।"},
       {n:77,type:"verb",ar:"أَنْذَرَ",bn:"সতর্ক করা / সাবধান করা",en:"to warn",root:"ن ذ ر",form:"IV",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে সতর্ককারী বা ভীতিপ্রদর্শনকারী অর্থে 'নাযীর' (منذر) শব্দটি এই মূল থেকেই গঠিত।"},
       {n:78,type:"verb",ar:"سَبَّحَ",bn:"প্রশংসা করা / পবিত্রতা ঘোষণা করা",en:"to glorify, to praise",root:"س ب ح",form:"II",emoji:"✨",tip:"<b>মনে রাখার কৌশল:</b> বহুল পঠিত তাসবিহ বা 'সুবহানাল্লাহ' বাক্যটি এই মূল থেকেই উদ্ভূত।"},
-      {n:79,type:"verb",ar:"حَمَلَ",bn:"বহন করা / গর্ভধারণ করা",en:"to carry",root:"ح م ل",form:"I",emoji:"🎒",tip:"<b>মনে রাখার কৌশল:</b> পিঠে বা মনে কোনো বোঝা বহন করা কিংবা গর্ভধারণের অর্থে ব্যবহৃত হয়।"}
+      {n:79,type:"verb",ar:"حَمَلَ",bn:"বহন করা / গর্ভ ধারণ করা",en:"to carry, to bear",root:"ح م ل",form:"I",emoji:"📦",tip:"<b>মনে রাখার কৌশল:</b> কোনো বস্তু বা দায়িত্ব কাঁধে বা পিঠে বহন করা কিংবা গর্ভধারণ করা অর্থে ব্যবহৃত হয়।"},
+      {n:80,type:"verb",ar:"عَذَّبَ",bn:"শাস্তি দেওয়া",en:"to punish",root:"ع ذ ب",form:"II",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'আযাব' (শাস্তি) সরাসরি এই ক্রিয়ার মূল থেকে এসেছে।"},
+      {n:141,type:"noun",ar:"تَحْتَ",bn:"নিচে",en:"beneath",root:"ت ح ت",form:"—",emoji:"⬇️",tip:"<b>মনে রাখার কৌশল:</b> যেমন কুরআনে বলা হয়েছে — 'তাখতিহা আল-আনহার' (যার তলদেশ দিয়ে নদী প্রবাহিত)।"},
+      {n:142,type:"noun",ar:"سُوءٌ",bn:"নিকৃষ্ট / মন্দ / অনিষ্ট",en:"harm, evil",root:"س و ء",form:"—",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> যেকোনো ধরনের মন্দ বা ক্ষতিকর বিষয় বোঝাতে এই শব্দ ব্যবহার হয়।"},
+      {n:143,type:"noun",ar:"عَدُوٌّ",bn:"শত্রু",en:"enemy",root:"ع د و",form:"বহুবচন: أَعْدَاءٌ",emoji:"🛡️",tip:"<b>মনে রাখার কৌশল:</b> মানুষের প্রকাশ্য দুশমন বা শত্রু বোঝাতে 'আদুউম মুবীন' ব্যবহৃত হয়।"},
+      {n:144,type:"noun",ar:"نِعْمَةٌ",bn:"অনুগ্রহ / নেয়ামত",en:"favor, blessing",root:"ن ع م",form:"বহুবচন: نِعَمٌ, أَنْعُمْ",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর দান বা নিয়ামত অর্থে আমাদের সমাজে এটি অত্যন্ত পরিচিত।"},
+      {n:145,type:"noun",ar:"أَعْلَمُ",bn:"খুব জানেন / অধিক জ্ঞাত",en:"most knowing",root:"ع ل م",form:"তুলনামূলক",emoji:"🧠",tip:"<b>মনে রাখার কৌশল:</b> 'আলিম' (জ্ঞানী) থেকে তুলনামূলক রূপ — যিনি সবচেয়ে বেশি জানেন।"},
+      {n:146,type:"noun",ar:"غَيْبٌ",bn:"অদৃশ্য",en:"the unseen",root:"غ ي ب",form:"বহুবচন: غُيُوبٌ",emoji:"🌌",tip:"<b>মনে রাখার কৌশল:</b> যা আমাদের চোখের আড়ালে বা অগোচরে থাকে।"},
+      {n:147,type:"noun",ar:"بَصَرٌ",bn:"দৃষ্টি",en:"sight, eyes",root:"ب ص ر",form:"বহুবচন: أَبْصَارٌ",emoji:"👁️",tip:"<b>মনে রাখার কৌশল:</b> চোখ বা দেখার শক্তি ও দৃষ্টিশক্তি বোঝাতে ব্যবহৃত হয়।"},
+      {n:148,type:"noun",ar:"دَارٌ",bn:"বাড়ি / আবাস",en:"home, house",root:"د و ر",form:"বহুবচন: دِيَارٌ",emoji:"🏠",tip:"<b>মনে রাখার কৌশল:</b> যেমন 'দারুল আখিরাত' বা পরকালের স্থায়ী আবাস।"},
+      {n:149,type:"noun",ar:"سَاعَةٌ",bn:"কিয়ামত / মুহূর্ত / সময়",en:"the Hour, time",root:"س و ع",form:"বহুবচন: سَاعَاتٌ",emoji:"⏰",tip:"<b>মনে রাখার কৌশল:</b> নির্দিষ্ট মুহূর্ত বা মহাপ্রলয় 'কিয়ামতের ঘন্টা' অর্থে ব্যবহৃত হয়।"},
+      {n:150,type:"noun",ar:"مُلْكٌ",bn:"রাজত্ব / রাজ্য",en:"kingdom, dominion",root:"م ل ك",form:"—",emoji:"🏰",tip:"<b>মনে রাখার কৌশল:</b> সুলাইমান (আঃ)-এর রাজত্ব বা সার্বভৌম কর্তৃত্ব বোঝাতে ব্যবহৃত হয়েছে।"},
+      {n:151,type:"noun",ar:"سَمِيعٌ",bn:"সব শুনেন / সর্বশ্রোতা",en:"All-Hearing",root:"س م ع",form:"—",emoji:"👂",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর অন্যতম সুন্দর একটি গুণবাচক নাম — যিনি সবকিছু শোনেন।"},
+      {n:152,type:"noun",ar:"أَبٌ",bn:"বাবা / পিতা",en:"father",root:"أ ب و",form:"বহুবচন: آبَاءٌ",emoji:"👨‍👦",tip:"<b>মনে রাখার কৌশল:</b> ইউসুফ (আঃ)-এর পিতার কাহিনীর আয়াতে 'লি-আবিহি' শব্দে এটি পাওয়া যায়।"},
+      {n:153,type:"noun",ar:"خَبِيرٌ",bn:"সর্বজ্ঞ / খুব অবহিত",en:"All-Aware",root:"خ ب ر",form:"বহুবচন: خُبَرَاءُ",emoji:"🔍",tip:"<b>মনে রাখার কৌশল:</b> পুঙ্খানুপুঙ্খ বিষয়ে সম্যক ধারণা বা খবর রাখাকে 'খবির' বলে।"},
+      {n:154,type:"noun",ar:"صِرَاطٌ",bn:"পথ / সরলপথ",en:"path",root:"ص ر ط",form:"—",emoji:"🛣️",tip:"<b>মনে রাখার কৌশল:</b> সূরা ফাতিহায় বহুল পরিচিত শব্দ 'সিরাতাল মুস্তাকিম' (সরল পথ)।"},
+      {n:155,type:"noun",ar:"قَدِيرٌ",bn:"সর্বশক্তিমান",en:"All-Powerful",root:"ق د ر",form:"—",emoji:"⚡",tip:"<b>মনে রাখার কৌশল:</b> আল্লাহর আরেকটি মহান গুণ — যিনি সবকিছুর ওপর পূর্ণ ক্ষমতার অধিকারী।"},
+      {n:156,type:"noun",ar:"صَدْرٌ",bn:"বুক / অন্তর / হৃদয়",en:"breast, chest",root:"ص د ر",form:"বহুবচন: صُدُورٌ",emoji:"❤️",tip:"<b>মনে রাখার কৌশল:</b> মানুষের মনের ভেতরের গোপন ভাব বা অন্তর বোঝাতে 'সুদুর' ব্যবহৃত হয়।"},
+      {n:157,type:"noun",ar:"إِسْرَائِيلَ",bn:"ইসরাইল (নাম)",en:"Israel",root:"—",form:"সঠিক নাম",emoji:"⭐",tip:"<b>মনে রাখার কৌশল:</b> ইয়াকুব (আঃ)-এর অপর নাম এবং বনি ইসরাইল জাতিগত পরিচয়।"},
+      {n:158,type:"noun",ar:"حَمْدٌ",bn:"প্রশংসা",en:"praise, thanks",root:"ح م د",form:"—",emoji:"🙌",tip:"<b>মনে রাখার কৌশল:</b> 'আলহামদুলিল্লাহ' শব্দের মূল অংশ — সমস্ত প্রশংসা আল্লাহর জন্য।"},
+      {n:159,type:"noun",ar:"نُوحٌ",bn:"নূহ (আঃ)",en:"Nuh",root:"—",form:"সঠিক নাম",emoji:"🌊",tip:"<b>মনে রাখার কৌশল:</b> প্রখ্যাত নবী হযরত নূহ (আঃ)-এর পবিত্র নাম।"},
+      {n:160,type:"noun",ar:"نُورٌ",bn:"আলো",en:"light",root:"ن و ر",form:"বহুবচন: أَنْوَارٌ",emoji:"💡",tip:"<b>মনে রাখার কৌশল:</b> অন্ধকার দূরকারী আলো বা হেদায়েতের নূর।"}
+    ]
+  },
+    {
+    id: "class10",
+    label: "ক্লাস ১০",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১০",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৮১–৯০, অ-ক্রিয়া ১৬১–১৮০)",
+    data: [
+      {n:81,type:"verb",ar:"بِئْسَ",bn:"খারাপ হওয়া",en:"to be wretched, to be evil",root:"ب أ س",form:"I",emoji:"😟",tip:"বِئْسَ মানে দুর্দশাগ্রস্ত বা মন্দ হওয়া।"},
+      {n:82,type:"verb",ar:"بَلَغَ",bn:"পৌঁছা / নাগাল / উপনীত হওয়া",en:"to reach",root:"ب ل غ",form:"I",emoji:"🎯",tip:"بَلَغَ মানে কোনো স্থান বা লক্ষ্যে পৌঁছানো।"},
+      {n:83,type:"verb",ar:"تَرَكَ",bn:"ছেড়ে দেওয়া",en:"to leave",root:"ت ر ك",form:"I",emoji:"👋",tip:"تَرَكَ মানে ছেড়ে যাওয়া বা পরিত্যাগ করা।"},
+      {n:84,type:"verb",ar:"خَشِيَ",bn:"ভয় করা",en:"to fear",root:"خ ش ي",form:"I",emoji:"😨",tip:"خَشِيَ মানে ভয় করা, বিশেষত আল্লাহকে ভয় করা।"},
+      {n:85,type:"verb",ar:"اِسْتَكْبَرَ",bn:"অহংকার করা",en:"to be arrogant",root:"ك ب ر",form:"X",emoji:"👑",tip:"اِسْتَكْبَرَ মানে অহংকার করা বা নিজেকে বড় মনে করা।"},
+      {n:86,type:"verb",ar:"تَوَكَّلَ",bn:"ভরসা করা / নির্ভর করা",en:"to put trust",root:"و ك ل",form:"V",emoji:"🤲",tip:"تَوَكَّلَ মানে আল্লাহর ওপর ভরসা করা।"},
+      {n:87,type:"verb",ar:"حَرَّمَ",bn:"নিষিদ্ধ করা",en:"to forbid, to make unlawful",root:"ح ر م",form:"II",emoji:"🚫",tip:"حَرَّمَ মানে কোনো বিষয় নিষিদ্ধ করা।"},
+      {n:88,type:"verb",ar:"مَاتَ",bn:"মারা যাওয়া",en:"to die",root:"م و ت",form:"I",emoji:"🕊️",tip:"مَاتَ মানে মৃত্যুবরণ করা।"},
+      {n:89,type:"verb",ar:"بَشَّرَ",bn:"সুসংবাদ দেওয়া",en:"to give glad tidings",root:"ب ش ر",form:"II",emoji:"🎉",tip:"بَشَّرَ মানে আনন্দের সুসংবাদ দেওয়া।"},
+      {n:90,type:"verb",ar:"رَضِيَ",bn:"খুশি হওয়া / সন্তুষ্ট হওয়া",en:"to be pleased",root:"ر ض و",form:"I",emoji:"😊",tip:"رَضِيَ মানে সন্তুষ্ট বা প্রসন্ন হওয়া।"},
+      {n:161,type:"noun",ar:"جَزَاءٌ",bn:"প্রতিদান / পুরস্কার / শাস্তি",en:"recompense",root:"ج ز و",form:"—",emoji:"⚖️",tip:"جَزَاءٌ কাজের প্রতিদান বা ফল বোঝায়।"},
+      {n:162,type:"noun",ar:"سَلَامٌ",bn:"শান্তি",en:"peace",root:"س ل م",form:"—",emoji:"🕊️",tip:"سَلَامٌ মানে শান্তি ও নিরাপত্তা।"},
+      {n:163,type:"noun",ar:"سَوْفَ",bn:"শীঘ্রই",en:"soon",root:"—",form:"অব্যয়",emoji:"⏳",tip:"سَوْفَ ভবিষ্যৎ সময় বোঝাতে ব্যবহৃত হয়।"},
+      {n:164,type:"noun",ar:"بَحْرٌ",bn:"সাগর",en:"sea",root:"ب ح ر",form:"বহুবচন: بِحَارٌ",emoji:"🌊",tip:"بَحْرٌ মানে সমুদ্র বা সাগর।"},
+      {n:165,type:"noun",ar:"سُبْحَانَ",bn:"পবিত্র, মহান",en:"Glory be to",root:"س ب ح",form:"—",emoji:"✨",tip:"سُبْحَانَ আল্লাহর পবিত্রতা ঘোষণা করে।"},
+      {n:166,type:"noun",ar:"فَوْقَ",bn:"উপর / ঊর্ধ্বে",en:"above",root:"ف و ق",form:"—",emoji:"⬆️",tip:"فَوْقَ মানে কোনো কিছুর ওপর বা উপরে।"},
+      {n:167,type:"noun",ar:"شَرِيكٌ",bn:"অংশীদার",en:"partners",root:"ش ر ك",form:"বহুবচন: شُرَكَاءُ",emoji:"🤝",tip:"شَرِيكٌ মানে অংশীদার বা শরিক।"},
+      {n:168,type:"noun",ar:"كَبِيرٌ",bn:"বড় / মহান",en:"big, large, great",root:"ك ب ر",form:"—",emoji:"🏔️",tip:"كَبِيرٌ মানে বড় বা মহান।"},
+      {n:169,type:"noun",ar:"وَيْلٌ",bn:"দুর্ভোগ / ধ্বংস",en:"woe",root:"و ي ل",form:"—",emoji:"⚠️",tip:"وَيْلٌ দুর্ভোগ বা ধ্বংসের সতর্কতা বোঝায়।"},
+      {n:170,type:"noun",ar:"إِذْنٌ",bn:"অনুমতি / হুকুম",en:"permission",root:"أ ذ ن",form:"—",emoji:"✅",tip:"إِذْنٌ মানে অনুমতি।"},
+      {n:171,type:"noun",ar:"اِسْمٌ",bn:"নাম",en:"name",root:"س م و",form:"বহুবচন: أَسْمَاءٌ",emoji:"🏷️",tip:"اِسْمٌ মানে নাম।"},
+      {n:172,type:"noun",ar:"أَلَا",bn:"সাবধান / জেনে রাখো",en:"beware, unquestionably",root:"—",form:"অব্যয়",emoji:"📣",tip:"أَلَا মনোযোগ আকর্ষণ ও সতর্কতার জন্য ব্যবহৃত হয়।"},
+      {n:173,type:"noun",ar:"جَبَلٌ",bn:"পাহাড় / পর্বত",en:"mountains",root:"ج ب ل",form:"বহুবচন: جِبَالٌ",emoji:"⛰️",tip:"جَبَلٌ মানে পাহাড় বা পর্বত।"},
+      {n:174,type:"noun",ar:"حِسَابٌ",bn:"হিসাব / বিচার",en:"account",root:"ح س ب",form:"বহুবচন: حِسَابَاتٌ",emoji:"🧮",tip:"حِسَابٌ মানে হিসাব বা বিচার।"},
+      {n:175,type:"noun",ar:"ضَلَالٌ",bn:"বিভ্রান্তি / পথভ্রষ্টতা",en:"an error",root:"ض ل ل",form:"—",emoji:"🧭",tip:"ضَلَالٌ মানে পথভ্রষ্টতা বা ভুল পথ।"},
+      {n:176,type:"noun",ar:"مَعْرُوفٌ",bn:"সৎকাজ / ন্যায়নীতি",en:"a fair manner",root:"ع ر ف",form:"—",emoji:"🌿",tip:"مَعْرُوفٌ মানে স্বীকৃত ভালো ও ন্যায়সঙ্গত কাজ।"},
+      {n:177,type:"noun",ar:"مَيِّتٌ",bn:"মৃত / মৃতদেহ",en:"the dead",root:"م و ت",form:"বহুবচন: أَمْوَاتٌ",emoji:"🕊️",tip:"مَيِّتٌ মানে মৃত।"},
+      {n:178,type:"noun",ar:"بَشَرٌ",bn:"মানুষ",en:"the human being",root:"ب ش ر",form:"—",emoji:"🧑",tip:"بَشَرٌ মানে মানুষ বা মানবজাতি।"},
+      {n:179,type:"noun",ar:"ذَنْبٌ",bn:"পাপ",en:"sin",root:"ذ ن ب",form:"বহুবচন: ذُنُوبٌ",emoji:"⚫",tip:"ذَنْبٌ মানে পাপ বা অপরাধ।"},
+      {n:180,type:"noun",ar:"سُلْطَانٌ",bn:"প্রমাণ / কর্তৃত্ব",en:"my authority",root:"س ل ط",form:"—",emoji:"⚜️",tip:"سُلْطَانٌ মানে কর্তৃত্ব, ক্ষমতা বা প্রমাণ।"}
+    ]
+  },
+  {
+    id: "class11",
+    label: "ক্লাস ১১",
+    eyebrow: "আন-নূর ২০ · লেভেল ১, ক্লাস ১১",
+    footerText: "মোট ৩০টি শব্দ (ক্রিয়া ৯১–১০০, অ-ক্রিয়া ১৮১–২০০)",
+    data: [
+      {n:91,type:"verb",ar:"حَزِنَ",bn:"দুঃখ করা / চিন্তিত হওয়া",en:"to grieve",root:"ح ز ن",form:"I",emoji:"😢",tip:"<b>মনে রাখার কৌশল:</b> 'হাযিনা' শব্দটি ইংরেজি 'hazard'-এর মতো শোনায় — কোনো বিপদ/ক্ষতিতে মানুষ দুঃখিত হয়। এই মূল থেকেই আসে <b>اَلْحُزْنُ</b> (দুঃখ/শোক) বিশেষ্যটি।"},
+      {n:92,type:"verb",ar:"حَشَرَ",bn:"একত্র করা / উঠানো",en:"to gather, to raise",root:"ح ش ر",form:"I",emoji:"👥",tip:"<b>মনে রাখার কৌশল:</b> সূরা 'আল-হাশর' (সমাবেশ/একত্রীকরণ) নামটি এই মূল থেকেই এসেছে — কিয়ামতের দিন সবাইকে একত্র করা হবে।"},
+      {n:93,type:"verb",ar:"صَدَّ",bn:"বাধা দেওয়া / ফেরানো",en:"to turn away, to hinder",root:"ص د د",form:"I",emoji:"🚫",tip:"<b>মনে রাখার কৌশল:</b> 'সাদ্দা' মানে কাউকে পথ থেকে ফিরিয়ে দেওয়া বা বাধা দেওয়া — কল্পনা করুন একটি দরজা বন্ধ (🚫) হয়ে গেছে কারো পথ আটকে।"},
+      {n:94,type:"verb",ar:"نَجَّى",bn:"উদ্ধার করা / রক্ষা করা",en:"to save, to deliver",root:"ن ج و",form:"II",emoji:"🛟",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'নাজাত' (মুক্তি) এই মূল থেকেই এসেছে। বিশেষ্য রূপ <b>اَلنَّجَاةُ</b> মানে মুক্তি/পরিত্রাণ — যেমন ডুবন্ত মানুষকে জীবন-রক্ষাকারী বলয় (🛟) দিয়ে বাঁচানো।"},
+      {n:95,type:"verb",ar:"ذَاقَ",bn:"স্বাদ গ্রহণ করা",en:"to taste",root:"ذ و ق",form:"I",emoji:"👅",tip:"<b>মনে রাখার কৌশল:</b> বাংলা-উর্দুতে প্রচলিত শব্দ 'জওক' (স্বাদ/রুচি) এই মূল থেকেই এসেছে। বিশেষ্য <b>اَلذَّوْقُ</b> = স্বাদ।"},
+      {n:96,type:"verb",ar:"رَدَّ",bn:"ফিরত দেওয়া / ফিরিয়ে আনা",en:"to turn back, to return",root:"র د د",form:"I",emoji:"🔄",tip:"<b>মনে রাখার কৌশল:</b> ইংরেজি 'redo'(🔄) শব্দের মতো শোনায় — কোনো কিছু আবার ফিরিয়ে/পুনরায় করা।"},
+      {n:97,type:"verb",ar:"بَيَّنَ",bn:"বর্ণনা করা / স্পষ্ট করা",en:"to make clear, to explain",root:"ب ي ن",form:"II",emoji:"💡",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'বয়ান' (বক্তৃতা/ব্যাখ্যা) এই মূল থেকেই এসেছে — যা কিছু স্পষ্ট করে বলা হয়।"},
+      {n:98,type:"verb",ar:"اِخْتَلَفَ",bn:"মতবিরোধ করা / মতভেদ করা",en:"to differ, to dispute",root:"خ ل ف",form:"VIII",emoji:"🔀",tip:"<b>মনে রাখার কৌশল:</b> ইসলামী পরিভাষায় সুপরিচিত শব্দ 'ইখতিলাফ' (মতভেদ) সরাসরি এই ক্রিয়া থেকেই এসেছে।"},
+      {n:99,type:"verb",ar:"ذَهَبَ",bn:"নিয়ে নেওয়া / যাওয়া",en:"to go, to take away",root:"ذ ه ب",form:"I",emoji:"🚶",tip:"<b>মনে রাখার কৌশল:</b> একই মূল থেকে আসে 'যাহাব' (স্বর্ণ) — যা মূল্যবান বলে সহজে হাতছাড়া/চলে যায়। বিশেষ্য <b>اَلذِّهَابُ</b> = যাওয়া।"},
+      {n:100,type:"verb",ar:"سَجَدَ",bn:"সিজদা করা",en:"to prostrate",root:"س ج د",form:"I",emoji:"🕌",tip:"<b>মনে রাখার কৌশল:</b> নামাযে পরিচিত শব্দ 'সিজদাহ' এই মূল থেকেই এসেছে — মাথা মাটিতে রেখে আল্লাহর প্রতি বিনম্রতা প্রকাশ।"},
+      {n:181,type:"noun",ar:"أَحْسَنُ",bn:"উত্তম / সর্বোত্তম",en:"the best",root:"ح س ن",form:"—",emoji:"🏆",tip:"<b>মনে রাখার কৌশল:</b> 'ইহসান' (উৎকর্ষ/সদাচরণ) ও নাম 'হাসান/হুসনা' (সুন্দর/উত্তম) একই মূল থেকে আসে।"},
+      {n:182,type:"noun",ar:"سَيِّئَةٌ",bn:"পাপ / মন্দ কাজ",en:"the evil (deed)",root:"س و ء",form:"বহুবচন: سَيِّئَاتٌ",emoji:"⚠️",tip:"<b>মনে রাখার কৌশল:</b> 'হাসানাহ' (সৎকাজ)-এর বিপরীত শব্দ হলো সাইয়্যিআহ — মন্দ কাজ।"},
+      {n:183,type:"noun",ar:"إِثْمٌ",bn:"পাপ / গুনাহ",en:"sin",root:"أ ث م",form:"বহুবচন: آثَامٌ",emoji:"⚫",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে বহুল ব্যবহৃত শব্দ, সরাসরি 'গুনাহ/পাপ' অর্থে ব্যবহৃত হয়।"},
+      {n:184,type:"noun",ar:"حِينٌ",bn:"নির্দিষ্ট সময় / যখন",en:"a (specific) time",root:"ح ي ن",form:"—",emoji:"⏳",tip:"<b>মনে রাখার কৌশল:</b> ইংরেজি উচ্চারণে অনেকটা 'he-in' এর মতো শোনায় — 'সে একটি নির্দিষ্ট সময়ে' এভাবে যুক্ত করে মনে রাখুন।"},
+      {n:185,type:"noun",ar:"مَتَاعٌ",bn:"ভোগসামগ্রী / ভরণ-পোষণ / সুখ-সম্ভোগ",en:"a provision, worldly goods",root:"م ت ع",form:"বহুবচন: أَمْتِعَةٌ",emoji:"🎒",tip:"<b>মনে রাখার কৌশল:</b> বাংলা-উর্দুতে প্রচলিত 'মাল-মাতা' (জিনিসপত্র/সামগ্রী) শব্দের সাথে সরাসরি সম্পর্কিত।"},
+      {n:186,type:"noun",ar:"نَصِيرٌ",bn:"সাহায্যকারী",en:"any helper",root:"ن ص ر",form:"বহুবচন: أَنْصَارٌ",emoji:"🤝",tip:"<b>মনে রাখার কৌশল:</b> মদীনার 'আনসার' (সাহায্যকারী সাহাবীগণ) এবং নাম 'নাসির' এই মূল থেকেই এসেছে।"},
+      {n:187,type:"noun",ar:"أُمٌّ",bn:"মা / মূল",en:"mother, foundation",root:"أ م م",form:"বহুবচন: أُمَّهَاتٌ",emoji:"👩",tip:"<b>মনে রাখার কৌশল:</b> 'উম্মাহ' (জাতি/সম্প্রদায়) শব্দটিও একই মূল থেকে আসে — যেন গোটা জাতির 'মা' বা মূল ভিত্তি।"},
+      {n:188,type:"noun",ar:"فِتْنَةٌ",bn:"পরীক্ষা / বিপর্যয়",en:"a trial, tribulation",root:"ف ت ن",form:"বহুবচন: فِتَنٌ",emoji:"🔥",tip:"<b>মনে রাখার কৌশল:</b> প্রচলিত শব্দ 'ফিতনা' — বিশৃঙ্খলা/পরীক্ষা অর্থে সংবাদমাধ্যমেও ব্যবহৃত হয়, তাই সহজেই মনে থাকে।"},
+      {n:189,type:"noun",ar:"مَرْيَمٌ",bn:"মারইয়াম (নাম)",en:"Maryam",root:"—",form:"সঠিক নাম",emoji:"🌸",tip:"<b>মনে রাখার কৌশল:</b> ঈসা (আঃ)-এর মাতা, এবং কুরআনের ১৯তম সূরাটিও তাঁর নামেই — 'সূরা মারইয়াম'।"},
+      {n:190,type:"noun",ar:"آلَاءٍ",bn:"অনুগ্রহসমূহ",en:"favors, bounties",root:"أ ل و",form:"বহুবচন",emoji:"🎁",tip:"<b>মনে রাখার কৌশল:</b> সূরা আর-রাহমানের বারবার আসা বাক্য 'ফাবিআইয়্যি আলা-ই রব্বিকুমা তুকাযযিবান' এই শব্দ দিয়েই — আল্লাহর অসংখ্য নিয়ামত/উপহার।"},
+      {n:191,type:"noun",ar:"حَرَامٌ",bn:"নিষিদ্ধ / পবিত্র / সম্মানিত",en:"prohibition, sacred",root:"ح ر م",form:"বহুবচন: حُرُمٌ",emoji:"🚷",tip:"<b>মনে রাখার কৌশল:</b> প্রতিদিনের প্রচলিত শব্দ 'হারাম' (নিষিদ্ধ) এবং 'মসজিদুল হারাম' (পবিত্র মসজিদ) থেকেই সহজে চেনা যায়।"},
+      {n:192,type:"noun",ar:"شَمْسٌ",bn:"সূর্য",en:"the sun",root:"ش م س",form:"বহুবচন: شُمُوسٌ",emoji:"☀️",tip:"<b>মনে রাখার কৌশল:</b> কুরআনের ৯১তম সূরা 'আশ-শামস' (সূর্য) নামটি এই শব্দ থেকেই এসেছে।"},
+      {n:193,type:"noun",ar:"فَرِيقٌ",bn:"দল",en:"a group, party",root:"f r q",form:"—",emoji:"👨‍👩‍👧‍👦",tip:"<b>মনে রাখার কৌশল:</b> একটি নির্দিষ্ট দল/গোষ্ঠী বোঝাতে ব্যবহৃত হয় — 'ফারাক্বা' (আলাদা করা) মূল থেকে, অর্থাৎ পুরো জামাত থেকে আলাদা হওয়া একটি অংশ।"},
+      {n:194,type:"noun",ar:"كَلَّا",bn:"কখনো না / সাবধান",en:"nay, never",root:"—",form:"অব্যয় (particle)",emoji:"✋",tip:"<b>মনে রাখার কৌশল:</b> জোরালো নাকচ (✋)বোঝাতে ব্যবহৃত হয়। "},
+      {n:195,type:"noun",ar:"نَعَمٌ",bn:"গবাদি পশু / গৃহপালিত পশু",en:"cattle, livestock",root:"ن ع م",form:"বহুবচন: أَنْعَامٌ",emoji:"🐄",tip:"<b>মনে রাখার কৌশল:</b> সূরা 'আল-আনআম' (গবাদি পশু) নামটি এই শব্দ থেকেই এসেছে — কুরআনের ৬ষ্ঠ সূরা।"},
+      {n:196,type:"noun",ar:"زَكٰوةٌ",bn:"যাকাত / পবিত্রতা",en:"zakat, purification",root:"ز ك و",form:"বহুবচন: زَكَوَاتٌ",emoji:"💰",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের অন্যতম স্তম্ভ 'যাকাত' — সম্পদ পবিত্র করার আবশ্যিক দান, সবার কাছেই পরিচিত।"},
+      {n:197,type:"noun",ar:"عَاقِبَةٌ",bn:"পরিণাম",en:"end, consequence",root:"ع ق ب",form:"বহুবচন: عَوَاقِبُ",emoji:"🏁",tip:"<b>মনে রাখার কৌশল:</b> কুরআনে বারবার আসা বাক্যাংশ 'ফাকাইফা কানা আক্বিবাতু...' (তাদের পরিণাম কেমন হয়েছিল দেখুন) থেকেই এই শব্দ পরিচিত।"},
+      {n:198,type:"noun",ar:"إِذًا",bn:"তখন / তাহলে / অতঃপর",en:"then, when",root:"—",form:"অব্যয় (particle)",emoji:"⏰",tip:"<b>মনে রাখার কৌশল:</b> শর্তসাপেক্ষ বাক্যে ('যখন...তখন') কুরআনে সবচেয়ে বেশি ব্যবহৃত অব্যয়গুলোর একটি।"},
+      {n:199,type:"noun",ar:"أَشَدُّ",bn:"কঠোরতর / অধিকতর কঠিন",en:"more difficult, more severe",root:"ش د د",form:"তুলনামূলক (comparative)",emoji:"💪",tip:"<b>মনে রাখার কৌশল:</b> পরিচিত শব্দ 'শাদীদ' (তীব্র/কঠোর) থেকেই এসেছে এর তুলনামূলক রূপ — আরও বেশি কঠোর।"},
+      {n:200,type:"noun",ar:"وَاحِدٌ",bn:"এক / প্রত্যেক / একই",en:"single, one",root:"و ح د",form:"স্ত্রীলিঙ্গ: وَاحِدَةٌ",emoji:"1️⃣",tip:"<b>মনে রাখার কৌশল:</b> ইসলামের মূল বিশ্বাস 'তাওহীদ' (আল্লাহর একত্ববাদ) এই মূল থেকেই এসেছে — 'ওয়াহিদ' মানে এক."},
     ]
   }
+
 ];
 
-let currentDeckIndex = 0;
-let currentFilter = 'all';
-let currentIndex = 0;
-let currentList = [];
-let markedSet = new Set(JSON.parse(localStorage.getItem('annoor_marked') || '[]'));
-let practiceMode = false;
-let isShuffled = false;
-let originalIndices = [];
+const state = {
+  deckId: "class2",
+  filter:"all",
+  order: [],
+  idx:0,
+  marked: new Set(JSON.parse(localStorage.getItem("arVocabMarked")||"[]")),
+  flipped:false,
+  practiceMode:false,
+  theme: "light",
+  scaleArabic: parseFloat(localStorage.getItem("arVocabScaleArabic") || "1"),
+  scaleText: parseFloat(localStorage.getItem("arVocabScaleText") || "1")
+};
 
-// DOM Elements
-const deckSelector = document.getElementById('deckSelector');
-const themeToggle = document.getElementById('themeToggle');
-const voiceToggleBtn = document.getElementById('voiceToggleBtn');
-const voicePanel = document.getElementById('voicePanel');
-const rateSlider = document.getElementById('rateSlider');
-const rateVal = document.getElementById('rateVal');
-const fontResizer = document.getElementById('fontResizer');
-const arabicDecBtn = document.getElementById('arabicDecBtn');
-const arabicIncBtn = document.getElementById('arabicIncBtn');
-const textDecBtn = document.getElementById('textDecBtn');
-const textIncBtn = document.getElementById('textIncBtn');
-const tabs = document.getElementById('tabs');
-const progCount = document.getElementById('progCount');
-const progFill = document.getElementById('progFill');
-const progPercent = document.getElementById('progPercent');
-const card = document.getElementById('card');
-const starBtn = document.getElementById('starBtn');
-const typePill = document.getElementById('typePill');
-const arabicWord = document.getElementById('arabicWord');
-const speakFrontBtn = document.getElementById('speakFrontBtn');
-const backArabic = document.getElementById('backArabic');
-const speakBackBtn = document.getElementById('speakBackBtn');
-const meaningBn = document.getElementById('meaningBn');
-const meaningEn = document.getElementById('meaningEn');
-const rootRow = document.getElementById('rootRow');
-const tipBox = document.getElementById('tipBox');
-const prevBtn = document.getElementById('prevBtn');
-const flipBtn = document.getElementById('flipBtn');
-const nextBtn = document.getElementById('nextBtn');
-const shuffleBtn = document.getElementById('shuffleBtn');
-const shuffleBtnTextDefault = document.getElementById('shuffleBtnTextDefault');
-const shuffleBtnTextDone = document.getElementById('shuffleBtnTextDone');
-const practiceBtn = document.getElementById('practiceBtn');
-const practiceBtnTextDefault = document.getElementById('practiceBtnTextDefault');
-const practiceBtnTextActive = document.getElementById('practiceBtnTextActive');
+const els = {
+  card: document.getElementById("card"),
+  arabicWord: document.getElementById("arabicWord"),
+  backArabic: document.getElementById("backArabic"),
+  meaningBn: document.getElementById("meaningBn"),
+  meaningEn: document.getElementById("meaningEn"),
+  rootRow: document.getElementById("rootRow"),
+  tipBox: document.getElementById("tipBox"),
+  typePill: document.getElementById("typePill"),
+  starBtn: document.getElementById("starBtn"),
+  progCount: document.getElementById("progCount"),
+  progFill: document.getElementById("progFill"),
+  progPercent: document.getElementById("progPercent"),
+  prevBtn: document.getElementById("prevBtn"),
+  nextBtn: document.getElementById("nextBtn"),
+  flipBtn: document.getElementById("flipBtn"),
+  shuffleBtn: document.getElementById("shuffleBtn"),
+  practiceBtn: document.getElementById("practiceBtn"),
+  themeToggle: document.getElementById("themeToggle"),
+  tabs: document.getElementById("tabs"),
+  tabAll: document.getElementById("tabAll"),
+  tabVerb: document.getElementById("tabVerb"),
+  tabNoun: document.getElementById("tabNoun"),
+  tabMarked: document.getElementById("tabMarked"),
+  deckSelector: document.getElementById("deckSelector"),
+  shuffleBtnTextDefault: document.getElementById("shuffleBtnTextDefault"),
+  shuffleBtnTextDone: document.getElementById("shuffleBtnTextDone"),
+  practiceBtnTextDefault: document.getElementById("practiceBtnTextDefault"),
+  practiceBtnTextActive: document.getElementById("practiceBtnTextActive"),
+  headerEyebrow: document.querySelector('.brand .eyebrow'),
+  footerEl: document.querySelector('footer'),
+  arabicDecBtn: document.getElementById("arabicDecBtn"),
+  arabicIncBtn: document.getElementById("arabicIncBtn"),
+  textDecBtn: document.getElementById("textDecBtn"),
+  textIncBtn: document.getElementById("textIncBtn"),
+  voiceToggleBtn: document.getElementById("voiceToggleBtn"),
+  voicePanel: document.getElementById("voicePanel"),
+  rateSlider: document.getElementById("rateSlider"),
+  rateVal: document.getElementById("rateVal"),
+  speakFrontBtn: document.getElementById("speakFrontBtn"),
+  speakBackBtn: document.getElementById("speakBackBtn"),
+};
 
-// Font Scaling state
-let arabicScale = parseFloat(localStorage.getItem('annoor_scale_arabic') || '1');
-let textScale = parseFloat(localStorage.getItem('annoor_scale_text') || '1');
-
-function applyFontScales() {
-  document.documentElement.style.setProperty('--scale-arabic', arabicScale);
-  document.documentElement.style.setProperty('--scale-text', textScale);
-  localStorage.setItem('annoor_scale_arabic', arabicScale);
-  localStorage.setItem('annoor_scale_text', textScale);
+const banglaDigits = ["০","১","২","৩","৪","৫","৬","৭","৮","৯"];
+function toBn(num){
+  return String(num).split("").map(c=> /[0-9]/.test(c) ? banglaDigits[+c] : c).join("");
 }
-applyFontScales();
 
-arabicDecBtn.addEventListener('click', () => { if(arabicScale > 0.75){ arabicScale = +(arabicScale - 0.1).toFixed(1); applyFontScales(); } });
-arabicIncBtn.addEventListener('click', () => { if(arabicScale < 1.6){ arabicScale = +(arabicScale + 0.1).toFixed(1); applyFontScales(); } });
-textDecBtn.addEventListener('click', () => { if(textScale > 0.8){ textScale = +(textScale - 0.1).toFixed(1); applyFontScales(); } });
-textIncBtn.addEventListener('click', () => { if(textScale < 1.4){ textScale = +(textScale + 0.1).toFixed(1); applyFontScales(); } });
+function currentDeck(){
+  return DECKS.find(d=>d.id===state.deckId) || DECKS[0];
+}
 
-// Theme toggle
-themeToggle.addEventListener('click', () => {
-  const current = document.body.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.body.setAttribute('data-theme', next);
-  themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
-  localStorage.setItem('annoor_theme', next);
-});
-const savedTheme = localStorage.getItem('annoor_theme') || 'light';
-document.body.setAttribute('data-theme', savedTheme);
-themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+function byNum(n){ return currentDeck().data.find(d=>d.n===n); }
 
-// Voice panel toggle
-voiceToggleBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  voicePanel.classList.toggle('open');
-});
-document.addEventListener('click', () => {
-  voicePanel.classList.remove('open');
-});
-voicePanel.addEventListener('click', (e) => e.stopPropagation());
+function countVerbs(deck){ return deck.data.filter(d=>d.type==="verb").length; }
+function countNouns(deck){ return deck.data.filter(d=>d.type==="noun").length; }
 
-let speechRate = parseFloat(localStorage.getItem('annoor_rate') || '0.8');
-rateSlider.value = speechRate;
-rateVal.textContent = (speechRate.toFixed(1)) + '×';
-rateSlider.addEventListener('input', () => {
-  speechRate = parseFloat(rateSlider.value);
-  rateVal.textContent = (speechRate.toFixed(1)) + '×';
-  localStorage.setItem('annoor_rate', speechRate);
-});
+function currentList(){
+  const deck = currentDeck();
+  let list = deck.data.slice();
+  if(state.filter==="verb") list = list.filter(d=>d.type==="verb");
+  else if(state.filter==="noun") list = list.filter(d=>d.type==="noun");
+  else if(state.filter==="marked") list = list.filter(d=>state.marked.has(d.n));
+  return list;
+}
 
-// Render Decks
-function renderDecks() {
-  deckSelector.innerHTML = '';
-  DECKS.forEach((deck, idx) => {
-    const btn = document.createElement('button');
-    btn.className = `deck-btn ${idx === currentDeckIndex ? 'active' : ''}`;
+function rebuildOrder(preserveShuffle){
+  const list = currentList();
+  if(preserveShuffle && state.order.length){
+    const nums = new Set(list.map(d=>d.n));
+    state.order = state.order.filter(n=>nums.has(n));
+    list.forEach(d=>{ if(!state.order.includes(d.n)) state.order.push(d.n); });
+  } else {
+    state.order = list.map(d=>d.n);
+  }
+  state.idx = 0;
+}
+
+function shuffleOrder(){
+  const arr = state.order.slice();
+  for(let i=arr.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i],arr[j]]=[arr[j],arr[i]];
+  }
+  state.order = arr;
+  state.idx = 0;
+}
+
+function saveMarked(){
+  localStorage.setItem("arVocabMarked", JSON.stringify([...state.marked]));
+}
+
+function updateFontScales(){
+  document.documentElement.style.setProperty('--scale-arabic', state.scaleArabic);
+  document.documentElement.style.setProperty('--scale-text', state.scaleText);
+  localStorage.setItem("arVocabScaleArabic", state.scaleArabic);
+  localStorage.setItem("arVocabScaleText", state.scaleText);
+}
+
+function buildDeckSelector(){
+  els.deckSelector.innerHTML = "";
+  DECKS.forEach(deck => {
+    const btn = document.createElement("button");
+    btn.className = "deck-btn" + (deck.id === state.deckId ? " active" : "");
+    btn.dataset.deckId = deck.id;
     btn.textContent = deck.label;
-    btn.addEventListener('click', () => {
-      currentDeckIndex = idx;
-      currentIndex = 0;
-      isShuffled = false;
-      updateShuffleUI();
-      initDeck();
-      renderDecks();
-    });
-    deckSelector.appendChild(btn);
+    els.deckSelector.appendChild(btn);
   });
 }
 
-function initDeck() {
-  const data = DECKS[currentDeckIndex].data;
-  if(practiceMode) {
-    currentList = data.filter(item => markedSet.has(`${currentDeckIndex}-${item.n}`));
-  } else {
-    if(currentFilter === 'all') {
-      currentList = [...data];
-    } else if(currentFilter === 'verb') {
-      currentList = data.filter(item => item.type === 'verb');
-    } else if(currentFilter === 'noun') {
-      currentList = data.filter(item => item.type === 'noun');
-    } else if(currentFilter === 'marked') {
-      currentList = data.filter(item => markedSet.has(`${currentDeckIndex}-${item.n}`));
-    }
-  }
-  if(currentIndex >= currentList.length) currentIndex = 0;
-  updateCard();
+function updateTabLabels(){
+  const deck = currentDeck();
+  const total = deck.data.length;
+  const vCount = countVerbs(deck);
+  const nCount = countNouns(deck);
+  els.tabAll.textContent = "সব শব্দ (" + toBn(total) + ")";
+  els.tabVerb.textContent = "ক্রিয়া (" + toBn(vCount) + ")";
+  els.tabNoun.textContent = "অ-ক্রিয়া (" + toBn(nCount) + ")";
+  els.tabMarked.textContent = "⭐ চিহ্নিত";
 }
 
-renderDecks();
-initDeck();
+function render(){
+  const deck = currentDeck();
 
-// Tabs filter
-tabs.addEventListener('click', (e) => {
-  const tab = e.target.closest('.tab');
+  els.headerEyebrow.textContent = deck.eyebrow;
+  els.footerEl.textContent = deck.footerText;
+
+  const list = currentList();
+  if(list.length===0){
+    els.card.style.display="none";
+    document.querySelector(".controls").style.display="none";
+    document.querySelector(".progress-row").style.display="none";
+    if(!document.getElementById("emptyState")){
+      const div = document.createElement("div");
+      div.id="emptyState";
+      div.className="empty-state";
+      div.innerHTML = `<div class="big">⭐</div><div>এখনো কোনো শব্দ চিহ্নিত করা হয়নি।<br>শব্দের কার্ডে বাম পাশের তারকা চিহ্নে ট্যাপ করে চিহ্নিত করুন।</div>`;
+      document.querySelector(".stage").after(div);
+    }
+    return;
+  }
+  const es = document.getElementById("emptyState");
+  if(es) es.remove();
+  els.card.style.display="";
+  document.querySelector(".controls").style.display="";
+  document.querySelector(".progress-row").style.display="";
+
+  if(state.idx >= state.order.length) state.idx = 0;
+  const n = state.order[state.idx];
+  const d = byNum(n);
+
+  els.arabicWord.textContent = d.ar;
+  els.backArabic.textContent = d.ar;
+  els.meaningBn.textContent = d.bn;
+  els.meaningEn.textContent = d.en;
+  els.typePill.textContent = d.type==="verb" ? "ক্রিয়া" : "অ-ক্রিয়া";
+  els.tipBox.innerHTML = d.tip;
+
+  let rootChips = "";
+  if(d.root && d.root!=="—") rootChips += `<span class="chip">মূল: ${d.root}</span>`;
+  if(d.form && d.form!=="—") rootChips += `<span class="chip">${d.type==='verb' ? 'বাব: '+d.form : d.form}</span>`;
+  els.rootRow.innerHTML = rootChips;
+
+  els.starBtn.textContent = "⭐";
+  els.starBtn.classList.toggle("marked", state.marked.has(d.n));
+
+  els.progCount.textContent = toBn(state.idx+1) + " / " + toBn(state.order.length);
+  const pct = Math.round(((state.idx+1)/state.order.length)*100);
+  els.progFill.style.width = pct+"%";
+  els.progPercent.textContent = toBn(pct)+"%";
+
+  if(state.flipped){
+    els.card.classList.add("flipped");
+  } else {
+    els.card.classList.remove("flipped");
+  }
+}
+
+function flip(){
+  state.flipped = !state.flipped;
+  els.card.classList.toggle("flipped", state.flipped);
+}
+
+function goNext(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx+1) % state.order.length;
+  render();
+}
+function goPrev(){
+  if(state.order.length===0) return;
+  state.flipped=false;
+  state.idx = (state.idx-1+state.order.length) % state.order.length;
+  render();
+}
+
+els.card.addEventListener("click",(e)=>{
+  if(e.target===els.starBtn) return;
+  flip();
+});
+els.flipBtn.addEventListener("click",flip);
+els.nextBtn.addEventListener("click",goNext);
+els.prevBtn.addEventListener("click",goPrev);
+
+els.starBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  const n = state.order[state.idx];
+  if(state.marked.has(n)) state.marked.delete(n);
+  else state.marked.add(n);
+  saveMarked();
+  render();
+});
+
+els.shuffleBtn.addEventListener("click",()=>{
+  shuffleOrder();
+  state.flipped=false;
+  render();
+  els.shuffleBtnTextDefault.style.display = "none";
+  els.shuffleBtnTextDone.style.display = "";
+  setTimeout(()=>{
+    els.shuffleBtnTextDefault.style.display = "";
+    els.shuffleBtnTextDone.style.display = "none";
+  }, 900);
+});
+
+els.practiceBtn.addEventListener("click",()=>{
+  state.practiceMode = !state.practiceMode;
+  if(state.practiceMode){
+    state.filter="marked";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="marked"]').classList.add("active");
+    rebuildOrder(false);
+    shuffleOrder();
+    els.practiceBtn.classList.add("active");
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtn.classList.remove("active");
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+    state.filter="all";
+    document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+    document.querySelector('.tab[data-filter="all"]').classList.add("active");
+    rebuildOrder(false);
+  }
+  state.flipped=false;
+  render();
+});
+
+els.tabs.addEventListener("click",(e)=>{
+  const tab = e.target.closest(".tab");
   if(!tab) return;
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  tab.classList.add('active');
-  currentFilter = tab.getAttribute('data-filter');
-  currentIndex = 0;
-  isShuffled = false;
-  updateShuffleUI();
-  initDeck();
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  tab.classList.add("active");
+  state.filter = tab.dataset.filter;
+  state.practiceMode = (state.filter==="marked");
+  els.practiceBtn.classList.toggle("active", state.practiceMode);
+  if(state.practiceMode){
+    els.practiceBtnTextDefault.style.display = "none";
+    els.practiceBtnTextActive.style.display = "";
+  } else {
+    els.practiceBtnTextDefault.style.display = "";
+    els.practiceBtnTextActive.style.display = "none";
+  }
+  rebuildOrder(false);
+  state.flipped=false;
+  render();
 });
 
-// Update Card view
-function updateCard() {
-  card.classList.remove('flipped');
-  if(currentList.length === 0) {
-    typePill.textContent = "খালি";
-    arabicWord.textContent = "—";
-    backArabic.textContent = "—";
-    meaningBn.textContent = "কোনো শব্দ পাওয়া যায়নি";
-    meaningEn.textContent = "";
-    rootRow.innerHTML = "";
-    tipBox.innerHTML = "";
-    progCount.textContent = "০ / ০";
-    progFill.style.width = "0%";
-    progPercent.textContent = "০%";
-    return;
+els.deckSelector.addEventListener("click",(e)=>{
+  const btn = e.target.closest(".deck-btn");
+  if(!btn) return;
+  const newDeckId = btn.dataset.deckId;
+  if(newDeckId === state.deckId) return;
+  state.deckId = newDeckId;
+  state.filter = "all";
+  state.practiceMode = false;
+  state.flipped = false;
+  els.practiceBtn.classList.remove("active");
+  els.practiceBtnTextDefault.style.display = "";
+  els.practiceBtnTextActive.style.display = "none";
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.querySelector('.tab[data-filter="all"]').classList.add("active");
+  document.querySelectorAll(".deck-btn").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+});
+
+els.themeToggle.addEventListener("click",()=>{
+  state.theme = state.theme==="light" ? "dark" : "light";
+  document.body.setAttribute("data-theme", state.theme);
+  els.themeToggle.textContent = state.theme==="light" ? "🌙" : "☀️";
+  localStorage.setItem("arVocabTheme", state.theme);
+});
+
+els.arabicIncBtn.addEventListener("click", () => {
+  if(state.scaleArabic < 1.5) {
+    state.scaleArabic = parseFloat((state.scaleArabic + 0.1).toFixed(1));
+    updateFontScales();
   }
-  const item = currentList[currentIndex];
-  const uniqueKey = `${currentDeckIndex}-${item.n}`;
-  
-  typePill.textContent = item.type === 'verb' ? 'ক্রিয়া (Verb)' : 'অ-ক্রিয়া (Noun/Particle)';
-  arabicWord.textContent = item.ar;
-  backArabic.textContent = item.ar;
-  meaningBn.textContent = item.bn;
-  meaningEn.textContent = item.en;
-  
-  if(markedSet.has(uniqueKey)) {
-    starBtn.classList.add('marked');
-  } else {
-    starBtn.classList.remove('marked');
+});
+els.arabicDecBtn.addEventListener("click", () => {
+  if(state.scaleArabic > 0.7) {
+    state.scaleArabic = parseFloat((state.scaleArabic - 0.1).toFixed(1));
+    updateFontScales();
   }
-  
-  rootRow.innerHTML = `<span class="chip">মূল: ${item.root}</span><span class="chip">ফর্ম: ${item.form}</span>${item.emoji ? `<span class="chip">${item.emoji}</span>` : ''}`;
-  tipBox.innerHTML = item.tip || '';
-  
-  const total = currentList.length;
-  progCount.textContent = `${currentIndex + 1} / ${total}`;
-  const pct = Math.round(((currentIndex + 1) / total) * 100);
-  progFill.style.width = `${pct}%`;
-  progPercent.textContent = `${pct}%`;
+});
+els.textIncBtn.addEventListener("click", () => {
+  if(state.scaleText < 1.4) {
+    state.scaleText = parseFloat((state.scaleText + 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+els.textDecBtn.addEventListener("click", () => {
+  if(state.scaleText > 0.8) {
+    state.scaleText = parseFloat((state.scaleText - 0.1).toFixed(1));
+    updateFontScales();
+  }
+});
+
+let touchStartX = null;
+els.card.addEventListener("touchstart",(e)=>{ touchStartX = e.touches[0].clientX; },{passive:true});
+els.card.addEventListener("touchend",(e)=>{
+  if(touchStartX===null) return;
+  const dx = e.changedTouches[0].clientX - touchStartX;
+  if(Math.abs(dx) > 55){
+    if(dx < 0) goNext(); else goPrev();
+  }
+  touchStartX = null;
+});
+
+// ==================== Pronunciation: primary = device TTS, fallback = online ====================
+const ttsSupported = ("speechSynthesis" in window);
+let localArabicVoices = [];
+let hasLocalArabic = false;
+
+function loadLocalVoices(){
+  if(!ttsSupported) return;
+  const all = speechSynthesis.getVoices();
+  localArabicVoices = all.filter(v => v.lang && v.lang.toLowerCase().startsWith("ar"));
+  hasLocalArabic = localArabicVoices.length > 0;
+}
+if(ttsSupported){
+  speechSynthesis.onvoiceschanged = loadLocalVoices;
+  setTimeout(loadLocalVoices, 300);
 }
 
-// Star toggle
-starBtn.addEventListener('click', (e) => {
-  e.stopPropagation();
-  if(currentList.length === 0) return;
-  const item = currentList[currentIndex];
-  const uniqueKey = `${currentDeckIndex}-${item.n}`;
-  if(markedSet.has(uniqueKey)) {
-    markedSet.delete(uniqueKey);
-    starBtn.classList.remove('marked');
-  } else {
-    markedSet.add(uniqueKey);
-    starBtn.classList.add('marked');
-  }
-  localStorage.setItem('annoor_marked', JSON.stringify([...markedSet]));
-  if(currentFilter === 'marked' || (practiceMode && !markedSet.has(uniqueKey))) {
-    initDeck();
-  }
-});
-
-// Flip card interactions
-card.addEventListener('click', () => {
-  if(currentList.length > 0) card.classList.toggle('flipped');
-});
-flipBtn.addEventListener('click', () => {
-  if(currentList.length > 0) card.classList.toggle('flipped');
-});
-
-// Navigation buttons
-prevBtn.addEventListener('click', () => {
-  if(currentList.length === 0) return;
-  currentIndex = (currentIndex - 1 + currentList.length) % currentList.length;
-  updateCard();
-});
-nextBtn.addEventListener('click', () => {
-  if(currentList.length === 0) return;
-  currentIndex = (currentIndex + 1) % currentList.length;
-  updateCard();
-});
-
-// Shuffle Feature
-function updateShuffleUI() {
-  if(isShuffled) {
-    shuffleBtnTextDefault.style.display = 'none';
-    shuffleBtnTextDone.style.display = 'inline';
-    shuffleBtn.classList.add('active');
-  } else {
-    shuffleBtnTextDefault.style.display = 'inline';
-    shuffleBtnTextDone.style.display = 'none';
-    shuffleBtn.classList.remove('active');
-  }
+function pickArabicVoice(){
+  if(!hasLocalArabic) return null;
+  // prefer male
+  const male = localArabicVoices.find(v=> /male|naayf|hamed|majed|tarik|karim|abdullah|yousef|fahd|khalid|rashid|omar/.test(v.name.toLowerCase()));
+  return male || localArabicVoices[0];
 }
 
-shuffleBtn.addEventListener('click', () => {
-  if(currentList.length <= 1) return;
-  if(!isShuffled) {
-    isShuffled = true;
-    for (let i = currentList.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [currentList[i], currentList[j]] = [currentList[j], currentList[i]];
+function setSpeaking(on){
+  [els.speakFrontBtn, els.speakBackBtn].forEach(b=>b.classList.toggle("speaking", on));
+}
+
+let currentAudio = null;
+
+function speakArabic(text){
+  setSpeaking(true);
+
+  // Cancel any ongoing speech
+  if(ttsSupported) speechSynthesis.cancel();
+  if(currentAudio){ currentAudio.pause(); currentAudio = null; }
+
+  const rate = parseFloat(els.rateSlider.value) || 0.8;
+
+  // 1. Try local TTS if available
+  if(hasLocalArabic){
+    const voice = pickArabicVoice();
+    if(voice){
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.voice = voice;
+      utter.lang = voice.lang || "ar-SA";
+      utter.rate = rate;
+      utter.onend = utter.onerror = ()=> setSpeaking(false);
+      speechSynthesis.speak(utter);
+      return;
     }
-  } else {
-    isShuffled = false;
-    initDeck();
-    return;
-  }
-  currentIndex = 0;
-  updateShuffleUI();
-  updateCard();
-});
-
-// Practice Mode Toggle
-practiceBtn.addEventListener('click', () => {
-  practiceMode = !practiceMode;
-  if(practiceMode) {
-    practiceBtnTextDefault.style.display = 'none';
-    practiceBtnTextActive.style.display = 'inline';
-    practiceBtn.classList.add('active');
-  } else {
-    practiceBtnTextDefault.style.display = 'inline';
-    practiceBtnTextActive.style.display = 'none';
-    practiceBtn.classList.remove('active');
-  }
-  currentIndex = 0;
-  isShuffled = false;
-  updateShuffleUI();
-  initDeck();
-});
-
-// Keyboard support
-document.addEventListener('keydown', (e) => {
-  if(e.code === 'Space') {
-    e.preventDefault();
-    if(currentList.length > 0) card.classList.toggle('flipped');
-  } else if(e.code === 'ArrowLeft') {
-    prevBtn.click();
-  } else if(e.code === 'ArrowRight') {
-    nextBtn.click();
-  }
-});
-
-// Smart Speech Synthesis implementation prioritizing local Arabic voices, then cloud fallbacks
-function speakArabic(text, btnElement) {
-  if(!('speechSynthesis' in window)) {
-    alert("আপনার ব্রাউজার স্পিচ সিন্থেসিস সমর্থন করে না।");
-    return;
-  }
-  window.speechSynthesis.cancel();
-  
-  const cleanText = text.replace(/[\u064B-\u065F\u0670]/g, ''); // strip tashkeel if needed for clearer engine playback
-  const utterance = new SpeechSynthesisUtterance(cleanText);
-  utterance.rate = speechRate;
-  utterance.pitch = 1.0;
-
-  const voices = window.speechSynthesis.getVoices();
-  // 1. Prioritize pre-installed local Arabic voices
-  let selectedVoice = voices.find(v => v.lang.startsWith('ar') && v.localService);
-  // 2. Fallback to any available Arabic voice (Google / Microsoft server/cloud-backed)
-  if(!selectedVoice) {
-    selectedVoice = voices.find(v => v.lang.startsWith('ar') || v.lang.includes('ar-') || v.name.toLowerCase().includes('arabic'));
-  }
-  if(selectedVoice) {
-    utterance.voice = selectedVoice;
-    utterance.lang = selectedVoice.lang;
-  } else {
-    utterance.lang = 'ar-SA';
   }
 
-  if(btnElement) btnElement.classList.add('speaking');
-  voiceToggleBtn.classList.add('speaking');
+  // 2. Fallback: online TTS (Google)
+  const url = "https://translate.google.com/translate_tts?ie=UTF-8&tl=ar&client=tw-ob&q=" + encodeURIComponent(text);
+  const audio = new Audio(url);
+  currentAudio = audio;
+  audio.playbackRate = rate;
 
-  utterance.onend = () => {
-    if(btnElement) btnElement.classList.remove('speaking');
-    voiceToggleBtn.classList.remove('speaking');
-  };
-  utterance.onerror = () => {
-    if(btnElement) btnElement.classList.remove('speaking');
-    voiceToggleBtn.classList.remove('speaking');
+  let settled = false;
+  const done = ()=>{
+    if(settled) return;
+    settled = true;
+    setSpeaking(false);
   };
 
-  window.speechSynthesis.speak(utterance);
+  audio.addEventListener("ended", done);
+  audio.addEventListener("error", ()=>{
+    // if online fails, try local one more time as final fallback
+    if(ttsSupported && hasLocalArabic){
+      const voice = pickArabicVoice();
+      if(voice){
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.voice = voice;
+        utter.lang = voice.lang || "ar-SA";
+        utter.rate = rate;
+        utter.onend = utter.onerror = ()=> setSpeaking(false);
+        speechSynthesis.speak(utter);
+        return;
+      }
+    }
+    // otherwise just stop
+    setSpeaking(false);
+  });
+
+  audio.play().catch(()=>{
+    // if play() fails (e.g. autoplay blocked), fallback to local
+    if(ttsSupported && hasLocalArabic){
+      const voice = pickArabicVoice();
+      if(voice){
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.voice = voice;
+        utter.lang = voice.lang || "ar-SA";
+        utter.rate = rate;
+        utter.onend = utter.onerror = ()=> setSpeaking(false);
+        speechSynthesis.speak(utter);
+        return;
+      }
+    }
+    setSpeaking(false);
+  });
+
+  // safety timeout
+  setTimeout(()=>{ if(!settled) done(); }, 3000);
 }
 
-// Ensure voices are loaded asynchronously if needed
-if('speechSynthesis' in window) {
-  window.speechSynthesis.onvoiceschanged = () => {
-    window.speechSynthesis.getVoices();
-  };
+function speakCurrentWord(){
+  if(state.order.length===0) return;
+  const d = byNum(state.order[state.idx]);
+  if(d) speakArabic(d.ar);
 }
 
-speakFrontBtn.addEventListener('click', (e) => {
+els.voiceToggleBtn.addEventListener("click",(e)=>{
   e.stopPropagation();
-  if(currentList.length > 0) speakArabic(currentList[currentIndex].ar, speakFrontBtn);
+  els.voicePanel.classList.toggle("open");
 });
-speakBackBtn.addEventListener('click', (e) => {
+document.addEventListener("click",(e)=>{
+  if(!els.voicePanel.contains(e.target) && e.target!==els.voiceToggleBtn){
+    els.voicePanel.classList.remove("open");
+  }
+});
+els.rateSlider.addEventListener("input",()=>{
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+});
+els.speakFrontBtn.addEventListener("click",(e)=>{
   e.stopPropagation();
-  if(currentList.length > 0) speakArabic(currentList[currentIndex].ar, speakBackBtn);
+  speakCurrentWord();
 });
-  </script>
+els.speakBackBtn.addEventListener("click",(e)=>{
+  e.stopPropagation();
+  speakCurrentWord();
+});
+
+(function init(){
+  const savedTheme = localStorage.getItem("arVocabTheme");
+  if(savedTheme){
+    state.theme = savedTheme;
+    document.body.setAttribute("data-theme", savedTheme);
+    els.themeToggle.textContent = savedTheme==="light" ? "🌙" : "☀️";
+  }
+  updateFontScales();
+  buildDeckSelector();
+  updateTabLabels();
+  rebuildOrder(false);
+  render();
+  els.rateVal.textContent = parseFloat(els.rateSlider.value).toFixed(1) + "×";
+  if(ttsSupported) loadLocalVoices();
+})();
+</script>
  </body>
 </html>
